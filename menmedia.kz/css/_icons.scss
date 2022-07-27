@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon1.ttf');
+}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon2.ttf');
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-feedback:before {
+  content: "\e903";
+  width: 30px;
+  height: 30px;  
+  padding: 10px;
+  background: #FFED00;
+  border-radius: 50%;
+}
+.icon-call:before {
+  content: "\e900";
+}
+.icon-download:before {
+  content: "\e901";
+}
+.icon-facebook:before {
+  content: "\e902";
+}
+.icon-files:before {
+  content: "\e906";
+}
+.icon-img:before {
+  content: "\e907";
+}
+.icon-instagram:before {
+  content: "\e908";
+}
+.icon-logo:before {
+  content: "\e909";
+}
+.icon-logo-IM:before {
+  content: "\e90a";
+}
+.icon-mess:before {
+  content: "\e90b";
+}
+.icon-share:before {
+  content: "\e90c";
+}
+.icon-twitter:before {
+  content: "\e90d";
+}
+.icon-video:before {
+  content: "\e90e";
+}
+.icon-vk:before {
+  content: "\e90f";
+}
+.icon-zip:before {
+  content: "\e910";
+}
+.icon-big-logo:before {
+  content: "\e911";
+}
+.icon-calendar:before {
+  content: "\e912";
+}
+
+.share-fb:before{
+  content: "\f234";
+}
+.icon-photo:before {
+  content: "\e900";
+}
+.icon-videos:before {
+  content: "\e901";
+}

@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue2-touch-events@3.2.2/index.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Menmedia</title>
+</head>
+
+<body>
+  <main id="app" ref="infoBox">
+<!-- Header start -->
+    <header class="header">
+      <transition name="fade" mode="out-in">
+        <div class="header__top" v-if="!search" key="save">
+          <div class="container">
+            
+            <a href="index.html"><i class="icon-logo"></i></a>
+            <div class="link">              
+                <a class="link__item" href="#">О компании</a>            
+                <a class="link__item" href="#">Услуги</a>              
+                <a class="link__item" href="anons.html">Пресс-анонсы</a>              
+                <a class="link__item" href="events.html">Пресс-мероприятия</a>              
+                <a class="link__item" href="photos.html">Фото</a>              
+                <a class="link__item" href="videos.html">Видео</a>              
+                <a class="link__item" href="#">Контакты</a>             
+            </div>
+            <div class="info">
+              <div class="dropdown">
+                <div class="button" type="button" data-bs-toggle="dropdown">
+                  Рус <i class="bi bi-chevron-down"></i>
+                </div>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><img src="img/ru.png" alt=""> Рус</a></li>
+                  <li><a class="dropdown-item" href="#"><img src="img/kz.png" alt=""> Каз</a></li>
+                  <li><a class="dropdown-item" href="#"><img src="img/en.png" alt=""> Анг</a></li>
+                </ul>
+              </div>
+              <i class="bi bi-search" @click="clickSearch"></i>
+              <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
+            </div>
+
+          </div>
+        </div>
+        <div class="header__top header__search" v-else key="edit">
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
+          <i class="bi bi-x-lg" @click="clickSearch"></i>
+        </div>
+      </transition>
+      <div class="header__menu">
+        <div class="container">
+          <div class="header-bot">
+            <div class="title">Мен айтамын:</div>
+            <div class="link">
+              <a href="#">Новости</a>
+              <a href="#">PR и медиа</a>
+              <a href="#">IT для PR</a>
+              <a href="#">Спорт</a>
+              <a href="#">Экономика</a>
+              <a href="#">Культура</a>
+              <a href="#">Технологии</a>
+            </div>
+            <div class="heading__button">
+              <button @click="toggleHeading">
+                <transition name="fade" mode="out-in">
+                  <div class="btn-heading"  key="Open" v-if="!heading">
+                    Все рубрики <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <div class="btn-heading-close" key="Close" v-else=>
+                    Все рубрики
+                  </div>
+                </transition>
+              </button>
+            </div>
+          </div>
+          <div class="heading__menu">
+            <transition name="fade" mode="out-in">
+              <div class="heading" v-if="heading">
+                  <ul class="heading__list">
+                    <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
+                    <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
+                  </ul>
+              </div>
+            </transition>
+          </div>
+
+        </div>
+        </div>
+        
+      </div>
+    </header>
+
+    <!-- Modal start -->
+    <div class="modal fade" id="appModal" tabindex="-1" aria-labelledby="appModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="exampleModalLabel">Оставьте заявку на проведение мероприятия</h5>
+           
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="modal-text">
+                <div class="mb-3">
+                  <label for="event-type" class="col-form-label">Тип мероприятия</label>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Выберите мероприятие</option>
+                    <option value="1">Мероприятие1</option>
+                    <option value="2">Мероприятие2</option>
+                    <option value="3">Другое</option>
+                  </select>
+                  <label for="description" class="col-form-label">Описание</label>
+                  <input type="text" class="form-control" id="description" placeholder="Коротко о мероприятии">
+                  <div class="contact-data">
+                    <label  class="col-form-label">Контактные данные</label>
+                    <input type="text" class="form-control"  placeholder="Ваше Имя*">
+                    <input type="text" class="form-control"  placeholder="Номер телефона*">
+                    <input type="text" class="form-control"  placeholder="E-mail*">
+                  </div>
+                </div>
+                <div class="mb-2">
+                  <label  class="col-form-label">Дата и время</label>
+                  <div class="form-date">
+                    <input type="date"  placeholder="01.01.2000">
+                    <input type="time" placeholder="14:00">
+                  </div>
+                  <div class="contact-format">
+                    <label  class="col-form-label">Форма проведения </label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Online
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Offline
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal end -->
+
+    <header class="header header__mobile">
+      <div class="header__top">
+        <div class="container">
+          <transition name="fade" mode="out-in">
+            <i @click="clickMobile" key="menu" class="bi bi-list" v-if="!mobile"></i>
+            <i @click="clickMobile" key="close" class="bi bi-x" v-else></i>
+          </transition>
+          <a href="index.html"><i class="icon-logo"></i></a>
+          <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
+        </div>
+      </div>
+      <transition name="fade" mode="out-in">
+        <div class="header__menu" v-if="mobile">
+          <div class="container">
+            <div class="search">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
+              <i class="bi bi-x-lg" v-if="searchText.length > 1" @click="clear"></i>
+            </div>
+            <div class="content">
+              <div class="link">
+                <a href="#">О компании</a>
+                <a href="#">Услуги</a>
+                <a href="#">Пресс-анонсы</a>
+                <a href="#">Пресс-мероприятия</a>
+                <a href="#">Фото</a>
+                <a href="#">Видео</a>
+                <a href="#">Контакты</a>
+              </div>
+            </div>
+            <div class="content">
+              <div class="title">Мен айтамын:</div>
+              <div class="link">
+                <a href="#">Новости</a>
+                <a href="#">PR и медиа</a>
+                <a href="#">IT для PR</a>
+                <a href="#">Спорт</a>
+                <a href="#">Экономика</a>
+                <a href="#">Культура</a>
+                <a href="#">Технологии</a>
+              </div>
+            </div>
+            <div class="lang">
+              <a href="#" class="active"><img src="img/ru.png" alt=""> Рус</a>
+              <a href="#" class=""><img src="img/kz.png" alt=""> Каз</a>
+              <a href="#" class=""><img src="img/en.png" alt=""> Анг</a>
+            </div>
+
+            <div class="heading__button">
+              <button @click="toggleHeading">
+                <transition name="fade" mode="out-in">
+                  <div class="btn-heading"  key="Open" v-if="!heading">
+                    Все рубрики <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <div class="btn-heading-close" key="Close" v-else=>
+                    Все рубрики
+                  </div>
+                </transition>
+              </button>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <div class="heading__menu">
+        <transition name="fade" mode="out-in">
+          <div class="heading" v-if="heading">
+              <ul class="heading__list">
+                <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
+                <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
+              </ul>
+          </div>
+        </transition>
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <div class="dark-wrapper"  :style="`height: ${height}`"></div>
+
+    <section class="banner">
+      <div class="container">
+        <div class="carousel slide" id="carouselExampleCaptions" data-bs-ride="carousel" data-bs-interval="8000">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              
+              <img src="img/banner.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption">
+                <div class="live"><i class="bi bi-circle-fill" :class="{'active' : live}"></i>live</div>
+                <p><i class="bi bi-circle-fill"></i>Пресс-анонс</p>
+                <div class="title">Казахи в космосе</div>
+                <div class="text">Смотри <span>специальный репортаж</span></div>
+                <p>10 часов назад</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/banner.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption">
+                <div class="live"><i class="bi bi-circle-fill" :class="{'active' : live}"></i>live</div>
+                <p><i class="bi bi-circle-fill"></i>Пресс-анонс</p>
+                <div class="title">Казахи в космосе</div>
+                <div class="text">Смотри <span>специальный репортаж</span></div>
+                <p>10 часов назад</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/banner.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption">
+                <div class="live"><i class="bi bi-circle-fill" :class="{'active' : live}"></i>live</div>
+                <p><i class="bi bi-circle-fill"></i>Пресс-анонс</p>
+                <div class="title">Казахи в космосе</div>
+                <div class="text">Смотри <span>специальный репортаж</span></div>
+                <p>10 часов назад</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="announcements">
+          <div class="title">Пресс-анонсы</div>
+          <div class="announcements__head">
+            <div class="tabs-day" :class="{'active' : tab1}" @click="toggleTab1">Сегодня</div> 
+            <div class="tabs-day" :class="{'active' : tab2}" @click="toggleTab2">Завтра</div> 
+          </div>
+          <div class="mixing">
+            <transition name="fade" mode="out-in">
+            <div class="mixing__items" key="tab1" v-if="tab1">
+              <div class="mixing__item">
+                <div class="images"><img src="img/announcements-1.png" alt=""></div>
+                <div class="info">
+                  <div class="data-time">
+                    <span>Пресс-анонс</span> <i class="bi bi-circle-fill"></i> 12:30
+                  </div>
+                  <a href="#" class="title">
+                    Пресс-конференция на тему: <br>
+                    ”О привлечении иностранных инвестиций”
+                  </a>
+                  <div class="text" id="textLeng-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to...
+                  </div>
+                  <div class="share">
+                    <div class="dropdown">
+                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                        <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                      </div>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <div class="share-icons">
+                          <a href="#"><i class="icon-facebook"></i></a>
+                          <a href="#"><i class="icon-instagram"></i></a>
+                          <a href="#"><i class="icon-vk"></i></a>
+                          <a href="#"><i class="icon-twitter"></i></a>
+                          <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                          <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                        </div>
+                        <div class="share-icons">
+                          <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                            ссылку</p></a>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mixing__item">
+                <div class="images"><img src="img/announcements-2.png" alt=""></div>
+                <div class="info">
+                  <div class="data-time">
+                    <span>Пресс-анонс</span> <i class="bi bi-circle-fill"></i> 15:00
+                  </div>
+                  <a href="#" class="title">
+                    Пресс-конференция на тему: <br>
+                    ”О привлечении иностранных инвестиций”
+                  </a>
+                  <div class="text" id="textLeng-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to...
+                  </div>
+                  <div class="share">
+                    <div class="dropdown">
+                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                        <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                      </div>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <div class="share-icons">
+                          <a href="#"><i class="icon-facebook"></i></a>
+                          <a href="#"><i class="icon-instagram"></i></a>
+                          <a href="#"><i class="icon-vk"></i></a>
+                          <a href="#"><i class="icon-twitter"></i></a>
+                          <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                          <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                        </div>
+                        <div class="share-icons">
+                          <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                            ссылку</p></a>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+            <div class="mixing__items" key="tab2" v-if="tab2">
+              <div class="mixing__item">
+                <div class="images"><img src="img/announcements-1.png" alt=""></div>
+                <div class="info">
+                  <div class="data-time">
+                    <span>Пресс-анонс</span> <i class="bi bi-circle-fill"></i> 12:30
+                  </div>
+                  <a href="#" class="title">
+                    Пресс-конференция на тему: <br>
+                    ”О привлечении иностранных инвестиций”
+                  </a>
+                  <div class="text" id="textLeng-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to...
+                  </div>
+                  <div class="share">
+                    <div class="dropdown">
+                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                        <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                      </div>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <div class="share-icons">
+                          <a href="#"><i class="icon-facebook"></i></a>
+                          <a href="#"><i class="icon-instagram"></i></a>
+                          <a href="#"><i class="icon-vk"></i></a>
+                          <a href="#"><i class="icon-twitter"></i></a>
+                          <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                          <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                        </div>
+                        <div class="share-icons">
+                          <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                            ссылку</p></a>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mixing__item">
+                <div class="images"><img src="img/announcements-2.png" alt=""></div>
+                <div class="info">
+                  <div class="data-time">
+                    <span>Пресс-анонс</span> <i class="bi bi-circle-fill"></i> 15:00
+                  </div>
+                  <a href="#" class="title">
+                    Пресс-конференция на тему: <br>
+                    ”О привлечении иностранных инвестиций”
+                  </a>
+                  <div class="text" id="textLeng-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to...
+                  </div>
+                  <div class="share">
+                    <div class="dropdown">
+                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                        <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                      </div>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <div class="share-icons">
+                          <a href="#"><i class="icon-facebook"></i></a>
+                          <a href="#"><i class="icon-instagram"></i></a>
+                          <a href="#"><i class="icon-vk"></i></a>
+                          <a href="#"><i class="icon-twitter"></i></a>
+                          <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                          <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                        </div>
+                        <div class="share-icons">
+                          <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                            ссылку</p></a>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+          </transition>
+            <div class="mixing__calendar">
+              <div class="head">
+                <p>Все анонсы</p>
+                <i class="icon-calendar"></i>
+              </div>
+              <div class="items">
+                <div class="item">
+                  <div class="data">12 июля 2021</div>
+                  <a href="#" class="text">PR-менеджер для работы с зарубежными отелями</a>
+                </div>
+                <div class="hr"></div>
+                <div class="item">
+                  <div class="data">12 июля 2021</div>
+                  <a href="#" class="text">10 телеграм-каналов о коммуникациях</a>
+                </div>
+                <div class="hr"></div>
+                <div class="item">
+                  <div class="data">7 августа 2021</div>
+                  <a href="#" class="text">«Торговец славой РОМАН МАСЛЕННИКОВ»</a>
+                </div>
+                <div class="hr"></div>
+                <div class="item">
+                  <div class="data">7 августа 2021</div>
+                  <a href="#" class="text">«Торговец славой РОМАН МАСЛЕННИКОВ»</a>
+                </div>
+                <div class="hr"></div>
+                <div class="item">
+                  <div class="data">12 июля 2021</div>
+                  <a href="#" class="text">PR-менеджер для работы с зарубежными отелями</a>
+                </div>
+                <div class="hr"></div>
+                <div class="item">
+                  <div class="data">12 июля 2021</div>
+                  <a href="#" class="text">10 телеграм-каналов о коммуникациях</a>
+                </div>
+                <div class="hr"></div>
+                <div class="item">
+                  <div class="data">7 августа 2021</div>
+                  <a href="#" class="text">«Торговец славой РОМАН МАСЛЕННИКОВ»</a>
+                </div>
+                <div class="hr"></div>
+                <div class="item">
+                  <div class="data">7 августа 2021</div>
+                  <a href="#" class="text">«Торговец славой РОМАН МАСЛЕННИКОВ»</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="title__bottom">
+            <a href="anons.html">См. Все анонсы <i class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="events">
+      <div class="container">
+        <div class="title">Пресс-мероприятия</div>
+        <div class="mixing">
+          <div class="mixing__items">
+            <div class="mixing__item">
+              <div class="images"><img src="img/announcements-2.png" alt=""></div>
+              <div class="info">
+                <a href="#" class="title">
+                  Пресс-конференция на тему: <br>
+                  ”О привлечении иностранных инвестиций”
+                </a>
+                <div class="text" id="eventsText-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry 1500s, when an unknown printer took a galley of type and scrambled it to...
+                </div>
+                <div class="data-time">
+                  <p>28 Март, 2021</p> <div><i class="icon-img"></i> :17</div> <div><i class="icon-video"></i> :3</div> <div> <i class="icon-files"></i> :4</div>
+                </div>
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                          <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>                
+            </div>
+            <div class="mixing__item">
+              <div class="images"><img src="img/events-1.png" alt=""></div>
+              <div class="info">
+                <a href="#" class="title">
+                  Пресс-конференция на тему: <br>
+                  ”О привлечении иностранных инвестиций”
+                </a>
+                <div class="text" id="eventsText-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry 1500s, when an unknown printer took a galley of type and scrambled it to...
+                </div>
+                <div class="data-time">
+                  <p>28 Март, 2021</p> <i class="icon-img"></i> :17 <i class="icon-video"></i> :3 <i class="icon-files"></i> :4
+                </div>
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                          <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>                
+            </div>
+            <div class="mixing__item">
+              <div class="images"><img src="img/events-2.png" alt=""></div>
+              <div class="info">
+                <a href="#" class="title">
+                  Пресс-конференция на тему: <br>
+                  ”О привлечении иностранных инвестиций”
+                </a>
+                <div class="text" id="eventsText-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry 1500s, when an unknown printer took a galley of type and scrambled it to...
+                </div>
+                <div class="data-time">
+                  <p>28 Март, 2021</p> <i class="icon-img"></i> :17 <i class="icon-video"></i> :3 <i class="icon-files"></i> :4
+                </div>
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                          <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>                
+            </div>
+          </div>
+          <div class="mixing__calendar">
+            <div class="head">
+              <p>Все мероприятия</p>
+              <i class="icon-calendar"></i>
+            </div>
+            <div class="items">
+              <div class="items-header">Файлы для скачивания <i class="icon-zip"></i> <span>:25</span></div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+              <div class="item">
+                <i class="icon-zip"></i> <p>19. март пресс м..</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="title__bottom">
+          <a href="events.html">См. Все мероприятия <i class="bi bi-chevron-right"></i></a>
+        </div>
+      </div>    
+    </section>
+
+    <section class="info-block">
+      <div class="container">
+        <div class="title">Больше новостей</div>
+        <div class="block__head">
+          <a href="#otherNews" class="new-tab" :class="{'active' : newtab1}" @click="toggleTabNew1">1</a>
+          <a href="#otherNews" class="new-tab" :class="{'active' : newtab2}" @click="toggleTabNew2">2</a>
+          <a href="#otherNews" class="new-tab" :class="{'active' : newtab3}" @click="toggleTabNew3">3</a>
+        </div>
+        <div class="news">
+          <div class="news__main">
+            <div class="images">
+              <div class="text">PR и медиа</div>
+              <img src="img/news-1.png" alt="">
+            </div>
+            <div class="release">НОВОСТЬ</div>
+            <a href="new-page.html"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+            <div class="data">
+              <p>12 мая 2021</p>
+              <div class="share">
+                <div class="dropdown">
+                  <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                    <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                  </div>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                    <div class="share-icons">
+                      <a href="#"><i class="icon-facebook"></i></a>
+                      <a href="#"><i class="icon-instagram"></i></a>
+                      <a href="#"><i class="icon-vk"></i></a>
+                      <a href="#"><i class="icon-twitter"></i></a>
+                      <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                      <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                    </div>
+                    <div class="share-icons">
+                      <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                        ссылку</p></a>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <transition name="fade" mode="out-in">
+          <div class="news__items" key="newtab1" id="otherNews" v-if="newtab1">
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-2.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p>  
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-3.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p>
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-4.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data"><p>12 мая 2021</p> 
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-5.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p> 
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="news__items" key="newtab2" v-if="newtab2" id="otherNews">
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-2.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p>  
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-4.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data"><p>12 мая 2021</p> 
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-5.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p> 
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-3.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p>
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="news__items" key="newtab3" v-if="newtab3" id="otherNews">
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-3.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p>
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-4.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data"><p>12 мая 2021</p> 
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-2.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p>  
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news__item">
+              <div class="images">
+                <div class="text">PR и медиа</div>
+                <img src="img/news-5.png" alt="">
+              </div>
+              <div class="release">НОВОСТЬ</div>
+              <a href="#"><div class="title">PR-менеджер для работы с зарубежными отелями</div></a>
+              <div class="data">
+                <p>12 мая 2021</p> 
+                <div class="share">
+                  <div class="dropdown">
+                    <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                      <div class="share-icons">
+                        <a href="#"><i class="icon-facebook"></i></a>
+                        <a href="#"><i class="icon-instagram"></i></a>
+                        <a href="#"><i class="icon-vk"></i></a>
+                        <a href="#"><i class="icon-twitter"></i></a>
+                        <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                        <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                      </div>
+                      <div class="share-icons">
+                        <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
+                          ссылку</p></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          </transition>
+        </div>
+        <div class="title__bottom">
+          <a href="#">См. Все новости <i class="bi bi-chevron-right"></i></a>
+        </div>
+        <div class="carousel slide" id="carouselExampleCaptions-2" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions-2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions-2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions-2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions-2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/banner-2.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="text">Авиакомпания S7 Airlines в поисках PR-менеджера</div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/banner-2.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="text">Авиакомпания S7 Airlines в поисках PR-менеджера</div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/banner-2.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="text">Авиакомпания S7 Airlines в поисках PR-менеджера</div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/banner-2.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="text">Авиакомпания S7 Airlines в поисках PR-менеджера</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="title">Наши парнеры</div>
+        <div class="my-carousel partners">
+          <a href="#" class="images">
+            <img src="img/partners-1.png" alt="">
+          </a>
+          <a href="#" class="images">
+            <img src="img/partners-2.png" alt="">
+          </a>
+          <a href="#" class="images">
+            <img src="img/partners-3.png" alt="">
+          </a>
+          <a href="#" class="images">
+            <img src="img/partners-4.png" alt="">
+          </a>
+          <a href="#" class="images">
+            <img src="img/partners-5.png" alt="">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__head">
+          <div class="content">
+            <div class="colom colom-1">
+              <a href="index.html"><i class="icon-logo"></i></a>
+              <p>Мен айтамын:</p>
+            </div>
+            <div class="colom colom-2">
+              <a href="#">О компании</a>
+              <a href="#">Услуги</a>
+              <a href="anons.html">Пресс-анонсы</a>
+              <a href="events.html">Пресс-мероприятия</a>            
+            </div>
+            <div class="colom colom-3">
+              <a href="photos.html">Фото</a>
+              <a href="videos.html">Видео</a>
+              <a href="#">Контакты</a>
+              <a href="#">Новости</a>
+            </div>
+          </div>
+          <div class="content">
+            <div class="colom">
+              <div class="call">
+                <div class="phone">
+                  <a href="tell:+77272455556">+7 (727) 245 55 56</a>
+                </div>
+                <div class="whatsapp">
+                  <a href="tell:+77075666667">+7 (707) 566 66 67</a> 
+                </div>             
+              </div>
+              <div class="mess">
+                <i class="bi bi-envelope"></i>
+                <a href="#">info@menmedia.kz</a>
+              </div>
+              <div class="network">
+                <a href="#"><i class="icon-facebook"></i></a>
+                <a href="#"><i class="icon-instagram"></i></a>
+                <a href="#"><i class="icon-vk"></i></a>
+                <a href="#"><i class="icon-twitter"></i></a>
+                <a href="#" class="icon-foot"> <img src="img/telegram-foot.svg" alt=""> </a>
+                <a href="#" class="icon-foot"> <img src="img/tiktok-foot.svg" alt=""> </a>
+                <a href="#" class="icon-foot"> <img src="img/youtube-foot.svg" alt=""> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="footer__bottom">
+          <div class="content">
+            <p>© 2021 menmedia.kz. Все права  защищены.</p><span>|</span><p>Политика конфидециальности</p>
+          </div>
+          <div class="content">
+            <a href="#"><i class="icon-logo-IM"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+  <script src="js/carousel.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
