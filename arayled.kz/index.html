@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+
+    <title>ArayLed</title>
+</head>
+
+<body>
+    <!-- Header start -->
+
+    <div class="blank hide"></div>
+    <div class="burger">
+        <svg class="ham hamRotate180 ham5" viewbox="0 0 100 100" width="80">
+            <path
+                  class="line top" 
+                  d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+            <path
+                  class="line middle"
+                  d="m 70,50 h -40" />
+            <path
+                  class="line bottom"
+                  d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+          </svg>
+    </div>
+    <div class="hidden__menu">
+        <ul class="hidden__links">
+            <li class="hidden__item"><a href="#about-anchor">О компании</a></li>
+            <li class="hidden__item"><a href="#equipment-anchor">Оборудование</a></li>
+            <li class="hidden__item"><a href="#projects-anchor">Проекты</a></li>
+            <li class="hidden__item"><a href="#news-anchor">Новости</a></li>
+            <li class="hidden__item"><a href="tel:77777777777">+7 777 777 77 77</a></li>
+            <li class="hidden__item">
+                <a href="#">
+                    <svg class="inst-icon" width="26" height="27" viewbox="0 0 26 27" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <g  clip-path="url(#clip0)">
+                    <path  d="M25.7329 7.73929C25.6743 6.35781 25.4595 5.40805 25.1518 4.58508C24.8344 3.71151 24.346 2.9294 23.7061 2.27924C23.081 1.61895 22.324 1.10588 21.4937 0.780896C20.6978 0.460872 19.7894 0.23747 18.461 0.17656C17.1228 0.110492 16.6979 0.0952148 13.3037 0.0952148C9.90949 0.0952148 9.48464 0.110492 8.15134 0.171402C6.82299 0.232311 5.90976 0.455912 5.11863 0.775737C4.27847 1.10588 3.52645 1.61379 2.90129 2.27924C2.2664 2.9294 1.77325 3.71667 1.46058 4.58012C1.15286 5.40805 0.938053 6.35265 0.879486 7.73413C0.815959 9.12593 0.80127 9.56777 0.80127 13.0978C0.80127 16.6277 0.815959 17.0696 0.874526 18.4562C0.933093 19.8377 1.14809 20.7875 1.45581 21.6104C1.77325 22.484 2.2664 23.2661 2.90129 23.9163C3.52645 24.5766 4.28343 25.0896 5.11367 25.4146C5.90976 25.7346 6.81803 25.958 8.14657 26.019C9.47968 26.0801 9.90472 26.0951 13.2989 26.0951C16.6932 26.0951 17.118 26.0801 18.4513 26.019C19.7797 25.958 20.6929 25.7346 21.484 25.4146C23.1641 24.7391 24.4925 23.3576 25.1421 21.6104C25.4496 20.7825 25.6646 19.8377 25.7232 18.4562C25.7817 17.0696 25.7964 16.6277 25.7964 13.0978C25.7964 9.56777 25.7915 9.12593 25.7329 7.73929ZM23.4816 18.3546C23.4278 19.6244 23.2227 20.3101 23.0518 20.7672C22.6317 21.8999 21.7673 22.7989 20.6782 23.2358C20.2387 23.4135 19.5746 23.6268 18.3584 23.6826C17.0398 23.7437 16.6443 23.7587 13.3087 23.7587C9.97302 23.7587 9.57259 23.7437 8.25874 23.6826C7.0378 23.6268 6.37849 23.4135 5.93895 23.2358C5.39697 23.0274 4.90363 22.6973 4.5032 22.2656C4.08808 21.844 3.77064 21.336 3.57033 20.7724C3.39939 20.3153 3.19431 19.6244 3.14071 18.3598C3.08195 16.9884 3.06745 16.577 3.06745 13.1079C3.06745 9.6388 3.08195 9.22235 3.14071 7.85615C3.19431 6.58637 3.39939 5.90069 3.57033 5.44357C3.77064 4.8797 4.08808 4.36683 4.50816 3.95019C4.91336 3.51846 5.40174 3.18832 5.94391 2.98019C6.38345 2.80242 7.04772 2.58914 8.2637 2.53319C9.58232 2.47228 9.97798 2.457 13.3134 2.457C16.654 2.457 17.0495 2.47228 18.3634 2.53319C19.5843 2.58914 20.2436 2.80242 20.6832 2.98019C21.2251 3.18832 21.7185 3.51846 22.1189 3.95019C22.534 4.37179 22.8515 4.8797 23.0518 5.44357C23.2227 5.90069 23.4278 6.59133 23.4816 7.85615C23.5402 9.22751 23.5548 9.6388 23.5548 13.1079C23.5548 16.577 23.5402 16.9833 23.4816 18.3546Z" />
+                    <path  d="M13.3035 6.4187C9.758 6.4187 6.88135 9.41022 6.88135 13.0977C6.88135 16.7853 9.758 19.7768 13.3035 19.7768C16.8492 19.7768 19.7257 16.7853 19.7257 13.0977C19.7257 9.41022 16.8492 6.4187 13.3035 6.4187ZM13.3035 17.4303C11.0034 17.4303 9.13761 15.4901 9.13761 13.0977C9.13761 10.7054 11.0034 8.76521 13.3035 8.76521C15.6038 8.76521 17.4694 10.7054 17.4694 13.0977C17.4694 15.4901 15.6038 17.4303 13.3035 17.4303Z" />
+                    <path  d="M21.4792 6.15446C21.4792 7.01553 20.8079 7.71371 19.9797 7.71371C19.1518 7.71371 18.4805 7.01553 18.4805 6.15446C18.4805 5.2932 19.1518 4.59521 19.9797 4.59521C20.8079 4.59521 21.4792 5.2932 21.4792 6.15446Z" />
+                    </g>
+                    <defs>
+                    <clippath id="clip0">
+                    <rect width="25" height="26" fill="white" transform="translate(0.757324 0.0952148)"/>
+                    </clippath>
+                    </defs>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <header class="container-fluid header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header__menu">
+                        <a href="#" class="header__logo">
+                            <img src="img/main-logo.png" alt="logo">
+                        </a>
+                        <ul class="header__links">
+                            <li class="menu__item"><a href="#about-anchor">О компании</a></li>
+                            <li class="menu__item"><a href="#equipment-anchor">Оборудование</a></li>
+                            <li class="menu__item"><a href="#projects-anchor">Проекты</a></li>
+                            <li class="menu__item"><a href="#news-anchor">Новости</a></li>
+                            <li class="menu__item"><a href="tel:77777777777">+7 777 777 77 77</a></li>
+                            <li class="menu__item">
+                                <a href="#">
+                                    <svg class="inst-icon" width="26" height="27" viewbox="0 0 26 27" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                    <g  clip-path="url(#clip0)">
+                                    <path  d="M25.7329 7.73929C25.6743 6.35781 25.4595 5.40805 25.1518 4.58508C24.8344 3.71151 24.346 2.9294 23.7061 2.27924C23.081 1.61895 22.324 1.10588 21.4937 0.780896C20.6978 0.460872 19.7894 0.23747 18.461 0.17656C17.1228 0.110492 16.6979 0.0952148 13.3037 0.0952148C9.90949 0.0952148 9.48464 0.110492 8.15134 0.171402C6.82299 0.232311 5.90976 0.455912 5.11863 0.775737C4.27847 1.10588 3.52645 1.61379 2.90129 2.27924C2.2664 2.9294 1.77325 3.71667 1.46058 4.58012C1.15286 5.40805 0.938053 6.35265 0.879486 7.73413C0.815959 9.12593 0.80127 9.56777 0.80127 13.0978C0.80127 16.6277 0.815959 17.0696 0.874526 18.4562C0.933093 19.8377 1.14809 20.7875 1.45581 21.6104C1.77325 22.484 2.2664 23.2661 2.90129 23.9163C3.52645 24.5766 4.28343 25.0896 5.11367 25.4146C5.90976 25.7346 6.81803 25.958 8.14657 26.019C9.47968 26.0801 9.90472 26.0951 13.2989 26.0951C16.6932 26.0951 17.118 26.0801 18.4513 26.019C19.7797 25.958 20.6929 25.7346 21.484 25.4146C23.1641 24.7391 24.4925 23.3576 25.1421 21.6104C25.4496 20.7825 25.6646 19.8377 25.7232 18.4562C25.7817 17.0696 25.7964 16.6277 25.7964 13.0978C25.7964 9.56777 25.7915 9.12593 25.7329 7.73929ZM23.4816 18.3546C23.4278 19.6244 23.2227 20.3101 23.0518 20.7672C22.6317 21.8999 21.7673 22.7989 20.6782 23.2358C20.2387 23.4135 19.5746 23.6268 18.3584 23.6826C17.0398 23.7437 16.6443 23.7587 13.3087 23.7587C9.97302 23.7587 9.57259 23.7437 8.25874 23.6826C7.0378 23.6268 6.37849 23.4135 5.93895 23.2358C5.39697 23.0274 4.90363 22.6973 4.5032 22.2656C4.08808 21.844 3.77064 21.336 3.57033 20.7724C3.39939 20.3153 3.19431 19.6244 3.14071 18.3598C3.08195 16.9884 3.06745 16.577 3.06745 13.1079C3.06745 9.6388 3.08195 9.22235 3.14071 7.85615C3.19431 6.58637 3.39939 5.90069 3.57033 5.44357C3.77064 4.8797 4.08808 4.36683 4.50816 3.95019C4.91336 3.51846 5.40174 3.18832 5.94391 2.98019C6.38345 2.80242 7.04772 2.58914 8.2637 2.53319C9.58232 2.47228 9.97798 2.457 13.3134 2.457C16.654 2.457 17.0495 2.47228 18.3634 2.53319C19.5843 2.58914 20.2436 2.80242 20.6832 2.98019C21.2251 3.18832 21.7185 3.51846 22.1189 3.95019C22.534 4.37179 22.8515 4.8797 23.0518 5.44357C23.2227 5.90069 23.4278 6.59133 23.4816 7.85615C23.5402 9.22751 23.5548 9.6388 23.5548 13.1079C23.5548 16.577 23.5402 16.9833 23.4816 18.3546Z" />
+                                    <path  d="M13.3035 6.4187C9.758 6.4187 6.88135 9.41022 6.88135 13.0977C6.88135 16.7853 9.758 19.7768 13.3035 19.7768C16.8492 19.7768 19.7257 16.7853 19.7257 13.0977C19.7257 9.41022 16.8492 6.4187 13.3035 6.4187ZM13.3035 17.4303C11.0034 17.4303 9.13761 15.4901 9.13761 13.0977C9.13761 10.7054 11.0034 8.76521 13.3035 8.76521C15.6038 8.76521 17.4694 10.7054 17.4694 13.0977C17.4694 15.4901 15.6038 17.4303 13.3035 17.4303Z" />
+                                    <path  d="M21.4792 6.15446C21.4792 7.01553 20.8079 7.71371 19.9797 7.71371C19.1518 7.71371 18.4805 7.01553 18.4805 6.15446C18.4805 5.2932 19.1518 4.59521 19.9797 4.59521C20.8079 4.59521 21.4792 5.2932 21.4792 6.15446Z" />
+                                    </g>
+                                    <defs>
+                                    <clippath>
+                                    <rect width="25" height="26" fill="white" transform="translate(0.757324 0.0952148)"/>
+                                    </clippath>
+                                    </defs>
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li class="menu__item"><a href="#question-anchor" class="header__button main_btn">Заказать звонок</a></li>
+                            <li class="menu__item small-btn "><a href="#question-anchor" class="header__button main_btn"><svg width="19" height="19" viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.5018 13.9436L15.8447 11.3873C14.8957 10.4744 13.2825 10.8396 12.9029 12.0264C12.6182 12.8481 11.6693 13.3046 10.8152 13.122C8.91728 12.6655 6.35509 10.2918 5.88061 8.37455C5.59592 7.55284 6.1653 6.63988 7.01936 6.36603C8.25301 6.00084 8.63259 4.44881 7.68363 3.53584L5.02655 0.979549C4.26738 0.340476 3.12863 0.340476 2.46436 0.979549L0.661336 2.71418C-1.14169 4.5401 0.851128 9.3788 5.31124 13.6697C9.77134 17.9607 14.8008 19.9692 16.6987 18.1432L18.5018 16.4086C19.1661 15.6782 19.1661 14.5827 18.5018 13.9436Z" fill="white" fill-opacity="0.8"/>
+                                </svg>
+                                </a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!-- Header end -->
+    <!-- Main content start -->
+    <main>
+        <section class="container-fluid about">
+            <div class="row">
+                <div class="container">
+                    <div class="about__content">
+                        <div class="about__text">
+                            Оптимальные решения по монтажу светодиодного оборудования любой сложности в кратчайшие сроки
+                        </div>
+                        <span id="about-anchor"></span>
+                    </div>
+
+                </div>
+                <div class="container-fluid about__bottom">
+                    <div class="container about__inner">
+                        <div class="about__title title">
+                            О КОМПАНИИ
+                        </div>
+                        <div class="about__info">
+                            Наша основная деятельность - это продажа и установка LED экранов различных размеров и применения. Мы реализовываем проекты любой сложности в кратчайшие сроки. <br> LED экраны, поставляемые нашей компанией, являются продуктом
+                            высокого качества. <br><br> За время нашей работы был получен огромный опыт в поставке, монтаже и эксплуатации светодиодных рекламных экранов и конструкций различного вида.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid equipment">
+            <div id="equipment-anchor"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="equipment__title title">ОБОРУДОВАНИЕ</div>
+                        <div class="equipment__content">
+                            <div class=" equipment__icon">
+                                <div class="icon__wrap">
+                                    <div class="icon-image">
+                                        <picture>
+                                            <img src="img/equip-icon1.svg" alt="icon" class="blur">
+                                            <img src="img/equip-icon1.svg" alt="icon" class="l1">
+                                        </picture>
+                                    </div>
+                                    <div class="icon-text">
+                                        Led-экраны
+                                    </div>
+                                </div>
+                                <div class="icon__wrap">
+                                    <div class="icon-image">
+                                        <picture>
+                                            <img src="img/equip-icon2.svg" alt="icon" class="blur">
+                                            <img src="img/equip-icon2.svg" alt="icon" class="l2">
+                                        </picture>
+                                    </div>
+                                    <div class="icon-text">
+                                        Бегущие строки
+                                    </div>
+                                </div>
+                                <div class="icon__wrap">
+                                    <div class="icon-image">
+                                        <picture>
+                                            <img src="img/equip-icon3.svg" alt="icon" class="blur">
+                                            <img src="img/equip-icon3.svg" alt="icon" class="l3">
+                                        </picture>
+                                    </div>
+                                    <div class="icon-text">
+                                        Светомузыка
+                                    </div>
+                                </div>
+                                <div class="icon__wrap">
+                                    <div class="icon-image">
+                                        <picture>
+                                            <img src="img/equip-icon4.svg" alt="icon" class="blur">
+                                            <img src="img/equip-icon4.svg" alt="icon" class="l4">
+                                        </picture>
+                                    </div>
+                                    <div class="icon-text">
+                                        Медиафасады
+                                    </div>
+                                </div>
+                                <div class="icon__wrap">
+                                    <div class="icon-image">
+                                        <picture>
+                                            <img src="img/equip-icon5.svg" alt="icon" class="blur">
+                                            <img src="img/equip-icon5.svg" alt="icon" class="l5">
+                                        </picture>
+                                    </div>
+                                    <div class="icon-text">
+                                        Комплектующие
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid work">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="work__title title">КАК МЫ РАБОТАЕМ</div>
+                        <div class="work__content">
+                            <div class="work__item col-md-5">
+                                <div class="inner__block">
+                                    <div class="work__icon">
+                                        <picture>
+
+                                            <img src="img/work-icon1.svg" alt="icon">
+                                        </picture>
+                                    </div>
+                                    <div class="inner__title">Оставьте запрос</div>
+                                    <div class="work__subtitle">
+                                        Мы подберём для Вас оборудование под ваши требовавния. Подготовим ценовое предложение, заключим догвор и выставим счёт.
+                                    </div>
+                                </div>
+                                <div class="inner__block">
+                                    <div class="work__icon">
+                                        <picture>
+
+                                            <img src="img/work-icon2.svg" alt="icon">
+                                        </picture>
+                                    </div>
+                                    <div class="inner__title">Доставка</div>
+                                    <div class="work__subtitle">
+                                        Доставим экран в целости и сохранности, соблюдая все меры предосторожности
+                                    </div>
+                                </div>
+                                <div class="inner__block">
+                                    <div class="work__icon">
+                                        <picture>
+
+                                            <img src="img/work-icon3.svg" alt="icon">
+                                        </picture>
+                                    </div>
+                                    <div class="inner__title">Передача в экплуатацию</div>
+                                    <div class="work__subtitle">
+                                        Протестируем экран, проверим установку, подпишем акт приема передачи.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="work__item rounded col-md-2">
+                                <div class="round n1"></div>
+                                <div class="line l1"></div>
+                                <div class="round n2"></div>
+                                <div class="line l2"></div>
+                                <div class="round n3"></div>
+                                <div class="line l3"></div>
+                                <div class="round n4"></div>
+                                <div class="line l4"></div>
+                                <div class="round n5"></div>
+                            </div>
+                            <div class="work__item col-md-5">
+                                <div class="inner__block">
+                                    <div class="work__icon">
+                                        <picture>
+
+                                            <img src="img/work-icon4.svg" alt="icon">
+                                        </picture>
+                                    </div>
+                                    <div class="inner__title">Подготовление оборудования</div>
+                                    <div class="work__subtitle">
+                                        Протестируем оборудование на работоспособность, откалибруем экраны.
+                                    </div>
+                                </div>
+                                <div class="inner__block">
+                                    <div class="work__icon">
+                                        <picture>
+                                            <img src="img/work-icon5.svg" alt="icon">
+                                        </picture>
+                                    </div>
+                                    <div class="inner__title">Установка экрана</div>
+                                    <div class="work__subtitle">
+                                        Установим оборудование согласно запросу. Производим пусконаладочные работы.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid advantages">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="advantages__title title">НАШИ ПРЕИМУЩЕСТВА</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="advantages__content">
+                            <div class="advantages__item">
+                                <div class="advantages__image">
+                                    <img src="img/adv-img1.png" alt="image">
+                                </div>
+                                <div class="item__title">Качество</div>
+                                <div class="item__text">Длительный срок службы оборудования.</div>
+                                <div class="adv-line"></div>
+                            </div>
+                            <div class="advantages__item">
+                                <div class="advantages__image">
+                                    <img src="img/adv-img2.png" alt="image">
+                                </div>
+                                <div class="item__title">Специалисты</div>
+                                <div class="item__text">Наши специалисты воплотят любую идею качественно и в срок.</div>
+                                <div class="adv-line"></div>
+                            </div>
+                            <div class="advantages__item">
+                                <div class="advantages__image">
+                                    <img src="img/adv-img3.png" alt="image">
+                                </div>
+                                <div class="item__title">Опыт</div>
+                                <div class="item__text">Вместе с нашими партнерами мы успели реализовать проекты почти во всех отраслях.</div>
+                                <div class="adv-line"></div>
+                            </div>
+                            <div class="advantages__item">
+                                <div class="advantages__image">
+                                    <img src="img/adv-img4.png" alt="image">
+                                </div>
+                                <div class="item__title">Цены</div>
+                                <div class="item__text">Наши цены выгодно отличаются от большинства конкурентов. </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid projects">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="projects__title title" id="projects-anchor">НАШИ ПРОЕКТЫ</div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="projects__slider">
+                            <div class="slide">
+                                <picture>
+                                    <img src="img/projects-img1.png" alt="slide">
+                                </picture>
+                            </div>
+                            <div class="slide">
+                                <picture>
+                                    <img src="img/projects-img2.png" alt="slide">
+                                </picture>
+                            </div>
+                            <div class="slide">
+                                <picture>
+                                    <img src="img/projects-img3.png" alt="slide">
+                                </picture>
+                            </div>
+                            <div class="slide">
+                                <picture>
+                                    <img src="img/projects-img4.png" alt="slide">
+                                </picture>
+                            </div>
+                            <div class="slide">
+                                <picture>
+                                    <img src="img/projects-img1.png" alt="slide">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="video__content">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/je-f3HXp6TQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid clients">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="clients__title title">НАШИ КЛИЕНТЫ</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="clients__content">
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/1.png" alt="logo">
+                                </picture>
+                            </div>
+
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/2.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/3.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/4.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/5.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/7.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/6.png" alt="logo">
+                                </picture>
+                            </div>
+
+                        </div>
+                        <div class="clients__content-overlay">
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/1.png" alt="logo">
+                                </picture>
+                            </div>
+
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/2.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/3.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/4.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/5.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/7.png" alt="logo">
+                                </picture>
+                            </div>
+                            <div class="clients__logo">
+                                <picture>
+                                    <img src="img/6.png" alt="logo">
+                                </picture>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid news" id="news-anchor">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="news__title title">НОВОСТИ</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="news__content">
+                            <a href="#" data-toggle="modal" data-target="#news1">
+                                <div class="news__item" style="background:url('img/news-slide1.png') center center/cover no-repeat">
+                                    <div class="news__inner">
+                                        <div class="news__text">Новая установка в ТЦ...</div>
+                                        <div class="news__date">21.12.2020</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" data-toggle="modal" data-target="#news2">
+                                <div class="news__item" style="background:url('img/news-slide2.png') center center/cover no-repeat">
+                                    <div class="news__inner">
+                                        <div class="news__text">Led экраны производят...</div>
+                                        <div class="news__date">20.12.2020</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" data-toggle="modal" data-target="#news3">
+                                <div class="news__item" style="background:url('img/news-slide3.png') center center/cover no-repeat">
+                                    <div class="news__inner">
+                                        <div class="news__text">Led экраны теперь в...</div>
+                                        <div class="news__date">19.12.2020</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news__content-overlay">
+                            <a href="#" data-toggle="modal" data-target="#news1">
+                                <div class="news__item" style="background:url('img/news-slide1.png') center center/cover no-repeat">
+                                    <div class="news__inner">
+                                        <div class="news__text">Новая установка в ТЦ...</div>
+                                        <div class="news__date">21.12.2020</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" data-toggle="modal" data-target="#news2">
+                                <div class="news__item" style="background:url('img/news-slide2.png') center center/cover no-repeat">
+                                    <div class="news__inner">
+                                        <div class="news__text">Led экраны производят...</div>
+                                        <div class="news__date">20.12.2020</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" data-toggle="modal" data-target="#news3">
+                                <div class="news__item" style="background:url('img/news-slide3.png') center center/cover no-repeat">
+                                    <div class="news__inner">
+                                        <div class="news__text">Led экраны теперь в...</div>
+                                        <div class="news__date">19.12.2020</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid question">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 bg">
+                        <div class="question__title title" id="question-anchor">ОСТАЛИСЬ ВОПРОСЫ?</div>
+                        <div class="question__content">
+                            <form action="" class="question__form">
+                                <label for="name" class="nm">Имя</label>
+                                <input type="text" name="name" id="name">
+                                <label for="phone-mask" class="ph">Телефон</label>
+                                <input type="text" name="phone" id="phone-mask" value="+7(">
+                                <button type="submit" class="main_btn question__btn" data-toggle="modal" data-target="#contact">Заказать звонок</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Main content end -->
+    <!-- modal news start -->
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal__c">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body modal__contact">
+                    <h2>Спасибо Вам!</h2>
+                    <p>Мы перезвоним вам в ближайшее время!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="news1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Новости</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__image">
+                        <picture>
+                            <img src="img/news-slide1.png" alt="image">
+                        </picture>
+                    </div>
+                    <div class="modal__text">
+                        <div class="modal__title">Lorem, ipsum dolor.</div>
+                        <div class="modal__subtitle">Lorem ipsum dolor, sit ametreprehenderit corrupti perspiciatis dignissimos repellat ea fugiat tenetur, ab beatae recusandae. Aspernatur, ipsam expedita. Et impedit a pariatur quod at. Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Optio neque rerum, ipsum quo quis nemo nam iste molestiae dolores corrupti alias velit distinctio nisi! Animi laboriosam similique architecto obcaecati tempore.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="news2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Новости</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__image">
+                        <picture>
+                            <img src="img/news-slide2.png" alt="image">
+                        </picture>
+                    </div>
+                    <div class="modal__text">
+                        <div class="modal__title">Lorem, ipsum dolor.</div>
+                        <div class="modal__subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ipsa at repellat accusantium quasi corporis ducimus quidem inventore distinctio hic. Laudantium voluptatibus, inventore accusamus, praesentium quaerat repudiandae
+                            itaque stiae dolores corrupti alias velit distinctio nisi! Animi laboriosam similique architecto obcaecati tempore.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="news3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Новости</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__image">
+                        <picture>
+                            <img src="img/news-slide3.png" alt="image">
+                        </picture>
+                    </div>
+                    <div class="modal__text">
+                        <div class="modal__title">Lorem, ipsum dolor.</div>
+                        <div class="modal__subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ipsa at repellat accusantium quasi corporis ducimus quidem inventore distinctio hic. Laudantium voluptatibus, inventore accusamus, praesentium quaerat repudiandae
+                            itaque a veritatis reprehenderit corrupti perspiciatis dignissimos repellat ea fugiat tenetur, ab beatae recusandae. Aspernatur, ipsam expedita. Et impedit a pariatur quod at. Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Optio neque rerum, ipsum quo quis nemo nam iste molestiae dolores corrupti alias velit distinctio nisi! Animi laboriosam similique architecto obcaecati tempore.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal news end -->
+    <!-- Footer start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer__content">
+                        <div class="footer__item">
+                            <a href="#" class="footer__logo">
+                                <img src="img/main-logo.png" alt="logo">
+                            </a>
+                            <div class="footer__copyright">Copyright © 2021</div>
+                        </div>
+                        <div class="footer__item mt_item">
+                            <ul>
+                                <li><a href="#about-anchor">О компании</a></li>
+                                <li><a href="#projects-anchor" class="mt-4">Проекты</a></li>
+                                <div class="hidden__lists">
+                                    <br>
+                                    <li><a href="#equipment-anchor">Оборудование</a></li>
+                                    <li><a href="#news-anchor" class="mt-4">Новости</a></li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="footer__item mt_item">
+                            <ul>
+                                <li><a href="#equipment-anchor">Оборудование</a></li>
+                                <li><a href="#news-anchor" class="mt-4">Новости</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__item mt_item">
+                            <ul>
+                                <li>
+                                    <a href="#"><svg width="15" height="16" viewbox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.0625 2.70728H0.9375C0.42 2.70728 0 3.12728 0 3.64478V4.17821L7.5 7.35446L15 4.17728V3.64478C15 3.12728 14.58 2.70728 14.0625 2.70728Z"  fill-opacity="0.8"/>
+                                        <path d="M7.68281 8.29473C7.62469 8.32004 7.56187 8.33223 7.5 8.33223C7.43813 8.33223 7.37531 8.32004 7.31719 8.29473L0 5.19629V12.0822C0 12.5997 0.42 13.0197 0.9375 13.0197H14.0625C14.58 13.0197 15 12.5997 15 12.0822V5.19629L7.68281 8.29473Z"  fill-opacity="0.8"/>
+                                        </svg>yourmail@gmail.com</a></li>
+                                <li><a href="#" class="mt-3"><svg width="11" height="16" viewbox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 0.363525C2.46732 0.363525 0 2.76388 0 5.71425C0 9.42255 5.50541 15.7571 5.50541 15.7571C5.50541 15.7571 11 9.24019 11 5.71425C11 2.76388 8.53277 0.363525 5.5 0.363525ZM7.15946 7.28095C6.70189 7.72601 6.10099 7.94859 5.5 7.94859C4.8991 7.94859 4.29802 7.72601 3.84063 7.28095C2.92558 6.39082 2.92558 4.94241 3.84063 4.05219C4.28372 3.62094 4.87313 3.38342 5.5 3.38342C6.12687 3.38342 6.71618 3.62103 7.15946 4.05219C8.07452 4.94241 8.07452 6.39082 7.15946 7.28095Z"  fill-opacity="0.8"/>
+                                    </svg>
+                                    ул. Ваш Адрес, 29</a></li>
+                                <li><a href="#" class="mt-3"><svg width="13" height="14" viewbox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.6591 10.1964L10.8411 8.44734C10.1918 7.82269 9.08802 8.07257 8.82831 8.88461C8.63352 9.44682 7.98423 9.75915 7.39987 9.6342C6.1013 9.32187 4.34822 7.69775 4.02358 6.38597C3.82879 5.82375 4.21836 5.1991 4.80272 5.01172C5.6468 4.76186 5.90651 3.69994 5.25722 3.07528L3.43922 1.32624C2.91979 0.888976 2.14064 0.888976 1.68614 1.32624L0.452493 2.51309C-0.781154 3.76241 0.582351 7.0731 3.634 10.009C6.68566 12.9449 10.1269 14.3192 11.4255 13.0698L12.6591 11.883C13.1136 11.3832 13.1136 10.6336 12.6591 10.1964Z"  fill-opacity="0.8"/>
+                                    </svg>
+                                    +7 777 777 77 77</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
