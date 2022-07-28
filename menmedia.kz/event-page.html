@@ -16,76 +16,76 @@
 
 <body>
   <main id="app" ref="infoBox">
-    
 
-<!-- Header start -->
-   <header class="header">
-    <transition name="fade" mode="out-in">
-      <div class="header__top" v-if="!search" key="save">
-        <div class="container">
-          
-          <a href="index.html"><i class="icon-logo"></i></a>
-          <div class="link">              
-              <a class="link__item" href="#">О компании</a>            
-              <a class="link__item" href="#">Услуги</a>              
-              <a class="link__item" href="anons.html">Пресс-анонсы</a>              
-              <a class="link__item link__item-active" href="events.html">Пресс-мероприятия</a>              
-              <a class="link__item" href="photos.html">Фото</a>              
-              <a class="link__item" href="videos.html">Видео</a>              
-              <a class="link__item" href="#">Контакты</a>             
-          </div>
-          <div class="info">
-            <div class="dropdown">
-              <div class="button" type="button" data-bs-toggle="dropdown">
-                Рус <i class="bi bi-chevron-down"></i>
-              </div>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"><img src="img/ru.png" alt=""> Рус</a></li>
-                <li><a class="dropdown-item" href="#"><img src="img/kz.png" alt=""> Каз</a></li>
-                <li><a class="dropdown-item" href="#"><img src="img/en.png" alt=""> Анг</a></li>
-              </ul>
+
+    <!-- Header start -->
+    <header class="header">
+      <transition name="fade" mode="out-in">
+        <div class="header__top" v-if="!search" key="save">
+          <div class="container">
+
+            <a href="index.html"><i class="icon-logo"></i></a>
+            <div class="link">
+              <a class="link__item" href="about.html">О компании</a>
+              <a class="link__item" href="services.html">Услуги</a>
+              <a class="link__item" href="anons.html">Пресс-анонсы</a>
+              <a class="link__item link__item-active" href="events.html">Пресс-мероприятия</a>
+              <a class="link__item" href="photos.html">Фото</a>
+              <a class="link__item" href="videos.html">Видео</a>
+              <a class="link__item" href="contacts.html">Контакты</a>
             </div>
-            <i class="bi bi-search" @click="clickSearch"></i>
-            <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
-          </div>
+            <div class="info">
+              <div class="dropdown">
+                <div class="button" type="button" data-bs-toggle="dropdown">
+                  Рус <i class="bi bi-chevron-down"></i>
+                </div>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><img src="img/ru.png" alt=""> Рус</a></li>
+                  <li><a class="dropdown-item" href="#"><img src="img/kz.png" alt=""> Каз</a></li>
+                  <li><a class="dropdown-item" href="#"><img src="img/en.png" alt=""> Анг</a></li>
+                </ul>
+              </div>
+              <i class="bi bi-search" @click="clickSearch"></i>
+              <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
+            </div>
 
-        </div>
-      </div>
-      <div class="header__top header__search" v-else key="edit">
-        <i class="bi bi-search"></i>
-        <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
-        <i class="bi bi-x-lg" @click="clickSearch"></i>
-      </div>
-    </transition>
-    <div class="header__menu">
-      <div class="container">
-        <div class="header-bot">
-          <div class="title">Мен айтамын:</div>
-          <div class="link">
-            <a href="#">Новости</a>
-            <a href="#">PR и медиа</a>
-            <a href="#">IT для PR</a>
-            <a href="#">Спорт</a>
-            <a href="#">Экономика</a>
-            <a href="#">Культура</a>
-            <a href="#">Технологии</a>
-          </div>
-          <div class="heading__button">
-            <button @click="toggleHeading">
-              <transition name="fade" mode="out-in">
-                <div class="btn-heading"  key="Open" v-if="!heading">
-                  Все рубрики <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="btn-heading-close" key="Close" v-else=>
-                  Все рубрики
-                </div>
-              </transition>
-            </button>
           </div>
         </div>
-        <div class="heading__menu">
-          <transition name="fade" mode="out-in">
-            <div class="heading" v-if="heading">
+        <div class="header__top header__search" v-else key="edit">
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
+          <i class="bi bi-x-lg" @click="clickSearch"></i>
+        </div>
+      </transition>
+      <div class="header__menu">
+        <div class="container">
+          <div class="header-bot">
+            <div class="title">Мен айтамын:</div>
+            <div class="link">
+              <a href="#">Новости</a>
+              <a href="#">PR и медиа</a>
+              <a href="#">IT для PR</a>
+              <a href="#">Спорт</a>
+              <a href="#">Экономика</a>
+              <a href="#">Культура</a>
+              <a href="#">Технологии</a>
+            </div>
+            <div class="heading__button">
+              <button @click="toggleHeading">
+                <transition name="fade" mode="out-in">
+                  <div class="btn-heading" key="Open" v-if="!heading">
+                    Все рубрики <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <div class="btn-heading-close" key="Close" v-else=>
+                    Все рубрики
+                  </div>
+                </transition>
+              </button>
+            </div>
+          </div>
+          <div class="heading__menu">
+            <transition name="fade" mode="out-in">
+              <div class="heading" v-if="heading">
                 <ul class="heading__list">
                   <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
                   <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
@@ -99,143 +99,144 @@
                   <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
                   <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
                 </ul>
-            </div>
-          </transition>
-        </div>
-
-      </div>
-      </div>
-      
-    </div>
-  </header>
-
-  <!-- Modal start -->
-  <div class="modal fade" id="appModal" tabindex="-1" aria-labelledby="appModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <h5 class="modal-title" id="exampleModalLabel">Оставьте заявку на проведение мероприятия</h5>
-         
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="modal-text">
-              <div class="mb-3">
-                <label for="event-type" class="col-form-label">Тип мероприятия</label>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                  <option selected>Выберите мероприятие</option>
-                  <option value="1">Мероприятие1</option>
-                  <option value="2">Мероприятие2</option>
-                  <option value="3">Другое</option>
-                </select>
-                <label for="description" class="col-form-label">Описание</label>
-                <input type="text" class="form-control" id="description" placeholder="Коротко о мероприятии">
-                <div class="contact-data">
-                  <label  class="col-form-label">Контактные данные</label>
-                  <input type="text" class="form-control"  placeholder="Ваше Имя*">
-                  <input type="text" class="form-control"  placeholder="Номер телефона*">
-                  <input type="text" class="form-control"  placeholder="E-mail*">
-                </div>
               </div>
-              <div class="mb-2">
-                <label  class="col-form-label">Дата и время</label>
-                <div class="form-date">
-                  <input type="date" class="form-control" id="date" placeholder="01.01.2000">
-                  <input type="time" class="form-control"  id= "time" placeholder="00:00">
-                </div>
-                <div class="contact-format">
-                  <label  class="col-form-label">Форма проведения </label>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Online
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      Offline
-                    </label>
+            </transition>
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+    </header>
+
+    <!-- Modal start -->
+    <div class="modal fade" id="appModal" tabindex="-1" aria-labelledby="appModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="exampleModalLabel">Оставьте заявку на проведение мероприятия</h5>
+
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="modal-text">
+                <div class="mb-3">
+                  <label for="event-type" class="col-form-label">Тип мероприятия</label>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Выберите мероприятие</option>
+                    <option value="1">Мероприятие1</option>
+                    <option value="2">Мероприятие2</option>
+                    <option value="3">Другое</option>
+                  </select>
+                  <label for="description" class="col-form-label">Описание</label>
+                  <input type="text" class="form-control" id="description" placeholder="Коротко о мероприятии">
+                  <div class="contact-data">
+                    <label class="col-form-label">Контактные данные</label>
+                    <input type="text" class="form-control" placeholder="Ваше Имя*">
+                    <input type="text" class="form-control" placeholder="Номер телефона*">
+                    <input type="text" class="form-control" placeholder="E-mail*">
                   </div>
                 </div>
+                <div class="mb-2">
+                  <label class="col-form-label">Дата и время</label>
+                  <div class="form-date">
+                    <input type="date" class="form-control" id="date" placeholder="01.01.2000">
+                    <input type="time" class="form-control" id="time" placeholder="00:00">
+                  </div>
+                  <div class="contact-format">
+                    <label class="col-form-label">Форма проведения </label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                        checked>
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Online
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Offline
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Modal end -->
+    <!-- Modal end -->
 
-  <header class="header header__mobile">
-    <div class="header__top">
-      <div class="container">
-        <transition name="fade" mode="out-in">
-          <i @click="clickMobile" key="menu" class="bi bi-list" v-if="!mobile"></i>
-          <i @click="clickMobile" key="close" class="bi bi-x" v-else></i>
-        </transition>
-        <a href="index.html"><i class="icon-logo"></i></a>
-        <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
-      </div>
-    </div>
-    <transition name="fade" mode="out-in">
-      <div class="header__menu" v-if="mobile">
+    <header class="header header__mobile">
+      <div class="header__top">
         <div class="container">
-          <div class="search">
-            <i class="bi bi-search"></i>
-            <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
-            <i class="bi bi-x-lg" v-if="searchText.length > 1" @click="clear"></i>
-          </div>
-          <div class="content">
-            <div class="link">
-              <a href="#">О компании</a>
-              <a href="#">Услуги</a>
-              <a href="#">Пресс-анонсы</a>
-              <a href="#">Пресс-мероприятия</a>
-              <a href="#">Фото</a>
-              <a href="#">Видео</a>
-              <a href="#">Контакты</a>
-            </div>
-          </div>
-          <div class="content">
-            <div class="title">Мен айтамын:</div>
-            <div class="link">
-              <a href="#">Новости</a>
-              <a href="#">PR и медиа</a>
-              <a href="#">IT для PR</a>
-              <a href="#">Спорт</a>
-              <a href="#">Экономика</a>
-              <a href="#">Культура</a>
-              <a href="#">Технологии</a>
-            </div>
-          </div>
-          <div class="lang">
-            <a href="#" class="active"><img src="img/ru.png" alt=""> Рус</a>
-            <a href="#" class=""><img src="img/kz.png" alt=""> Каз</a>
-            <a href="#" class=""><img src="img/en.png" alt=""> Анг</a>
-          </div>
-          <div class="heading__button">
-            <button @click="toggleHeading">
-              <transition name="fade" mode="out-in">
-                <div class="btn-heading"  key="Open" v-if="!heading">
-                  Все рубрики <i class="bi bi-chevron-down"></i>
-                </div>
-                <div class="btn-heading-close" key="Close" v-else=>
-                  Все рубрики
-                </div>
-              </transition>
-            </button>
-          </div>
+          <transition name="fade" mode="out-in">
+            <i @click="clickMobile" key="menu" class="bi bi-list" v-if="!mobile"></i>
+            <i @click="clickMobile" key="close" class="bi bi-x" v-else></i>
+          </transition>
+          <a href="index.html"><i class="icon-logo"></i></a>
+          <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
         </div>
       </div>
-    </transition>
-    <div class="heading__menu">
       <transition name="fade" mode="out-in">
-        <div class="heading" v-if="heading">
+        <div class="header__menu" v-if="mobile">
+          <div class="container">
+            <div class="search">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
+              <i class="bi bi-x-lg" v-if="searchText.length > 1" @click="clear"></i>
+            </div>
+            <div class="content">
+              <div class="link">
+                <a href="#">О компании</a>
+                <a href="#">Услуги</a>
+                <a href="#">Пресс-анонсы</a>
+                <a href="#">Пресс-мероприятия</a>
+                <a href="#">Фото</a>
+                <a href="#">Видео</a>
+                <a href="#">Контакты</a>
+              </div>
+            </div>
+            <div class="content">
+              <div class="title">Мен айтамын:</div>
+              <div class="link">
+                <a href="#">Новости</a>
+                <a href="#">PR и медиа</a>
+                <a href="#">IT для PR</a>
+                <a href="#">Спорт</a>
+                <a href="#">Экономика</a>
+                <a href="#">Культура</a>
+                <a href="#">Технологии</a>
+              </div>
+            </div>
+            <div class="lang">
+              <a href="#" class="active"><img src="img/ru.png" alt=""> Рус</a>
+              <a href="#" class=""><img src="img/kz.png" alt=""> Каз</a>
+              <a href="#" class=""><img src="img/en.png" alt=""> Анг</a>
+            </div>
+            <div class="heading__button">
+              <button @click="toggleHeading">
+                <transition name="fade" mode="out-in">
+                  <div class="btn-heading" key="Open" v-if="!heading">
+                    Все рубрики <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <div class="btn-heading-close" key="Close" v-else=>
+                    Все рубрики
+                  </div>
+                </transition>
+              </button>
+            </div>
+          </div>
+        </div>
+      </transition>
+      <div class="heading__menu">
+        <transition name="fade" mode="out-in">
+          <div class="heading" v-if="heading">
             <ul class="heading__list">
               <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
               <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
@@ -249,229 +250,271 @@
               <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
               <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
             </ul>
-        </div>
-      </transition>
-    </div>
-  </header>
-  <!-- Header end -->
+          </div>
+        </transition>
+      </div>
+    </header>
+    <!-- Header end -->
 
-    <div class="dark-wrapper"  :style="`height: ${height}`"></div>
+    <div class="dark-wrapper" :style="`height: ${height}`"></div>
 
     <section class="breadcrumbs">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/">Главная</a>
-                </li> 
-                <li class="breadcrumb-item">
-                    <a href="/">Пресс-мероприятия</a>
-                </li> 
-                <li class="breadcrumb-item active" aria-current="page">
-                    Пресс-конференция на тему...
-                </li>
-            </ol>
-        </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">Главная</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="/">Пресс-мероприятия</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Пресс-конференция на тему...
+          </li>
+        </ol>
+      </div>
     </section>
 
     <section class="event-page">
-        <div class="container">
-            <div class="event__date">
-                <p>8 Июля 2021г.</p>
-            </div>
-            <div class="event__content">
-                <div class="event__content-top">
-                    <div class="event__title">
-                        <div class="title">
-                            Пресс-конференция на тему: ”О привлечении иностранных инвестиций”
-                        </div>
-                        <div class="share share-page">
-                          <div class="dropdown">
-                            <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
-                              <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
-                            </div>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
-                              <div class="share-icons">
-                                <a href="#"><i class="icon-facebook"></i></a>
-                                <a href="#"><i class="icon-instagram"></i></a>
-                                <a href="#"><i class="icon-vk"></i></a>
-                                <a href="#"><i class="icon-twitter"></i></a>
-                                <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
-                                <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
-                              </div>
-                              <div class="share-icons">
-                                <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
-                                  ссылку</p></a>
-                              </div>
-                            </ul>
-                          </div>
-                        </div>
+      <div class="container">
+        <div class="event__date">
+          <p>8 Июля 2021г.</p>
+        </div>
+        <div class="event__content">
+          <div class="event__content-top">
+            <div class="event__title">
+              <div class="title">
+                Пресс-конференция на тему: ”О привлечении иностранных инвестиций”
+              </div>
+              <div class="share share-page">
+                <div class="dropdown">
+                  <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside"
+                    data-bs-auto-close="outside">
+                    <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+                  </div>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
+                    <div class="share-icons">
+                      <a href="#"><i class="icon-facebook"></i></a>
+                      <a href="#"><i class="icon-instagram"></i></a>
+                      <a href="#"><i class="icon-vk"></i></a>
+                      <a href="#"><i class="icon-twitter"></i></a>
+                      <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                      <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
                     </div>
-                    <div class="event__img">
-                        <img src="img/event.jpg" alt="event image">
+                    <div class="share-icons">
+                      <a href="#"><i class="bi bi-link-45deg"></i>
+                        <p>Копировать
+                          ссылку</p>
+                      </a>
                     </div>
-                    <div class="go__gallery">
-                      <div></div>
-                      <div class="go__gallery-text">Перейти в галерею<a href="#"></a>
-                        </div>
-                        <div class="go__gallery-icon">
-                          <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12.5" cy="12.5" r="12" stroke="#389DD5"/>
-                            <path d="M12.5 5V14.5M12.5 14.5L16 11M12.5 14.5L9 11" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                            <path d="M6 18.5H19" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="content-top__text">
-                        <p>С помощью иностранных инвестиций можно реально улучшить деформированную производственную структуру экономики Казахстана, создать новые высокотехнологические производства, модернизовать основные фонды и технически</p>
-                    </div>
+                  </ul>
                 </div>
-                <div class="event__content-mid">
-                    <div class="content-mid__text">
-                    <p>На данном этапе развития Казахстана как суверенного государства, направленного на построение цивилизованных рыночных отношений, приоритетным путем экономических реформ является разработка и реализация инвестиционной политики страны, нацеленной на достижение высоких темпов экономического роста и роста эффективности экономики. С целью осуществления данных задач, а также для обеспечения коренных изменений в экономике на базе программы Правительства РК по осуществлению реформ в условиях недостаточности внутренних источников финансирования исключительно важную роль приобретает привлечение иностранного капитала в экономику Казахстана [1]. 
-                    </p>       
-                    <p>Привлечение и эффективное использование иностранных инвестиций в экономику РК является основой, одним из направлений взаимовыгодного экономического сотрудничества с ведущими мировыми странами. С помощью иностранных инвестиций можно реально улучшить деформированную производственную структуру экономики Казахстана, создать новые высокотехнологические производства, модернизовать основные фонды и технически перевооружить многие предприятия, подготовить специалистов и рабочих, внедрить передовые достижения менеджмента, маркетинга и ноу-хау, наполнить внутренний рынок качественными товарами отечественного производства с одновременным увеличением объемов экспорта в зарубежные страны.</p>
-                    </div>
-                    <div class="events-inner__calendar">
-                      <div class="mixing__calendar">
-                        <div class="items-header">Файлы для скачивания <i class="icon-zip"></i> <span>:25</span></div>
-                        <div class="items">
-                          <div class="item">
-                            <i class="icon-img"></i> <p>17фото</p> <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
-                          </div>
-                          <div class="item">
-                            <i class="icon-video"></i> <p>5видео</p> <p>736KB</p> <a href="#"><i class="bi bi-download"></i></a>
-                          </div>
-                          <div class="item">
-                            <i class="icon-files"></i> <p>3статьи</p> <p>536KB</p> <a href="#"><i class="bi bi-download"></i></a>
-                          </div>
-                        </div>
-                        <div class="items-footer">
-                          <a href="#">Скачать все ZIP файлом</a><i class="bi bi-download"></i>
-                        </div>
-                    </div>
+              </div>
+            </div>
+            <div class="event__img">
+              <img src="img/event.jpg" alt="event image">
+            </div>
+            <div class="go__gallery">
+              <div></div>
+              <div class="go__gallery-text">Перейти в галерею<a href="#"></a>
+              </div>
+              <div class="go__gallery-icon">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12.5" cy="12.5" r="12" stroke="#389DD5" />
+                  <path d="M12.5 5V14.5M12.5 14.5L16 11M12.5 14.5L9 11" stroke="#389DD5" stroke-width="1.5"
+                    stroke-linecap="square" stroke-linejoin="round" />
+                  <path d="M6 18.5H19" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="content-top__text">
+              <p>С помощью иностранных инвестиций можно реально улучшить деформированную производственную структуру
+                экономики Казахстана, создать новые высокотехнологические производства, модернизовать основные фонды и
+                технически</p>
+            </div>
+          </div>
+          <div class="event__content-mid">
+            <div class="content-mid__text">
+              <p>На данном этапе развития Казахстана как суверенного государства, направленного на построение
+                цивилизованных рыночных отношений, приоритетным путем экономических реформ является разработка и
+                реализация инвестиционной политики страны, нацеленной на достижение высоких темпов экономического роста
+                и роста эффективности экономики. С целью осуществления данных задач, а также для обеспечения коренных
+                изменений в экономике на базе программы Правительства РК по осуществлению реформ в условиях
+                недостаточности внутренних источников финансирования исключительно важную роль приобретает привлечение
+                иностранного капитала в экономику Казахстана [1].
+              </p>
+              <p>Привлечение и эффективное использование иностранных инвестиций в экономику РК является основой, одним
+                из направлений взаимовыгодного экономического сотрудничества с ведущими мировыми странами. С помощью
+                иностранных инвестиций можно реально улучшить деформированную производственную структуру экономики
+                Казахстана, создать новые высокотехнологические производства, модернизовать основные фонды и технически
+                перевооружить многие предприятия, подготовить специалистов и рабочих, внедрить передовые достижения
+                менеджмента, маркетинга и ноу-хау, наполнить внутренний рынок качественными товарами отечественного
+                производства с одновременным увеличением объемов экспорта в зарубежные страны.</p>
+            </div>
+            <div class="events-inner__calendar">
+              <div class="mixing__calendar">
+                <div class="items-header">Файлы для скачивания <i class="icon-zip"></i> <span>:25</span></div>
+                <div class="items">
+                  <div class="item">
+                    <i class="icon-img"></i>
+                    <p>17фото</p>
+                    <p>136KB</p> <a href="#"><i class="bi bi-download"></i></a>
+                  </div>
+                  <div class="item">
+                    <i class="icon-video"></i>
+                    <p>5видео</p>
+                    <p>736KB</p> <a href="#"><i class="bi bi-download"></i></a>
+                  </div>
+                  <div class="item">
+                    <i class="icon-files"></i>
+                    <p>3статьи</p>
+                    <p>536KB</p> <a href="#"><i class="bi bi-download"></i></a>
                   </div>
                 </div>
-                <div class="event__content-bot">
-                    <img src="img/event-bot.jpg" alt="event bot image">
-                    <div class="bot-text">
-                      <p>С помощью иностранных инвестиций можно реально улучшить деформированную 
-                      производственную структуру экономики Казахстана, создать новые 
-                      высокотехнологические производства, модернизовать основные фонды и технически 
-                      перевооружить многие предприятия</p>
-                      <div class="go__gallery-icon">
-                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="12.5" cy="12.5" r="12" stroke="#389DD5"/>
-                          <path d="M12.5 5V14.5M12.5 14.5L16 11M12.5 14.5L9 11" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                          <path d="M6 18.5H19" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                          </svg>
-                      </div>
-                    </div>
-                    
-                    <div class="content-bot__text">
-                        <p>Привлечение иностранных инвестиций в экономику Казахстана является объективно необходимым процессом. Мировой опыт многих стран свидетельствует, что приток иностранного капитала и государственное регулирование его использования позитивно воздействуют на экономику. Инвестиции содействуют становлению и укреплению частного предпринимательства в странах со средним и низким уровнями экономического развития, мобилизуют капитал для реализации серьезных проектов, создания смешанных компаний, рынков ссудного капитала. От того, насколько успешно экономика Казахстана будет интегрироваться в мирохозяйственные связи, зависит стратегия и тактика преодоления кризиса.</p>
-                        <p>Прямые иностранные инвестиции окажут большое воздействие на экономические преобразования и помогут объективно оценить последствия внешних факторов промышленного развития, будет способствовать в выработке инвестиционной политики, необходимой экономике Казахстана, которая поможет в преодолении кризисных явлений и достижения высоких результатов [2].</p>
-                    </div>
-                    <div class="content-bot__video">
-                        <img src="img/eventvideo.jpg" alt="video">
-                        <img id="playicon" src="img/play.jpg" alt="play">
-                    </div>
-                    <div class="go__gallery">
-                      <div></div>
-                      <div class="go__gallery-text">Перейти в галерею<a href="#"></a>
-                        </div>
-                        <div class="go__gallery-icon">
-                          <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12.5" cy="12.5" r="12" stroke="#389DD5"/>
-                            <path d="M12.5 5V14.5M12.5 14.5L16 11M12.5 14.5L9 11" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                            <path d="M6 18.5H19" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <p>С помощью иностранных инвестиций можно реально улучшить деформированную производственную структуру экономики Казахстана</p>
-                    <div class="content-bot__text">
-                        <p>Главной задачей поставленной Главой Государства перед Правительством РК является создание благоприятного инвестиционного климата, для чего в Казахстане действует Совет иностранных инвесторов председателем которого является Назарбаев Н.А. Президент Республики Казахстан [5].</p>
-                    </div>
-                    <div class="share-bot">
-                        <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
-                        <div class="share-icons">
-                            <a href="#"><i class="icon-facebook"></i></a>
-                            <a href="#"><i class="icon-instagram"></i></a>
-                            <a href="#"><i class="icon-vk"></i></a>
-                            <a href="#"><i class="icon-twitter"></i></a>
-                              <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
-                              <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
-                            <a href="#"><i class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div> 
+                <div class="items-footer">
+                  <a href="#">Скачать все ZIP файлом</a><i class="bi bi-download"></i>
                 </div>
+              </div>
             </div>
+          </div>
+          <div class="event__content-bot">
+            <img src="img/event-bot.jpg" alt="event bot image">
+            <div class="bot-text">
+              <p>С помощью иностранных инвестиций можно реально улучшить деформированную
+                производственную структуру экономики Казахстана, создать новые
+                высокотехнологические производства, модернизовать основные фонды и технически
+                перевооружить многие предприятия</p>
+              <div class="go__gallery-icon">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12.5" cy="12.5" r="12" stroke="#389DD5" />
+                  <path d="M12.5 5V14.5M12.5 14.5L16 11M12.5 14.5L9 11" stroke="#389DD5" stroke-width="1.5"
+                    stroke-linecap="square" stroke-linejoin="round" />
+                  <path d="M6 18.5H19" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="content-bot__text">
+              <p>Привлечение иностранных инвестиций в экономику Казахстана является объективно необходимым процессом.
+                Мировой опыт многих стран свидетельствует, что приток иностранного капитала и государственное
+                регулирование его использования позитивно воздействуют на экономику. Инвестиции содействуют становлению
+                и укреплению частного предпринимательства в странах со средним и низким уровнями экономического
+                развития, мобилизуют капитал для реализации серьезных проектов, создания смешанных компаний, рынков
+                ссудного капитала. От того, насколько успешно экономика Казахстана будет интегрироваться в
+                мирохозяйственные связи, зависит стратегия и тактика преодоления кризиса.</p>
+              <p>Прямые иностранные инвестиции окажут большое воздействие на экономические преобразования и помогут
+                объективно оценить последствия внешних факторов промышленного развития, будет способствовать в выработке
+                инвестиционной политики, необходимой экономике Казахстана, которая поможет в преодолении кризисных
+                явлений и достижения высоких результатов [2].</p>
+            </div>
+            <div class="content-bot__video">
+              <img src="img/eventvideo.jpg" alt="video">
+              <img id="playicon" src="img/play.jpg" alt="play">
+            </div>
+            <div class="go__gallery">
+              <div></div>
+              <div class="go__gallery-text">Перейти в галерею<a href="#"></a>
+              </div>
+              <div class="go__gallery-icon">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12.5" cy="12.5" r="12" stroke="#389DD5" />
+                  <path d="M12.5 5V14.5M12.5 14.5L16 11M12.5 14.5L9 11" stroke="#389DD5" stroke-width="1.5"
+                    stroke-linecap="square" stroke-linejoin="round" />
+                  <path d="M6 18.5H19" stroke="#389DD5" stroke-width="1.5" stroke-linecap="square"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+            <p>С помощью иностранных инвестиций можно реально улучшить деформированную производственную структуру
+              экономики Казахстана</p>
+            <div class="content-bot__text">
+              <p>Главной задачей поставленной Главой Государства перед Правительством РК является создание
+                благоприятного инвестиционного климата, для чего в Казахстане действует Совет иностранных инвесторов
+                председателем которого является Назарбаев Н.А. Президент Республики Казахстан [5].</p>
+            </div>
+            <div class="share-bot">
+              <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
+              <div class="share-icons">
+                <a href="#"><i class="icon-facebook"></i></a>
+                <a href="#"><i class="icon-instagram"></i></a>
+                <a href="#"><i class="icon-vk"></i></a>
+                <a href="#"><i class="icon-twitter"></i></a>
+                <a href="#" class="icon-grey"><img src="img/telegram-grey.svg" alt=""></a>
+                <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
+                <a href="#"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-          <div class="footer__head">
-            <div class="content">
-              <div class="colom colom-1">
-                <a href="index.html"><i class="icon-logo"></i></a>
-                <p>Мен айтамын:</p>
-              </div>
-              <div class="colom colom-2">
-                <a href="#">О компании</a>
-                <a href="#">Услуги</a>
-                <a href="#">Пресс-анонсы</a>
-                <a href="#">Пресс-мероприятия</a>            
-              </div>
-              <div class="colom colom-3">
-                <a href="#">Фото</a>
-                <a href="#">Видео</a>
-                <a href="#">Контакты</a>
-                <a href="#">Новости</a>
-              </div>
+      <div class="container">
+        <div class="footer__head">
+          <div class="content">
+            <div class="colom colom-1">
+              <a href="index.html"><i class="icon-logo"></i></a>
+              <p>Мен айтамын:</p>
             </div>
-            <div class="content">
-              <div class="colom">
-                <div class="call">
-                  <div class="phone">
-                    <a href="tell:+77272455556">+7 (727) 245 55 56</a>
-                  </div>
-                  <div class="whatsapp">
-                    <a href="tell:+77075666667">+7 (707) 566 66 67</a> 
-                  </div>             
-                </div>
-                <div class="mess">
-                  <i class="bi bi-envelope"></i>
-                  <a href="#">info@menmedia.kz</a>
-                </div>
-                <div class="network">
-                  <a href="#"><i class="icon-facebook"></i></a>
-                  <a href="#"><i class="icon-instagram"></i></a>
-                  <a href="#"><i class="icon-vk"></i></a>
-                  <a href="#" class="icon-foot"> <img src="img/telegram-foot.svg" alt=""> </a>
-                  <a href="#" class="icon-foot"> <img src="img/tiktok-foot.svg" alt=""> </a>
-                  <a href="#" class="icon-foot"> <img src="img/youtube-foot.svg" alt=""> </a>
-                </div>
-              </div>
+            <div class="colom colom-2">
+              <a href="#">О компании</a>
+              <a href="#">Услуги</a>
+              <a href="#">Пресс-анонсы</a>
+              <a href="#">Пресс-мероприятия</a>
+            </div>
+            <div class="colom colom-3">
+              <a href="#">Фото</a>
+              <a href="#">Видео</a>
+              <a href="#">Контакты</a>
+              <a href="#">Новости</a>
             </div>
           </div>
-          <div class="hr"></div>
-          <div class="footer__bottom">
-            <div class="content">
-              <p>© 2021 menmedia.kz. Все права  защищены.</p><span>|</span><p>Политика конфидециальности</p>
-            </div>
-            <div class="content">
-              <a href="#"><i class="icon-logo-IM"></i></a>
+          <div class="content">
+            <div class="colom">
+              <div class="call">
+                <div class="phone">
+                  <a href="tell:+77272455556">+7 (727) 245 55 56</a>
+                </div>
+                <div class="whatsapp">
+                  <a href="tell:+77075666667">+7 (707) 566 66 67</a>
+                </div>
+              </div>
+              <div class="mess">
+                <i class="bi bi-envelope"></i>
+                <a href="#">info@menmedia.kz</a>
+              </div>
+              <div class="network">
+                <a href="#"><i class="icon-facebook"></i></a>
+                <a href="#"><i class="icon-instagram"></i></a>
+                <a href="#"><i class="icon-vk"></i></a>
+                <a href="#" class="icon-foot"> <img src="img/telegram-foot.svg" alt=""> </a>
+                <a href="#" class="icon-foot"> <img src="img/tiktok-foot.svg" alt=""> </a>
+                <a href="#" class="icon-foot"> <img src="img/youtube-foot.svg" alt=""> </a>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
-  
-    </main>
-    <script src="js/carousel.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-  </body>
-  
-  </html>
+        <div class="hr"></div>
+        <div class="footer__bottom">
+          <div class="content">
+            <p>© 2021 menmedia.kz. Все права защищены.</p><span>|</span>
+            <p>Политика конфидециальности</p>
+          </div>
+          <div class="content">
+            <a href="#"><i class="icon-logo-IM"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+  <script src="js/carousel.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

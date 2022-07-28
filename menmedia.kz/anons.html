@@ -16,21 +16,21 @@
 
 <body>
   <main id="app" ref="infoBox">
-<!-- Header start -->
+    <!-- Header start -->
     <header class="header">
       <transition name="fade" mode="out-in">
         <div class="header__top" v-if="!search" key="save">
           <div class="container">
-            
+
             <a href="index.html"><i class="icon-logo"></i></a>
-            <div class="link">              
-                <a class="link__item" href="#">О компании</a>            
-                <a class="link__item" href="#">Услуги</a>              
-                <a class="link__item link__item-active" href="anons.html">Пресс-анонсы</a>              
-                <a class="link__item" href="events.html">Пресс-мероприятия</a>              
-                <a class="link__item" href="photos.html">Фото</a>              
-                <a class="link__item" href="videos.html">Видео</a>              
-                <a class="link__item" href="#">Контакты</a>             
+            <div class="link">
+              <a class="link__item" href="about.html">О компании</a>
+              <a class="link__item" href="services.html">Услуги</a>
+              <a class="link__item" href="anons.html">Пресс-анонсы</a>
+              <a class="link__item" href="events.html">Пресс-мероприятия</a>
+              <a class="link__item" href="photos.html">Фото</a>
+              <a class="link__item" href="videos.html">Видео</a>
+              <a class="link__item" href="contacts.html">Контакты</a>
             </div>
             <div class="info">
               <div class="dropdown">
@@ -71,7 +71,7 @@
             <div class="heading__button">
               <button @click="toggleHeading">
                 <transition name="fade" mode="out-in">
-                  <div class="btn-heading"  key="Open" v-if="!heading">
+                  <div class="btn-heading" key="Open" v-if="!heading">
                     Все рубрики <i class="bi bi-chevron-down"></i>
                   </div>
                   <div class="btn-heading-close" key="Close" v-else=>
@@ -84,26 +84,26 @@
           <div class="heading__menu">
             <transition name="fade" mode="out-in">
               <div class="heading" v-if="heading">
-                  <ul class="heading__list">
-                    <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
-                    <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
-                  </ul>
+                <ul class="heading__list">
+                  <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
+                </ul>
               </div>
             </transition>
           </div>
 
         </div>
-        </div>
-        
+      </div>
+
       </div>
     </header>
 
@@ -114,7 +114,7 @@
           <div class="modal-header">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             <h5 class="modal-title" id="exampleModalLabel">Оставьте заявку на проведение мероприятия</h5>
-           
+
           </div>
           <div class="modal-body">
             <form>
@@ -130,22 +130,23 @@
                   <label for="description" class="col-form-label">Описание</label>
                   <input type="text" class="form-control" id="description" placeholder="Коротко о мероприятии">
                   <div class="contact-data">
-                    <label  class="col-form-label">Контактные данные</label>
-                    <input type="text" class="form-control"  placeholder="Ваше Имя*">
-                    <input type="text" class="form-control"  placeholder="Номер телефона*">
-                    <input type="text" class="form-control"  placeholder="E-mail*">
+                    <label class="col-form-label">Контактные данные</label>
+                    <input type="text" class="form-control" placeholder="Ваше Имя*">
+                    <input type="text" class="form-control" placeholder="Номер телефона*">
+                    <input type="text" class="form-control" placeholder="E-mail*">
                   </div>
                 </div>
                 <div class="mb-2">
-                  <label  class="col-form-label">Дата и время</label>
+                  <label class="col-form-label">Дата и время</label>
                   <div class="form-date">
                     <input type="date" class="form-control" id="date" placeholder="01.01.2000">
-                    <input type="time" class="form-control"  id= "time" placeholder="00:00">
+                    <input type="time" class="form-control" id="time" placeholder="00:00">
                   </div>
                   <div class="contact-format">
-                    <label  class="col-form-label">Форма проведения </label>
+                    <label class="col-form-label">Форма проведения </label>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                        checked>
                       <label class="form-check-label" for="flexRadioDefault1">
                         Online
                       </label>
@@ -219,7 +220,7 @@
             <div class="heading__button">
               <button @click="toggleHeading">
                 <transition name="fade" mode="out-in">
-                  <div class="btn-heading"  key="Open" v-if="!heading">
+                  <div class="btn-heading" key="Open" v-if="!heading">
                     Все рубрики <i class="bi bi-chevron-down"></i>
                   </div>
                   <div class="btn-heading-close" key="Close" v-else=>
@@ -234,38 +235,38 @@
       <div class="heading__menu">
         <transition name="fade" mode="out-in">
           <div class="heading" v-if="heading">
-              <ul class="heading__list">
-                <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
-              </ul>
+            <ul class="heading__list">
+              <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
+            </ul>
           </div>
         </transition>
       </div>
     </header>
     <!-- Header end -->
 
-    <div class="dark-wrapper"  :style="`height: ${height}`"></div>
+    <div class="dark-wrapper" :style="`height: ${height}`"></div>
 
     <section class="breadcrumbs">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/">Главная</a>
-                </li> 
-                <li class="breadcrumb-item active" aria-current="page">
-                    Пресс-анонсы
-                </li>
-            </ol>
-        </div>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">Главная</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Пресс-анонсы
+          </li>
+        </ol>
+      </div>
     </section>
 
     <section class="banner banner-anons">
@@ -274,7 +275,7 @@
           <div class="title">Пресс-анонсы</div>
           <div class="announcements__head">
             <a href="#" class="today-active">Сегодня</a>
-            
+
           </div>
           <div class="mixing">
             <div class="mixing__items">
@@ -288,11 +289,14 @@
                     Пресс-конференция на тему: <br>
                     ”О привлечении иностранных инвестиций”
                   </a>
-                  <div class="text" id="textLeng-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to...
+                  <div class="text" id="textLeng-1">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                    unknown printer took a galley of type and scrambled it to...
                   </div>
                   <div class="share">
                     <div class="dropdown">
-                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside"
+                        data-bs-auto-close="outside">
                         <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
                       </div>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
@@ -305,8 +309,10 @@
                           <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
                         </div>
                         <div class="share-icons">
-                          <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
-                            ссылку</p></a>
+                          <a href="#"><i class="bi bi-link-45deg"></i>
+                            <p>Копировать
+                              ссылку</p>
+                          </a>
                         </div>
                       </ul>
                     </div>
@@ -323,11 +329,14 @@
                     Пресс-конференция на тему: <br>
                     ”О привлечении иностранных инвестиций”
                   </a>
-                  <div class="text" id="textLeng-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to...
+                  <div class="text" id="textLeng-2">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                    unknown printer took a galley of type and scrambled it to...
                   </div>
                   <div class="share">
                     <div class="dropdown">
-                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside"
+                        data-bs-auto-close="outside">
                         <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
                       </div>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
@@ -340,13 +349,15 @@
                           <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
                         </div>
                         <div class="share-icons">
-                          <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
-                            ссылку</p></a>
+                          <a href="#"><i class="bi bi-link-45deg"></i>
+                            <p>Копировать
+                              ссылку</p>
+                          </a>
                         </div>
                       </ul>
                     </div>
                   </div>
-                </div>                
+                </div>
               </div>
               <div class="mixing__item">
                 <div class="images"><img src="img/announcements-1.png" alt=""></div>
@@ -358,11 +369,14 @@
                     Пресс-конференция на тему: <br>
                     ”О привлечении иностранных инвестиций”
                   </a>
-                  <div class="text" id="textLeng-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to...
+                  <div class="text" id="textLeng-2">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                    unknown printer took a galley of type and scrambled it to...
                   </div>
                   <div class="share">
                     <div class="dropdown">
-                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside"
+                        data-bs-auto-close="outside">
                         <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
                       </div>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
@@ -375,13 +389,15 @@
                           <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
                         </div>
                         <div class="share-icons">
-                          <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
-                            ссылку</p></a>
+                          <a href="#"><i class="bi bi-link-45deg"></i>
+                            <p>Копировать
+                              ссылку</p>
+                          </a>
                         </div>
                       </ul>
                     </div>
                   </div>
-                </div>                
+                </div>
               </div>
               <div class="mixing__item">
                 <div class="images"><img src="img/announcements-2.png" alt=""></div>
@@ -393,11 +409,14 @@
                     Пресс-конференция на тему: <br>
                     ”О привлечении иностранных инвестиций”
                   </a>
-                  <div class="text" id="textLeng-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to...
+                  <div class="text" id="textLeng-2">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                    unknown printer took a galley of type and scrambled it to...
                   </div>
                   <div class="share">
                     <div class="dropdown">
-                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside" data-bs-auto-close="outside">
+                      <div class="button" type="button" data-bs-toggle="dropdown" id="dropdownMenuClickableInside"
+                        data-bs-auto-close="outside">
                         <a href="#"><i class="icon-share"></i> <span>Поделиться</span></a>
                       </div>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuClickableInside">
@@ -410,13 +429,15 @@
                           <a href="#" class="icon-grey"><img src="img/whtsp-grey.svg" alt=""></a>
                         </div>
                         <div class="share-icons">
-                          <a href="#"><i class="bi bi-link-45deg"></i><p>Копировать 
-                            ссылку</p></a>
+                          <a href="#"><i class="bi bi-link-45deg"></i>
+                            <p>Копировать
+                              ссылку</p>
+                          </a>
                         </div>
                       </ul>
                     </div>
                   </div>
-                </div>                
+                </div>
               </div>
             </div>
           </div>
@@ -436,7 +457,7 @@
               <a href="#">О компании</a>
               <a href="#">Услуги</a>
               <a href="#">Пресс-анонсы</a>
-              <a href="#">Пресс-мероприятия</a>            
+              <a href="#">Пресс-мероприятия</a>
             </div>
             <div class="colom colom-3">
               <a href="#">Фото</a>
@@ -452,8 +473,8 @@
                   <a href="tell:+77272455556">+7 (727) 245 55 56</a>
                 </div>
                 <div class="whatsapp">
-                  <a href="tell:+77075666667">+7 (707) 566 66 67</a> 
-                </div>             
+                  <a href="tell:+77075666667">+7 (707) 566 66 67</a>
+                </div>
               </div>
               <div class="mess">
                 <i class="bi bi-envelope"></i>
@@ -473,7 +494,8 @@
         <div class="hr"></div>
         <div class="footer__bottom">
           <div class="content">
-            <p>© 2021 menmedia.kz. Все права  защищены.</p><span>|</span><p>Политика конфидециальности</p>
+            <p>© 2021 menmedia.kz. Все права защищены.</p><span>|</span>
+            <p>Политика конфидециальности</p>
           </div>
           <div class="content">
             <a href="#"><i class="icon-logo-IM"></i></a>

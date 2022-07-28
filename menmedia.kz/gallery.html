@@ -16,522 +16,548 @@
 
 <body>
   <main id="app" ref="infoBox">
- <!-- Header start -->
- <header class="header">
-  <transition name="fade" mode="out-in">
-    <div class="header__top" v-if="!search" key="save">
-      <div class="container">
-        
-        <a href="index.html"><i class="icon-logo"></i></a>
-        <div class="link">              
-            <a class="link__item" href="#">О компании</a>            
-            <a class="link__item" href="#">Услуги</a>              
-            <a class="link__item" href="anons.html">Пресс-анонсы</a>              
-            <a class="link__item" href="events.html">Пресс-мероприятия</a>              
-            <a class="link__item" href="photos.html">Фото</a>              
-            <a class="link__item" href="videos.html">Видео</a>              
-            <a class="link__item" href="#">Контакты</a>             
-        </div>
-        <div class="info">
-          <div class="dropdown">
-            <div class="button" type="button" data-bs-toggle="dropdown">
-              Рус <i class="bi bi-chevron-down"></i>
-            </div>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#"><img src="img/ru.png" alt=""> Рус</a></li>
-              <li><a class="dropdown-item" href="#"><img src="img/kz.png" alt=""> Каз</a></li>
-              <li><a class="dropdown-item" href="#"><img src="img/en.png" alt=""> Анг</a></li>
-            </ul>
-          </div>
-          <i class="bi bi-search" @click="clickSearch"></i>
-          <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
-        </div>
-
-      </div>
-    </div>
-    <div class="header__top header__search" v-else key="edit">
-      <i class="bi bi-search"></i>
-      <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
-      <i class="bi bi-x-lg" @click="clickSearch"></i>
-    </div>
-  </transition>
-  <div class="header__menu">
-    <div class="container">
-      <div class="header-bot">
-        <div class="title">Мен айтамын:</div>
-        <div class="link">
-          <a href="#">Новости</a>
-          <a href="#">PR и медиа</a>
-          <a href="#">IT для PR</a>
-          <a href="#">Спорт</a>
-          <a href="#">Экономика</a>
-          <a href="#">Культура</a>
-          <a href="#">Технологии</a>
-        </div>
-        <div class="heading__button">
-          <button @click="toggleHeading">
-            <transition name="fade" mode="out-in">
-              <div class="btn-heading"  key="Open" v-if="!heading">
-                Все рубрики <i class="bi bi-chevron-down"></i>
-              </div>
-              <div class="btn-heading-close" key="Close" v-else=>
-                Все рубрики
-              </div>
-            </transition>
-          </button>
-        </div>
-      </div>
-      <div class="heading__menu">
-        <transition name="fade" mode="out-in">
-          <div class="heading" v-if="heading">
-              <ul class="heading__list">
-                <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
-                <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
-              </ul>
-          </div>
-        </transition>
-      </div>
-
-    </div>
-    </div>
-    
-  </div>
-</header>
-
-<!-- Modal start -->
-<div class="modal fade" id="appModal" tabindex="-1" aria-labelledby="appModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        <h5 class="modal-title" id="exampleModalLabel">Оставьте заявку на проведение мероприятия</h5>
-       
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="modal-text">
-            <div class="mb-3">
-              <label for="event-type" class="col-form-label">Тип мероприятия</label>
-              <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <option selected>Выберите мероприятие</option>
-                <option value="1">Мероприятие1</option>
-                <option value="2">Мероприятие2</option>
-                <option value="3">Другое</option>
-              </select>
-              <label for="description" class="col-form-label">Описание</label>
-              <input type="text" class="form-control" id="description" placeholder="Коротко о мероприятии">
-              <div class="contact-data">
-                <label  class="col-form-label">Контактные данные</label>
-                <input type="text" class="form-control"  placeholder="Ваше Имя*">
-                <input type="text" class="form-control"  placeholder="Номер телефона*">
-                <input type="text" class="form-control"  placeholder="E-mail*">
-              </div>
-            </div>
-            <div class="mb-2">
-              <label  class="col-form-label">Дата и время</label>
-              <div class="form-date">
-                <input type="date" class="form-control" id="date" placeholder="01.01.2000">
-                <input type="time" class="form-control"  id= "time" placeholder="00:00">
-              </div>
-              <div class="contact-format">
-                <label  class="col-form-label">Форма проведения </label>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Online
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    Offline
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Отправить заявку</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal end -->
-
-<header class="header header__mobile">
-  <div class="header__top">
-    <div class="container">
+    <!-- Header start -->
+    <header class="header">
       <transition name="fade" mode="out-in">
-        <i @click="clickMobile" key="menu" class="bi bi-list" v-if="!mobile"></i>
-        <i @click="clickMobile" key="close" class="bi bi-x" v-else></i>
-      </transition>
-      <a href="index.html"><i class="icon-logo"></i></a>
-      <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
-    </div>
-  </div>
-  <transition name="fade" mode="out-in">
-    <div class="header__menu" v-if="mobile">
-      <div class="container">
-        <div class="search">
+        <div class="header__top" v-if="!search" key="save">
+          <div class="container">
+
+            <a href="index.html"><i class="icon-logo"></i></a>
+            <div class="link">
+              <a class="link__item" href="about.html">О компании</a>
+              <a class="link__item" href="services.html">Услуги</a>
+              <a class="link__item" href="anons.html">Пресс-анонсы</a>
+              <a class="link__item" href="events.html">Пресс-мероприятия</a>
+              <a class="link__item" href="photos.html">Фото</a>
+              <a class="link__item" href="videos.html">Видео</a>
+              <a class="link__item" href="contacts.html">Контакты</a>
+            </div>
+            <div class="info">
+              <div class="dropdown">
+                <div class="button" type="button" data-bs-toggle="dropdown">
+                  Рус <i class="bi bi-chevron-down"></i>
+                </div>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><img src="img/ru.png" alt=""> Рус</a></li>
+                  <li><a class="dropdown-item" href="#"><img src="img/kz.png" alt=""> Каз</a></li>
+                  <li><a class="dropdown-item" href="#"><img src="img/en.png" alt=""> Анг</a></li>
+                </ul>
+              </div>
+              <i class="bi bi-search" @click="clickSearch"></i>
+              <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
+            </div>
+
+          </div>
+        </div>
+        <div class="header__top header__search" v-else key="edit">
           <i class="bi bi-search"></i>
           <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
-          <i class="bi bi-x-lg" v-if="searchText.length > 1" @click="clear"></i>
+          <i class="bi bi-x-lg" @click="clickSearch"></i>
         </div>
-        <div class="content">
-          <div class="link">
-            <a href="#">О компании</a>
-            <a href="#">Услуги</a>
-            <a href="#">Пресс-анонсы</a>
-            <a href="#">Пресс-мероприятия</a>
-            <a href="#">Фото</a>
-            <a href="#">Видео</a>
-            <a href="#">Контакты</a>
+      </transition>
+      <div class="header__menu">
+        <div class="container">
+          <div class="header-bot">
+            <div class="title">Мен айтамын:</div>
+            <div class="link">
+              <a href="#">Новости</a>
+              <a href="#">PR и медиа</a>
+              <a href="#">IT для PR</a>
+              <a href="#">Спорт</a>
+              <a href="#">Экономика</a>
+              <a href="#">Культура</a>
+              <a href="#">Технологии</a>
+            </div>
+            <div class="heading__button">
+              <button @click="toggleHeading">
+                <transition name="fade" mode="out-in">
+                  <div class="btn-heading" key="Open" v-if="!heading">
+                    Все рубрики <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <div class="btn-heading-close" key="Close" v-else=>
+                    Все рубрики
+                  </div>
+                </transition>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="content">
-          <div class="title">Мен айтамын:</div>
-          <div class="link">
-            <a href="#">Новости</a>
-            <a href="#">PR и медиа</a>
-            <a href="#">IT для PR</a>
-            <a href="#">Спорт</a>
-            <a href="#">Экономика</a>
-            <a href="#">Культура</a>
-            <a href="#">Технологии</a>
-          </div>
-        </div>
-        <div class="lang">
-          <a href="#" class="active"><img src="img/ru.png" alt=""> Рус</a>
-          <a href="#" class=""><img src="img/kz.png" alt=""> Каз</a>
-          <a href="#" class=""><img src="img/en.png" alt=""> Анг</a>
-        </div>
-        <div class="heading__button">
-          <button @click="toggleHeading">
+          <div class="heading__menu">
             <transition name="fade" mode="out-in">
-              <div class="btn-heading"  key="Open" v-if="!heading">
-                Все рубрики <i class="bi bi-chevron-down"></i>
-              </div>
-              <div class="btn-heading-close" key="Close" v-else=>
-                Все рубрики
+              <div class="heading" v-if="heading">
+                <ul class="heading__list">
+                  <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
+                  <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
+                </ul>
               </div>
             </transition>
-          </button>
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+    </header>
+
+    <!-- Modal start -->
+    <div class="modal fade" id="appModal" tabindex="-1" aria-labelledby="appModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="exampleModalLabel">Оставьте заявку на проведение мероприятия</h5>
+
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="modal-text">
+                <div class="mb-3">
+                  <label for="event-type" class="col-form-label">Тип мероприятия</label>
+                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Выберите мероприятие</option>
+                    <option value="1">Мероприятие1</option>
+                    <option value="2">Мероприятие2</option>
+                    <option value="3">Другое</option>
+                  </select>
+                  <label for="description" class="col-form-label">Описание</label>
+                  <input type="text" class="form-control" id="description" placeholder="Коротко о мероприятии">
+                  <div class="contact-data">
+                    <label class="col-form-label">Контактные данные</label>
+                    <input type="text" class="form-control" placeholder="Ваше Имя*">
+                    <input type="text" class="form-control" placeholder="Номер телефона*">
+                    <input type="text" class="form-control" placeholder="E-mail*">
+                  </div>
+                </div>
+                <div class="mb-2">
+                  <label class="col-form-label">Дата и время</label>
+                  <div class="form-date">
+                    <input type="date" class="form-control" id="date" placeholder="01.01.2000">
+                    <input type="time" class="form-control" id="time" placeholder="00:00">
+                  </div>
+                  <div class="contact-format">
+                    <label class="col-form-label">Форма проведения </label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                        checked>
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Online
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Offline
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+          </div>
         </div>
       </div>
     </div>
-  </transition>
-  <div class="heading__menu">
-    <transition name="fade" mode="out-in">
-      <div class="heading" v-if="heading">
-          <ul class="heading__list">
-            <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
-            <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
-          </ul>
-      </div>
-    </transition>
-  </div>
-</header>
-<!-- Header end -->
+    <!-- Modal end -->
 
-    <div class="dark-wrapper"  :style="`height: ${height}`"></div>
-
-    <section class="breadcrumbs">
+    <header class="header header__mobile">
+      <div class="header__top">
         <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/">Главная</a>
-                </li>  
-                <li class="breadcrumb-item breadcrumb-item-active" aria-current="page">
-                    Галерея
-                </li>
-            </ol>
+          <transition name="fade" mode="out-in">
+            <i @click="clickMobile" key="menu" class="bi bi-list" v-if="!mobile"></i>
+            <i @click="clickMobile" key="close" class="bi bi-x" v-else></i>
+          </transition>
+          <a href="index.html"><i class="icon-logo"></i></a>
+          <i class="icon-feedback" data-bs-toggle="modal" data-bs-target="#appModal"></i>
         </div>
-    </section>
-
-    <section class="gallery">
-        <div class="container">
-            <div class="gallery-content">
-                <div class="gallery__photos">
-                    <div class="title">Фото</div>
-                    <div class="gallery__items">
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/photo-1.jpg" alt="photo">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title"> <a href="">19. март пресс конференция
-                            “О привлечении иностран...”</a> </div>
-                            <i class="icon-photo"></i>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/photo-2.jpg" alt="photo">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">30. март Event Arena - 
-                            Система онлайн-покупки...</div>
-                            <i class="icon-photo"></i>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/photo-3.jpg" alt="photo">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">1 апрель Digital Almaty Forum 
-                            2021 | Управление ..</div>
-                            <i class="icon-photo"></i>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/photo-4.jpg" alt="photo">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">15. апрель Памятные 
-                            мероприятия в день...</div>
-                            <i class="icon-photo"></i>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/photo-5.jpg" alt="photo">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">19. март пресс конференция
-                            “О привлечении иностран...”</div>
-                            <i class="icon-photo"></i>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/photo-6.jpg" alt="photo">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">30. март Event Arena - 
-                            Система онлайн-покупки...</div>
-                            <i class="icon-photo"></i>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/photo-7.jpg" alt="photo">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">1 апрель Digital Almaty Forum 
-                            2021 | Управление ..</div>
-                            <i class="icon-photo"></i>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/photo-8.jpg" alt="photo">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">15. апрель Памятные 
-                            мероприятия в день...</div>
-                            <i class="icon-photo"></i>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-                <div class="gallery__videos">
-                    <div class="title">Видео</div>
-                    <div class="gallery__items">
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/video-1.jpg" alt="video">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">19. март пресс конференция
-                            “О привлечении иностран...”</div>
-                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z" fill="#389DD5"/>
-                              <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round" stroke-linejoin="bevel"/>
-                              </svg>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/video-2.jpg" alt="video">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">30. март Event Arena - 
-                            Система онлайн-покупки...</div>
-                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z" fill="#389DD5"/>
-                              <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round" stroke-linejoin="bevel"/>
-                              </svg>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/video-3.jpg" alt="video">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">1 апрель Digital Almaty Forum 
-                            2021 | Управление ..</div>
-                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z" fill="#389DD5"/>
-                              <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round" stroke-linejoin="bevel"/>
-                              </svg>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/video-4.jpg" alt="video">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">15. апрель Памятные 
-                            мероприятия в день...</div>
-                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z" fill="#389DD5"/>
-                              <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round" stroke-linejoin="bevel"/>
-                              </svg>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/video-5.jpg" alt="video">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">19. март пресс конференция
-                            “О привлечении иностран...”</div>
-                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z" fill="#389DD5"/>
-                              <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round" stroke-linejoin="bevel"/>
-                              </svg>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/video-6.jpg" alt="video">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">30. март Event Arena - 
-                            Система онлайн-покупки...</div>
-                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z" fill="#389DD5"/>
-                              <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round" stroke-linejoin="bevel"/>
-                              </svg>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/video-7.jpg" alt="video">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">1 апрель Digital Almaty Forum 
-                            2021 | Управление ..</div>
-                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z" fill="#389DD5"/>
-                              <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round" stroke-linejoin="bevel"/>
-                              </svg>
-                        </div>
-                      </div>
-                      <div class="gallery__item">
-                        <div class="item__image">
-                          <img src="img/video-8.jpg" alt="video">
-                        </div>
-                        <div class="item__text">
-                          <div class="item__title">15. апрель Памятные 
-                            мероприятия в день...</div>
-                            <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z" fill="#389DD5"/>
-                              <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round" stroke-linejoin="bevel"/>
-                              </svg>
-                        </div>
-                      </div>
-                  </div>
-                </div>
+      </div>
+      <transition name="fade" mode="out-in">
+        <div class="header__menu" v-if="mobile">
+          <div class="container">
+            <div class="search">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Искать в Menmedia.kz" v-model="searchText">
+              <i class="bi bi-x-lg" v-if="searchText.length > 1" @click="clear"></i>
             </div>
-    </section>
-    
-    <footer class="footer">
-        <div class="container">
-          <div class="footer__head">
             <div class="content">
-              <div class="colom colom-1">
-                <a href="index.html"><i class="icon-logo"></i></a>
-                <p>Мен айтамын:</p>
-              </div>
-              <div class="colom colom-2">
+              <div class="link">
                 <a href="#">О компании</a>
                 <a href="#">Услуги</a>
                 <a href="#">Пресс-анонсы</a>
-                <a href="#">Пресс-мероприятия</a>            
-              </div>
-              <div class="colom colom-3">
+                <a href="#">Пресс-мероприятия</a>
                 <a href="#">Фото</a>
                 <a href="#">Видео</a>
                 <a href="#">Контакты</a>
+              </div>
+            </div>
+            <div class="content">
+              <div class="title">Мен айтамын:</div>
+              <div class="link">
                 <a href="#">Новости</a>
+                <a href="#">PR и медиа</a>
+                <a href="#">IT для PR</a>
+                <a href="#">Спорт</a>
+                <a href="#">Экономика</a>
+                <a href="#">Культура</a>
+                <a href="#">Технологии</a>
               </div>
             </div>
-            <div class="content">
-              <div class="colom">
-                <div class="call">
-                  <div class="phone">
-                    <a href="tell:+77272455556">+7 (727) 245 55 56</a>
+            <div class="lang">
+              <a href="#" class="active"><img src="img/ru.png" alt=""> Рус</a>
+              <a href="#" class=""><img src="img/kz.png" alt=""> Каз</a>
+              <a href="#" class=""><img src="img/en.png" alt=""> Анг</a>
+            </div>
+            <div class="heading__button">
+              <button @click="toggleHeading">
+                <transition name="fade" mode="out-in">
+                  <div class="btn-heading" key="Open" v-if="!heading">
+                    Все рубрики <i class="bi bi-chevron-down"></i>
                   </div>
-                  <div class="whatsapp">
-                    <a href="tell:+77075666667">+7 (707) 566 66 67</a> 
-                  </div>             
-                </div>
-                <div class="mess">
-                  <i class="bi bi-envelope"></i>
-                  <a href="#">info@menmedia.kz</a>
-                </div>
-                <div class="network">
-                  <a href="#"><i class="icon-facebook"></i></a>
-                  <a href="#"><i class="icon-instagram"></i></a>
-                  <a href="#"><i class="icon-vk"></i></a>
-                  <a href="#" class="icon-foot"> <img src="img/telegram-foot.svg" alt=""> </a>
-                  <a href="#" class="icon-foot"> <img src="img/tiktok-foot.svg" alt=""> </a>
-                  <a href="#" class="icon-foot"> <img src="img/youtube-foot.svg" alt=""> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="hr"></div>
-          <div class="footer__bottom">
-            <div class="content">
-              <p>© 2021 menmedia.kz. Все права  защищены.</p><span>|</span><p>Политика конфидециальности</p>
-            </div>
-            <div class="content">
-              <a href="#"><i class="icon-logo-IM"></i></a>
+                  <div class="btn-heading-close" key="Close" v-else=>
+                    Все рубрики
+                  </div>
+                </transition>
+              </button>
             </div>
           </div>
         </div>
-      </footer>
-  
-    </main>
-    <script src="js/carousel.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-  </body>
-  
-  </html>
+      </transition>
+      <div class="heading__menu">
+        <transition name="fade" mode="out-in">
+          <div class="heading" v-if="heading">
+            <ul class="heading__list">
+              <li class="heading__list-item"> <a href="#">Рубрика 1</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 2</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 3</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 4</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 5</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 6</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 7</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 8</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 9</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 10</a> </li>
+              <li class="heading__list-item"> <a href="#">Рубрика 11</a> </li>
+            </ul>
+          </div>
+        </transition>
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <div class="dark-wrapper" :style="`height: ${height}`"></div>
+
+    <section class="breadcrumbs">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">Главная</a>
+          </li>
+          <li class="breadcrumb-item breadcrumb-item-active" aria-current="page">
+            Галерея
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="gallery-content">
+          <div class="gallery__photos">
+            <div class="title">Фото</div>
+            <div class="gallery__items">
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/photo-1.jpg" alt="photo">
+                </div>
+                <div class="item__text">
+                  <div class="item__title"> <a href="">19. март пресс конференция
+                      “О привлечении иностран...”</a> </div>
+                  <i class="icon-photo"></i>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/photo-2.jpg" alt="photo">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">30. март Event Arena -
+                    Система онлайн-покупки...</div>
+                  <i class="icon-photo"></i>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/photo-3.jpg" alt="photo">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">1 апрель Digital Almaty Forum
+                    2021 | Управление ..</div>
+                  <i class="icon-photo"></i>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/photo-4.jpg" alt="photo">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">15. апрель Памятные
+                    мероприятия в день...</div>
+                  <i class="icon-photo"></i>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/photo-5.jpg" alt="photo">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">19. март пресс конференция
+                    “О привлечении иностран...”</div>
+                  <i class="icon-photo"></i>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/photo-6.jpg" alt="photo">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">30. март Event Arena -
+                    Система онлайн-покупки...</div>
+                  <i class="icon-photo"></i>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/photo-7.jpg" alt="photo">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">1 апрель Digital Almaty Forum
+                    2021 | Управление ..</div>
+                  <i class="icon-photo"></i>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/photo-8.jpg" alt="photo">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">15. апрель Памятные
+                    мероприятия в день...</div>
+                  <i class="icon-photo"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery__videos">
+            <div class="title">Видео</div>
+            <div class="gallery__items">
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/video-1.jpg" alt="video">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">19. март пресс конференция
+                    “О привлечении иностран...”</div>
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z"
+                      fill="#389DD5" />
+                    <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round"
+                      stroke-linejoin="bevel" />
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/video-2.jpg" alt="video">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">30. март Event Arena -
+                    Система онлайн-покупки...</div>
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z"
+                      fill="#389DD5" />
+                    <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round"
+                      stroke-linejoin="bevel" />
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/video-3.jpg" alt="video">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">1 апрель Digital Almaty Forum
+                    2021 | Управление ..</div>
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z"
+                      fill="#389DD5" />
+                    <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round"
+                      stroke-linejoin="bevel" />
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/video-4.jpg" alt="video">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">15. апрель Памятные
+                    мероприятия в день...</div>
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z"
+                      fill="#389DD5" />
+                    <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round"
+                      stroke-linejoin="bevel" />
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/video-5.jpg" alt="video">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">19. март пресс конференция
+                    “О привлечении иностран...”</div>
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z"
+                      fill="#389DD5" />
+                    <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round"
+                      stroke-linejoin="bevel" />
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/video-6.jpg" alt="video">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">30. март Event Arena -
+                    Система онлайн-покупки...</div>
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z"
+                      fill="#389DD5" />
+                    <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round"
+                      stroke-linejoin="bevel" />
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/video-7.jpg" alt="video">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">1 апрель Digital Almaty Forum
+                    2021 | Управление ..</div>
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z"
+                      fill="#389DD5" />
+                    <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round"
+                      stroke-linejoin="bevel" />
+                  </svg>
+                </div>
+              </div>
+              <div class="gallery__item">
+                <div class="item__image">
+                  <img src="img/video-8.jpg" alt="video">
+                </div>
+                <div class="item__text">
+                  <div class="item__title">15. апрель Памятные
+                    мероприятия в день...</div>
+                  <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M2.33893 4.44132H2.12455C0.979946 4.44132 0.0487766 5.37249 0.0487766 6.51709V18.607C0.0487766 19.7514 0.979946 20.6826 2.12455 20.6826H18.6241C19.5539 20.6826 20.3432 20.0679 20.6062 19.2235C20.664 19.0381 20.6959 18.8416 20.6989 18.6381C21.8733 18.6192 22.8374 17.7209 22.9603 16.574C24.1306 16.4609 25.0488 15.4719 25.0488 14.272V3.92519C25.0488 1.9505 23.4421 0.34375 21.4672 0.34375H6.7104C5.51887 0.34375 4.53544 1.24974 4.41127 2.40903C3.32981 2.51336 2.46444 3.36595 2.33893 4.44132ZM1.02534 7V6.51709C1.02534 5.91093 1.51839 5.41788 2.12455 5.41788H18.6241C19.2301 5.41788 19.7231 5.91093 19.7231 6.51709V13.4911V14.7933V14.9766V18.607C19.7231 18.7205 19.7058 18.8302 19.6735 18.9334C19.5343 19.3805 19.1164 19.706 18.6241 19.706H2.12436C1.51839 19.706 1.02534 19.213 1.02534 18.6068V18H1V7H1.02534ZM19 14.3621C19.1623 14.4988 19.3033 14.6181 19.4171 14.7147C19.5564 14.832 19.6611 14.9218 19.7231 14.9766C19.6913 14.9485 19.5832 14.8558 19.4171 14.7147C19.3006 14.6166 19.16 14.4994 19 14.3674V14.3621ZM21.9971 4.79742V16.3262C21.9971 17.0501 21.4186 17.6411 20.6997 17.6616V14.5726V6.51709C20.6997 5.37249 19.7685 4.44132 18.6241 4.44132H3.32656C3.45149 3.83325 3.99089 3.37453 4.6352 3.37453H4.8862H10.6952C10.9649 3.37453 11.1835 3.15595 11.1835 2.88625C11.1835 2.61655 10.9649 2.39797 10.6952 2.39797H5.39966C5.5204 1.78437 6.06228 1.32031 6.7104 1.32031H21.4672C22.9036 1.32031 24.0723 2.48895 24.0723 3.92519V14.272C24.0723 14.9279 23.5975 15.475 22.9736 15.5873V4.79742C22.9736 3.47429 21.8973 2.39797 20.5742 2.39797H14.6015C14.3318 2.39797 14.1132 2.61655 14.1132 2.88625C14.1132 3.15595 14.3318 3.37453 14.6015 3.37453H20.5742C21.3097 3.37453 21.9168 3.93549 21.9896 4.65208C21.9946 4.69976 21.9971 4.7484 21.9971 4.79742Z"
+                      fill="#389DD5" />
+                    <path d="M13 12.5L9.25 14.6651L9.25 10.3349L13 12.5Z" stroke="#389DD5" stroke-linecap="round"
+                      stroke-linejoin="bevel" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__head">
+          <div class="content">
+            <div class="colom colom-1">
+              <a href="index.html"><i class="icon-logo"></i></a>
+              <p>Мен айтамын:</p>
+            </div>
+            <div class="colom colom-2">
+              <a href="#">О компании</a>
+              <a href="#">Услуги</a>
+              <a href="#">Пресс-анонсы</a>
+              <a href="#">Пресс-мероприятия</a>
+            </div>
+            <div class="colom colom-3">
+              <a href="#">Фото</a>
+              <a href="#">Видео</a>
+              <a href="#">Контакты</a>
+              <a href="#">Новости</a>
+            </div>
+          </div>
+          <div class="content">
+            <div class="colom">
+              <div class="call">
+                <div class="phone">
+                  <a href="tell:+77272455556">+7 (727) 245 55 56</a>
+                </div>
+                <div class="whatsapp">
+                  <a href="tell:+77075666667">+7 (707) 566 66 67</a>
+                </div>
+              </div>
+              <div class="mess">
+                <i class="bi bi-envelope"></i>
+                <a href="#">info@menmedia.kz</a>
+              </div>
+              <div class="network">
+                <a href="#"><i class="icon-facebook"></i></a>
+                <a href="#"><i class="icon-instagram"></i></a>
+                <a href="#"><i class="icon-vk"></i></a>
+                <a href="#" class="icon-foot"> <img src="img/telegram-foot.svg" alt=""> </a>
+                <a href="#" class="icon-foot"> <img src="img/tiktok-foot.svg" alt=""> </a>
+                <a href="#" class="icon-foot"> <img src="img/youtube-foot.svg" alt=""> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="footer__bottom">
+          <div class="content">
+            <p>© 2021 menmedia.kz. Все права защищены.</p><span>|</span>
+            <p>Политика конфидециальности</p>
+          </div>
+          <div class="content">
+            <a href="#"><i class="icon-logo-IM"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+  <script src="js/carousel.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
