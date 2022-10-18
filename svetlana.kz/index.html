@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svetlana</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__items">
+                <div class="header__item">
+                    <img src="images/menu-icon.svg" onclick="openMenu()" alt="icon">
+                    <div class="header__item-name" onclick="openMenu()" href="#">Меню</div>
+                </div>
+                <a class="header__item">
+                    <img src="images/tg-icon.svg" alt="icon">
+                    <div class="header__item-name" href="https://telegram.me/anna_gadanie7">Написать в Telegram</div>
+                </a>
+                <a class="header__item">
+                    <img src="images/head-icon.svg" alt="icon">
+                    <div class="header__item-name" href="/"></div>
+                </a>
+                <a class="header__item">
+                    <img src="images/whtsp-icon.svg" alt="icon">
+                    <div class="header__item-name" href="https://api.whatsapp.com/send?phone=77005008232">Написать в
+                        WhatsApp</div>
+                </a>
+                <a class="header__item">
+                    <img src="images/phone-icon.svg" alt="icon">
+                    <div class="header__item-name" href="tel:+77005008232">+996 551 167 797</div>
+                </a>
+            </div>
+
+            <!-- Menu modal start -->
+            <div class="modal1" id="modalMenu">
+
+                <div class="modal1__content">
+                    <div class="menu__about">
+                        <ul>
+                            <li><a href="#" onclick="closeMenu()">Автобиография</a></li>
+                            <li><a href="#" onclick="closeMenu()">Коротко о работе</a></li>
+                            <li><a href="#" onclick="closeMenu()">Отзывы</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu__services">
+                        <div class="menu__services-title">Обряды</div>
+                        <div class="menu__services-list">
+                            <ul>
+                                <li><a href="#service1" onclick="closeMenu()">Гадания и предсказания </a></li>
+                                <li><a href="#" onclick="closeMenu()">Отворотные ритуалы и снятие магии</a></li>
+                                <li><a href="#service2" onclick="closeMenu()">Гадание на кофейной гуще</a></li>
+                                <li><a href="#service10" onclick="closeMenu()">Снятие приворота</a></li>
+                                <li><a href="#service3" onclick="closeMenu()">Гадание на рунах</a></li>
+                                <li><a href="#service11" onclick="closeMenu()">Снятие порчи и сглаза</a></li>
+                                <li><a href="#service4" onclick="closeMenu()">Гадание по ладони</a></li>
+                                <li><a href="service12" onclick="closeMenu()">Снятие родового проклятья</a></li>
+                                <li><a href="#service5" onclick="closeMenu()">Гадание по числам</a></li>
+                                <li><a href="#service13" onclick="closeMenu()">Наведение порчи на обидчика</a></li>
+                                <li><a href="#service6" onclick="closeMenu()">Действенные ритуалы любовной магии</a>
+                                </li>
+                                <li><a href="#service14" onclick="closeMenu()">Очищение дома </a></li>
+                                <li><a href="#service7" onclick="closeMenu()">Обряды на привлекательность</a></li>
+                                <li><a href="#service15" onclick="closeMenu()">Постановка защиты</a></li>
+                                <li><a href="#service8" onclick="closeMenu()">Егильет - сексуальная привязка
+                                        партнёра</a></li>
+                                <li><a href="#service16" onclick="closeMenu()">Спиритизм- Общение с загробным Миром</a>
+                                </li>
+                                <li><a href="#service9" onclick="closeMenu()">Снятие Венца безбрачия</a></li>
+                                <li><a href="#service17" onclick="closeMenu()">Экзорцизм- Изгнание джинов и бесов</a>
+                                </li>
+                                <li><a href="#service19" onclick="closeMenu()">Денежная магия</a></li>
+                                <li><a href="#service18" onclick="closeMenu()">Восстановление энергетики</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img class="topitem" src="images/top.svg" alt="icon">
+                    <div class="close-button">
+                        <button>
+                            <img src="images/close-icon.svg" onclick="closeMenu()" alt="icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu modal end -->
+
+        </div>
+    </header>
+    <main class="main">
+
+        <section class="banner">
+            <div class="container">
+                <div class="banner__content">
+                    <div class="banner__content-text">
+                        <div class="banner__title">
+                            <picture>
+                                <img src="images/svetlana.svg" alt="">
+                            </picture>
+                        </div>
+                        <div class="banner__text1">Магический практик
+                            любви и обретения счастья</div>
+                        <div class="banner__text2">Помощь в сложных жизненных ситуациях</div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="banner__content-img">
+                        <picture>
+                            <img src="images/banner.svg" alt="banner">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+        <section class="slider">
+            <div class="container">
+                <!-- Общий контейнер для табов -->
+                <div class="tabs">
+
+                    <!--  Контейнер с вкладками   -->
+                    <ul class="tab-header">
+                        <li class="tab-header__item js-tab-trigger" data-tab="1">Сильные</li>
+                        <li class="tab-header__item js-tab-trigger active" data-tab="2">Обряды</li>
+                        <li class="tab-header__item js-tab-trigger" data-tab="3">Магии</li>
+                    </ul>
+
+                    <!--  Контейнер с блоками, которые содержат контент вкладок   -->
+                    <ul class="tab-content">
+                        <li class="tab-content__item js-tab-content" data-tab="1">
+                            <div class="sliders">
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture class="picture">
+                                            <img src="images/service1.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service1">Гадания и предсказания</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service2.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service2">Гадание на кофейной гуще</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service3.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service3">Гадание на рунах</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service4.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service4">Гадание по ладони</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service5.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service5">Гадание по числам</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tab-content__item js-tab-content active" data-tab="2">
+                            <div class="sliders">
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service6.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service6">Действенные ритуалы любовной магии</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service7.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service7">Обряды на привлекательность</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service8.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service8">Егильет - сексуальная привязка партнёра</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service9.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service9">Снятие Венца безбрачия</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service10.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service10">Денежная магия</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tab-content__item js-tab-content" data-tab="3">
+                            <div class="sliders">
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service11.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service11">Отворотные ритуалы и снятие магии</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service12.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service12">Снятие приворота</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service13.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service13">Снятие порчи и сглаза</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service14.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service14">Снятие родового проклятья</a>
+                                    </div>
+                                </div>
+                                <div class="sliders__item">
+                                    <div class="sliders__item-img">
+                                        <picture>
+                                            <img src="images/service15.svg" alt="image">
+                                        </picture>
+                                    </div>
+                                    <div class="sliders__item-title">
+                                        <a href="#service15">Наведение порчи на обидчика</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="autobio" style="background-image: url('images/autobio.svg');">
+            <div class="container">
+                <div class="autobio__content">
+                    <div class="autobio__content-title title1">Автобиография</div>
+                    <div class="autobio__content-text">
+                        <p>
+                            Меня зовут Светлана. Много лет я занимаюсь магией, гаданием Таро, провожу магические
+                            ритуалы и помогаю людям стать счастливее.
+                        </p>
+                        <br>
+                        <p>
+                            Магия для меня — это искусство и образ жизни. Моя ежедневная практика. Когда я вижу
+                            счастливые
+                            лица моих клиентов и получаю от них слова благодарности, то понимаю, что нахожусь на
+                            правильном
+                            пути, и мои магические действия созвучны предназначению.
+                        </p>
+                        <br>
+                        <p>
+                            Безответные чувства в отношениях, направление финансовых потоков, одиночество и неудачи —
+                            все это
+                            можно менять в рамках вашей судьбы. Магические обряды — самое верное и эффективное средство.
+                        </p>
+                        <br>
+                        <p>
+                            Мои способности наследственные и несколько лет я изучала различные направления оккультно —
+                            магической
+                            деятельности. Провожу экстрасенсорную работу по чакрам и ежедневно гадаю на Таро.
+                        </p>
+                        <br>
+                        <p>
+                            Очень часто для достижения нужного результата заказчика я сочетаю несколько видов магических
+                            обрядов и ритуалов. Вы можете быть уверены, что придете к своей желанной цели в самые
+                            короткие
+                            сроки. Магия способна кардинально изменить вашу жизнь. Я помогу вам провести магические
+                            обряды, которые
+                            сделают вас счастливым и успешным! <br>
+                            * Результат может отличаться в каждом индивидуальном (отдельном) случае.
+                        </p>
+                    </div>
+                    <div class="help-link">
+                        <a href="#">
+                            <p>Обратиться за помощью</p>
+                            <img src="images/help-icon.svg" alt="icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about" style="background-image: url('images/about.svg');
+            background-repeat: no-repeat; ">
+            <div class="container">
+                <div class="about__content">
+                    <div class="about__content-title">
+                        <div class="work">
+                            <p>Коротко</p>
+                            <span>О работе</span>
+                        </div>
+                    </div>
+                    <div class="about__content-text">
+                        <p>Более 35 лет я помогаю людям</p>
+
+                        <p>Магическая помощь в сложных жизненных ситуациях</p>
+                        <p>Сильные авторские обряды, не имеющие аналогов</p>
+
+                        <p>Индивидуальный подбор обрядов на магической диагностике</p>
+                        <p>Полная конфиденциальность</p>
+                        <p>Проведение магических ритуалов от 3 до 40 дней</p>
+
+                        <p>Помощь людям из любой точки мира</p>
+                        <p>Поддерживаем с вами связь на протяжении всех обрядов</p>
+                        <p>Работаю до полного положительного эффекта</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <div class="services__item" id="service1">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service1.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service1.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Гадания и предсказания</div>
+                        <div class="service__text">
+                            С давних времён люди ходят к предсказательницам и ясновидящим потому, что хотят знать своё
+                            будущее
+                            и не делать ошибок, за которые им придётся расплачиваться слезами и душевными муками. Если и
+                            вы
+                            хотите «подстелить себе соломку» на будущее, узнать тайны и последствия, приглашаю вас на
+                            свои гадания
+                            и предсказания. Я сделаю для вас детальный просмотр жизненной ситуации по старинным русским
+                            картам,
+                            картам Таро, погадаю на кофейной гуще, по книге судьбы, по воску, предскажу будущее на 3
+                            месяца вперёд.
+                            Говорю всегда только то, что вижу в действительности и отвечу на любые ваши вопросы. По
+                            завершению
+                            диагностики я определю, есть ли на вас негативные программы, озвучу точные причины проблем и
+                            помогу
+                            принять решение в сложной ситуации.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service2">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service2.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service2.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Гадание на кофейной гуще</div>
+                        <div class="service__text">
+                            Гадание на кофейной гуще — очень старое гадание, которое было придумано сразу после
+                            появления в наших
+                            краях этого чудного напитка. Заключается гадание в поиске и расшифровке фигур в кофейной
+                            гуще, после
+                            выпитого напитка. Гадать можно на всё — на будущее, на любовь и т.д.
+                            <br>
+                            Как гадать? и получить ответы?
+                            Лучше всего — налить чашечку кофе (пускай даже растворимого) и пока пьете думать только о
+                            цели гадания.
+                            Например это может быть какой-нибудь насущный вопрос или вопрос об отношениях с человеком.
+                            Затем
+                            сфотографировать остаток на дне чашки, и прислать фото мне на Ватсап, я помогу Вам с
+                            расшифровкой и
+                            трактовкой результата.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service3">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service3.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service3.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Гадание на рунах</div>
+                        <div class="service__text">
+                            Гадание на рунах позволяет узнать, что произойдет
+                            в ближайшее будущее с вами или с другим человеком,
+                            а также увидеть уже сложившуюся ситуацию.
+                            Позволяющей осуществлять свои желания, и предвидеть будущее. К рунам можно обращаться с
+                            любым
+                            интересующиеся вопросом.
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service4">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service4.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service4.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Гадание по ладони</div>
+                        <div class="service__text">
+                            Гадание на кофейной гуще — очень старое гадание, которое было придумано сразу после
+                            появления в наших
+                            краях этого чудного напитка. Заключается гадание в поиске и расшифровке фигур в кофейной
+                            гуще, после
+                            выпитого напитка. Гадать можно на всё — на будущее, на любовь и т.д.
+                            <br>
+                            Как гадать? и получить ответы?
+                            Лучше всего — налить чашечку кофе (пускай даже растворимого) и пока пьете думать только о
+                            цели гадания.
+                            Например это может быть какой-нибудь насущный вопрос или вопрос об отношениях с человеком.
+                            Затем
+                            сфотографировать остаток на дне чашки, и прислать фото мне на Ватсап, я помогу Вам с
+                            расшифровкой и
+                            трактовкой результата.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service5">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service5.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service5.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Гадание по числам</div>
+                        <div class="service__text">
+                            Магическая связь чисел с физическими объектами, процессами и жизнью людей и их сознанием,
+                            которые
+                            взаимосвязаны и влияют друг на друга. Ясновидящая с помощью нумерологии по вашей дате
+                            рождение
+                            распишет Вашу судьбу и предназначение, а также с помощью нумерологии выведет ваше счастливое
+                            число.
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service6">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service6.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service6.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Ритуалы любовной магии</div>
+                        <div class="service__text">
+                            В современном мире очень трудно обрести счастье в личной жизни и для многих обращение к
+                            ведунье
+                            становиться последней возможностью построить семью и заново склеить проблемные отношения.
+                            Обращайтесь,
+                            я помогу вам избавиться без исходного одиночества, притяну любимых по судьбе, сделаю обряд
+                            на заключение
+                            брака, верну любимых, восстановлю семью и гармонизирую отношения. Если у вас критическую
+                            ситуацию в
+                            отношениях/семье, очень действенный метод: сделать любовный приворот по фотографии или
+                            отворот от
+                            соперницы (-ка) (зависит от конкретной ситуации).
+                            Это поможет вам спасти союз, избавит от измен, вернёт любимых в отношения, восстановит
+                            утраченные чувства
+                            и навсегда оградит любовь от любых вмешательств магии. Приворот и отворот - это мощный
+                            толчок к тому, чтобы
+                            всё пошло именно так, как вам нужно!
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service7">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service7.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service7.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Обряды на привлекательность</div>
+                        <div class="service__text">
+                            Если вам нравится человек, но он не замечает вас, либо
+                            не видит в вас потенциального партнера для отношений,
+                            то я помогу нарастить и усилить вашу природную энергетику. Это даст вам намного больше
+                            шансов
+                            естественным путем обратить на себя внимание (не прибегая к привороту, подчинению воли или
+                            каким-либо
+                            другим воздействиям
+                            на потенциального партнера).
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service8">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service8.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service8.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Егильет - сексуальная привязка партнёра</div>
+                        <div class="service__text">
+                            Егильет – одна из разновидностей ЛЮБОВНОГО приворота. Особенность его состоит в том, что он
+                            блокирует
+                            возможность ЛЮБОВНЫХ отношений с любыми лицами противоположного пола, кроме заказчика.
+                            Данный вид
+                            приворота используется как эффективное средство против измен. Помимо сек{цензура}уальной
+                            блокировки к
+                            другим, привораживаемый начнет испытывать мощное влечение к заказчику приворота.
+                            <br>
+                            В зависимости от ситуации, а также от пожеланий заказчика, маг определяет необходимый вид
+                            приворота и
+                            конкретный ритуал. Заказчику следует в точности следовать указанию мага – магия не терпит
+                            ошибок, а
+                            если маг будет работать по черной магии, то тем более.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service9">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service9.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service9.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Снятие Венца безбрачия</div>
+                        <div class="service__text">
+                            Ко мне на прием часто приходят женщины, уставшие намекать своим мужчинам о замужестве.
+                            Многие женщины
+                            не могут выйти замуж на протяжении десятков лет: все длительные отношения каждый раз
+                            заканчиваются
+                            разрывами.
+                            На консультации я проведу диагностику и скажу, в чем причина этой ситуации. Бывают случаи,
+                            когда
+                            проблема не в мужчине,
+                            а в женщине: это может быть родовая порча или венец безбрачия.
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service10">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service10.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service10.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Снятие приворота</div>
+                        <div class="service__text">
+                            Наваждения Остуды обычно используются для разрушения отношений (семьи) на одного человека
+                            или сразу на
+                            обоих. Пара начинает остывать друг к другу не только в моральном,
+                            но и сексуальном плане. Начинаются ссоры на пустом месте, люди отдаляются друг от друга,
+                            становятся чужими.
+                            Снятие происходит с помощью вычитки и пережигания определённых наговорённых свечей.
+                            Если вы испытываете сильные чувства к человеку, но понимаете, что они не оправданы, так как
+                            человек не
+                            любит вас в ответ,
+                            не уважает, и всячески портит вам жизнь;
+                            Если вы понимаете что человек просто пользуется вами ради своей выгоды;
+                            Если при всем при этом вы не можете просто уйти от него, вычеркнуть из своей жизни;
+                            То знайте – на вас приворот.
+                            Я помогу вам снять его и отправлю это негативное воздействие обратно отправителю.
+                            Кроме того, я могу снять приворот
+                            и с вашего партнера, если он вдруг стал испытывать непреодолимую тягу к другому человеку.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service11">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service11.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service11.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Снятие порчи и сглаза</div>
+                        <div class="service__text">
+                            Если Вы чувствуете в своей жизни невезение, апатию, депрессию, бессонницу, проблемы по
+                            здоровью, в
+                            личной жизни, на работе, в бизнесе, скорее всего это влияние негативных программ, сделанных
+                            недругами и
+                            завистниками.
+                            И тогда вам срочно необходима помощь опытного мага.
+                            От себя же могу сказать, звоните, приходите и пишите,
+                            я снимаю негативные программы любой давности и сложности: сглаз, порчу (в том числе,
+                            кладбищенскую и на
+                            смерть), родовое проклятие, венец безбрачия, приворот, отворот. После моих обрядов-чистки у
+                            вас
+                            восстановиться энергетика биополя, перед вами откроются все двери и дороги, а счастье, успех
+                            и
+                            благополучие станут навсегда вашими добрыми попутчиками! *Обратите внимание, что результаты
+                            индивидуальны
+                            и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service12">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service12.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service12.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Снятие родового проклятья</div>
+                        <div class="service__text">
+                            Родовое проклятие – одно из самых сильных и пагубных воздействий, которое накладывается
+                            сразу на
+                            несколько поколений. Наложение такого мощного негативного влияния требует проведения
+                            сложного ритуала.
+                            Тем не менее я помогу Вам снять родовое проклятие со всех нынешних его носителей
+                            и их потомков.
+                            <br>
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service13">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service13.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service13.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Наведение порчи на обидчика</div>
+                        <div class="service__text">
+                            Жизнь каждого из нас похожа на художественное произведение, где можно встретить как
+                            положительных героев,
+                            всегда готовых прийти к нам на помощь и поддержать в любой ситуации, так же в ней
+                            встречаются и
+                            отрицательные персонажи, наносящие нам обиды и желающие неудач. Порой такие люди негативно
+                            влияют на нашу
+                            жизнь настолько сильно, что опускаются руки и нет сил бороться с этим.
+                            <br>
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service14">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service14.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service14.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Очищение дома</div>
+                        <div class="service__text">
+                            Зачастую недоброжелательные люди, завистливые гости, наносят Вам в дом энергетическую грязь.
+                            Которая
+                            забирает покой, не даёт спокойно спать, вселяет беспокойство в душу. Сделаю энергетическую
+                            уборку,
+                            чтобы в семье всегда царили согласие и мир. Чтобы каждому домочадцу сопутствовала удача.
+                            <br>
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service15">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service15.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service15.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Постановка защиты</div>
+                        <div class="service__text">
+                            Диагностика на присутствие негатива и магического воздействия. Выявление истинных причин
+                            появление
+                            проблем. Снятие любых негативных воздействий. Установка защиты. Защитная магия.
+                            Индивидуальное
+                            изготовление защитных амулетов, талисманов, оберегов, ритуалов, направленных на устранение
+                            чужеродных
+                            программ. Применение древних магических практик.
+                            <br>
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service16">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service16.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service16.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Спиритизм Общение с загробным Миром</div>
+                        <div class="service__text">
+                            Я профессиональный парапсихолог – Мне хочется помогать людям. Я вижу результат, ведь
+                            спиритический сеанс
+                            можно относить к хорошей психотерапевтической практике. После этих сеансов люди получают
+                            ответы на свои
+                            вопросы и в какой-то степени становится счастливее и спокойнее.
+                            <br>
+                            Медиум, через которого идет общение с духами, теряет за время сеанса огромное количество
+                            энергии,
+                            Потому что на его энергии и строится это общение.
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service17">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service17.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service17.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Экзорцизм Изгнание джинов и бесов</div>
+                        <div class="service__text">
+                            Молитва от бесов поможет человеку, которому являются демоны. Иногда нечисть поселяется
+                            внутри человека,
+                            и тогда только изгоняющая молитва может помочь.
+                            <br>
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service18">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service18.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service18.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Восстановление энергетики</div>
+                        <div class="service__text">
+                            При нарушениях энергетики человек испытывает дискомфорт
+                            в различных частях тела, у него появляются различные расстройства и болезни. Обрядом по
+                            восстановлению
+                            энергетики восполняю затраченные ресурсы, устраняю стресс
+                            и восстанавливаю естественный энергетический баланс Вашего организма.
+                            <br>
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="services__item" id="service19">
+                    <div class="services__item-img">
+                        <div class="background" style="background-image: url('images/service19.svg');"></div>
+                        <div class="image">
+                            <picture>
+                                <img src="images/service19.svg" alt="img">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="services__item-content">
+                        <div class="service__title">Денежная магия</div>
+                        <div class="service__text">
+                            Бывает, так что вы стараетесь, работаете, а денег нет.
+                            Как сквозь пальцы утекают. Что вы только не предпринимаете,
+                            а денег по-прежнему нет. Тогда вам однозначно стоит обратиться к магии и сделать приворот на
+                            деньги.
+                            Для своих клиентов я делаю разблокировку денежного канала, ставлю код удачи, провожу ритуал
+                            на
+                            неиссякаемый денежный поток, делаю обряд на успех в карьере и ритуал на финансовое
+                            благополучие в
+                            бизнесе. Будьте уверены, что после моего ритуала деньги будут сыпаться на вас с воздуха!
+                            <br>
+                            *Обратите внимание, что результаты индивидуальны и могут отличаться в каждом случае.
+                        </div>
+                        <div class="help-link">
+                            <a href="#">
+                                <p>Обратиться за помощью</p>
+                                <img src="images/help-icon.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="container">
+                <div class="reviews__title">Отзывы</div>
+                <div class="reviews__content">
+                    <div class="reviews__item">
+                        <div class="reviews__name">Татьяна</div>
+                        <div class="reviews__text">
+                            Мне так жалко людей, которые нарываются на ненастоящих гадалок, а вот мне повезло – первый
+                            раз
+                            обратилась к предсказательнице и попала к Светлане. Проблема-то у меня была банальная –муж
+                            ушел из
+                            семьи, а вот Решение гадалка выполнила индивидуальное, как результат мы снова с мужем
+                            вместе,
+                            воспитываем двух своих очаровательных дочек, а о случившемся уже забыли. А разлучница наша
+                            так одна и
+                            сидит локти кусает – и мужика чужого не удержала и подругу потеряла, хотя я ей зла не желаю,
+                            пусть у
+                            всех все будет хорошо! *
+                        </div>
+                        <button class="reviews__full" onclick="openMenu2()">Посмотреть полностью</button>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="reviews__name">Светлана</div>
+                        <div class="reviews__text">ontrary to popular belief, Lorem Ipsum is not simply random text. It
+                            has roots in
+                            a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+                            McClintock, a
+                            Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
+                            Latin words,
+                            consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                            classical literature,
+                            discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
+                            "de Finibus
+                            Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book
+                            is a treatise
+                            on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
+                            "Lorem ipsum
+                            dolor sit amet..", comes from a line in section 1.10.32.</div>
+                        <button class="reviews__full" onclick="openMenu2()">Посмотреть полностью</button>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="reviews__name">Карина</div>
+                        <div class="reviews__text">
+                            It is a long established fact that a reader will be distracted by the readable content of a
+                            page when
+                            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                            distribution
+                            of letters, as opposed to using 'Content here, content here', making it look like readable
+                            English. Many
+                            desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                            text, and a
+                            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
+                            versions have evolved
+                            over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </div>
+                        <button class="reviews__full" onclick="openMenu2()">Посмотреть полностью</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal review start -->
+            <div class="modal2" id="modalReview">
+                <div class="modal2__wrapper">
+
+                </div>
+                <div class="modal2__content">
+                    <div class="reviews__name">Карина</div>
+                    <div class="reviews__text">
+                        It is a long established fact that a reader will be distracted by the readable content of a
+                        page when
+                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution
+                        of letters, as opposed to using 'Content here, content here', making it look like readable
+                        English. Many
+                        desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                        text, and a
+                        search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
+                        versions have evolved
+                        over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        <div class="close-button">
+                            <button>
+                                <img src="images/close-icon.svg" onclick="closeMenu2()" alt="icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Modal review end -->
+
+        </section>
+        <section class="go-top">
+            <button class="arrow-top" onclick="topFunction()" id="up"></button>
+        </section>
+
+        <div class="container">
+            <div class="line">
+                <hr>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__top-info">
+                    <div class="top__info-img">
+                        <a href="/">
+                            <img src="images/head-icon.svg" alt="logo">
+                        </a>
+                    </div>
+                    <div class="top__info-name">Светлана</div>
+                    <div class="top__info-text">
+                        Магический практик любви и обретения счастья
+                    </div>
+                </div>
+                <div class="footer__top-list">
+                    <a href="#service1">Гадания и предсказания</a>
+                    <a href="">Отворотные ритуалы и снятие магии</a>
+                    <a href="#service2">Гадание на кофейной гуще</a>
+                    <a href="#service10">Снятие приворота</a>
+                    <a href="#service3">Гадание на рунах</a>
+                    <a href="#service11">Снятие порчи и сглаза</a>
+                    <a href="#service4">Гадание по ладони</a>
+                    <a href="#service12">Снятие родового проклятья</a>
+                    <a href="#service5">Гадание по числам</a>
+                    <a href="#service13">Наведение порчи на обидчика</a>
+                    <a href="#service6">Действенные ритуалы любовной магии</a>
+                    <a href="#service14">Очищение дома </a>
+                    <a href="#service7">Обряды на привлекательность</a>
+                    <a href="#service15">Постановка защиты</a>
+                    <a href="#service8">Егильет - сексуальная привязка партнёра</a>
+                    <a href="#service16">Спиритизм- Общение с загробным Миром</a>
+                    <a href="#service9">Снятие Венца безбрачия</a>
+                    <a href="#service17">Экзорцизм- Изгнание джинов и бесов</a>
+                    <a href="#service19">Денежная магия</a>
+                    <a href="#service18">Восстановление энергетики</a>
+                </div>
+            </div>
+            <div class="footer__bot">
+                <div class="footer__bot-items">
+                    <a class="footer__bot-item" href="">
+                        <img src="images/tg-icon.svg" alt="icon">
+                        <p>Написать в Telegram</p>
+                    </a>
+                    <a class="footer__bot-item" href="">
+                        <img src="images/whtsp-icon.svg" alt="icon">
+                        <p>Написать в WhatsApp</p>
+                    </a>
+                    <a class="footer__bot-item" href="">
+                        <img src="images/phone-icon.svg" alt="icon">
+                        <p>+996 551 167 797</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="preloader" id="preloader">
+        <img src="images/preloader.svg" alt="image">
+    </div>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/slides.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+
+</html>
