@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/logo.svg">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Tomiris</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Bellota+Text:wght@400;700&family=Bona+Nova:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!--Header menu start-->
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-burger" onclick="openBurger()">
+                <img src="images/burger-icon.svg" alt="icon">
+            </div>
+            <div class="header__top-logo">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="logo">
+                </a>
+            </div>
+            <div class="header__top-table">Ежедневно c 10:00 дом 20:00</div>
+            <div class="header__top-phone">
+                <a href="#">
+                    +7 (702) 680 05 05
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="header__bot">
+        <div class="container">
+            <div class="header__bot-menu">
+                <ul>
+                    <li onclick="openMenu()">
+                        <a id="menuItem1" href="#">Каталог <img src="images/drop.svg" alt="icon"></a>
+                    </li>
+                    <li>
+                        <a id="menuItem" class="menu--item " href="#newitems">Новинки</a>
+                    </li>
+                    <li onclick="openMenu2()">
+                        <a id="menuItem2" class="menu--item " href="#">Коммерческое
+                            <img src="images/drop.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu--item " href="services.html">Услуги</a>
+                    </li>
+                    <li>
+                        <a class="menu--item " href="about.html">О компании</a>
+                    </li>
+                    <li>
+                        <a class="menu--item " href="#faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a class="menu--item " href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header__bot-lang">
+                <ul>
+                    <li class="lang"><a href="">Kaz</a></li>
+                    <li class="lang lang-active"><a href="">Rus</a></li>
+                </ul>
+            </div>
+            <div class="header__bot-buttons">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/whtsp-icon.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chosen.html">
+                            <img src="images/heart-icon.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <img src="images/cart-icon.svg" alt="icon">
+                            <p>2</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header__drop" id="dropdown1">
+        <div class="container">
+            <div class="header__drop-content" id="tabs">
+                <ul class="tabs__nav">
+                    <li><a href="#tab-1">По комнате</a></li>
+                    <li><a href="#tab-2">По стилю</a></li>
+                </ul>
+
+                <div class="tabs__items">
+                    <div class="tabs__item" id="tab-1">
+                        <div class="tabs__content">
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/room1.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Гостинная</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/room2.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Спальня</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/room3.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Детская</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/room4.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Кабинет</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tabs__item" id="tab-2">
+                        <div class="tabs__content">
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/style1.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Этнические</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/style2.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Классические</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/style3.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Геометрия</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/style4.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Современные</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__drop-button white-button">
+                <a href="forhome.html">Перейти в каталог</a>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="header__drop" id="dropdown2">
+        <div class="container">
+            <div class="header__drop-content" id="tabs2">
+                <ul class="tabs2__nav">
+                    <li><a href="#tab-0">По коммерции</a></li>
+                </ul>
+
+                <div class="tabs2__items">
+                    <div class="tabs__item" id="tab-0">
+                        <div class="tabs__content">
+                            <a href="forcommerce.html">
+                                <div class="tabs__img">
+                                    <img src="images/com1.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Для ресторанов</div>
+                            </a>
+                            <a href="forcommerce.html">
+                                <div class="tabs__img">
+                                    <img src="images/com2.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Для мечетей</div>
+                            </a>
+                            <a href="forcommerce.html">
+                                <div class="tabs__img">
+                                    <img src="images/com3.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Для офисов</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__drop-button white-button">
+                <a href="forcommerce.html">Перейти в каталог</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!--Header menu end-->
+
+<!--Burger menu start-->
+<div class="burger" id="burger-menu">
+    <div class="burger__wrapper"></div>
+    <div class="burger__content">
+        <div class="burger__content-top">
+            <div class="burger__content-phone">
+                <a href="">
+                    <img src="images/phone2.svg" alt="icon">
+                </a>
+            </div>
+            <div class="burger__content-logo">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="logo">
+                </a>
+            </div>
+            <div class="zaglushka"></div>
+        </div>
+        <div class="burger__content-close" onclick="closeBurger()">
+            <img src="images/close-button-red.svg" alt="icon">
+        </div>
+        <div class="burger__content-menu">
+            <ul>
+                <li>
+                    <button onclick="catalogToggle()">Каталог
+                        <img src="images/drop.svg" alt="icon">
+                    </button>
+                    <div class="burger__inner" id="catalog-toggle">
+                        <div class="burger__inner-title">По комнате</div>
+                        <div class="burger__inner-content">
+                            <ul>
+                                <li>
+                                    <a href="forhome.html">Гостинная</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Спальня</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Детская</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Кабинет</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="burger__inner-title">По стилю</div>
+                        <div class="burger__inner-content">
+                            <ul>
+                                <li>
+                                    <a href="forhome.html">Этнические</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Классические</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Геометрия</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Современные</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#newitems">Новинки</a>
+                </li>
+                <li>
+                    <button onclick="commerceToggle()">Коммерческое
+                        <img src="images/drop.svg" alt="icon">
+                    </button>
+                    <div class="burger__inner" id="commerce-toggle">
+                        <div class="burger__inner-title">По коммерции</div>
+                        <div class="burger__inner-content">
+                            <ul>
+                                <li>
+                                    <a href="forcommerce.html">Этнические</a>
+                                </li>
+                                <li>
+                                    <a href="forcommerce.html">Для ресторанов</a>
+                                </li>
+                                <li>
+                                    <a href="forcommerce.html">Для офисов</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="services.html">Услуги</a>
+                </li>
+                <li>
+                    <a href="about.html">О компании</a>
+                </li>
+                <li>
+                    <a href="#faq">FAQ</a>
+                </li>
+                <li>
+                    <a href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="burger__content-lang">
+            <ul>
+                <li class="lang"><a href="">Kaz</a></li>
+                <li class="lang lang-active"><a href="">Rus</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div class="burger__content-buttons">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/whtsp-icon.svg" alt="icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <img src="images/heart-icon.svg" alt="icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <img src="images/cart-icon.svg" alt="icon">
+                        <p>2</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="burger__content-graphic">Ежедневно c 10:00 дом 20:00</div>
+
+    </div>
+</div>
+<!--Burger menu start-->
+
+    <main class="main">
+        <div class="container">
+            <div class="goBack">
+                <div>
+                    <img src="images/back.svg" alt="icon">
+                    <a href="/">Вернуться назад</a>
+                </div>
+            </div>
+            <div class="policy">
+                <div class="policy__title page-title">Политика конфиденциальности</div>
+                <div class="policy__content editors">
+                    <h2>1. Обрабатываемые данные</h2>
+                    <p>
+                        1.1. Мы не осуществляем сбор ваших персональных данных с использованием Сайта.
+                    </p>
+                    <p>
+                        1.2. Все данные, собираемые на Сайте, предоставляются и принимаются в обезличенной форме (далее
+                        – «Обезличенные данные»).
+                    </p>
+                    <p>
+                        1.3. Обезличенные данные включают следующие сведения, которые не позволяют вас идентифицировать:
+                    </p>
+                    <p>
+                        1.3.1. Информацию, которую вы предоставляете о себе самостоятельно с использованием онлайн-форм
+                        и программных модулей Сайта, включая имя или номер телефона и/или адрес электронной почты.
+                    </p>
+                    <p>
+                        1.3.2. Данные, которые передаются в обезличенном виде в автоматическом режиме в зависимости от
+                        настроек используемого вами программного обеспечения.
+                    </p>
+                    <p>
+                        1.4. Администрация вправе устанавливать требования к составу Обезличенных данных Пользователя,
+                        которые собираются использованием Сайта.
+                    </p>
+                    <p>
+                        1.5. Если определенная информация не помечена как обязательная, ее предоставление или раскрытие
+                        осуществляется Пользователем на свое усмотрение и по собственной инициативе.
+                    </p>
+                    <p>
+                        1.6. Администрация не осуществляет проверку достоверности предоставляемых данных и наличия у
+                        Пользователя необходимого согласия на их обработку в соответствии с настоящей Политикой,
+                        полагая, что Пользователь действует добросовестно, осмотрительно и прилагает все необходимые
+                        усилия к поддержанию такой информации в актуальном состоянии и получению всех необходимых
+                        согласий на ее использование.
+                    </p>
+                    <p>
+                        1.7. Вы осознаете и принимаете возможность использования на Сайте программного обеспечения
+                        третьих лиц, в результате чего такие лица могут получать и передавать указанные в п.1.3 данные в
+                        обезличенном виде.
+                    </p>
+                    <h2>2. Цели обработки данных</h2>
+                    <p>2.1. Администрация использует данные в следующих целях:</p>
+                    <p>2.1.1. Обработка поступающих запросов и связи с Пользователем;</p>
+                    <p>2.1.2. Информационное обслуживание, включая рассылку рекламно-информационных материалов;</p>
+                    <p>2.1.3. Проведение маркетинговых, статистических и иных исследований;</p>
+                    <p>2.1.4. Таргетирование рекламных материалов на Сайте.</p>
+                    <h2>3. Требования к защите данных</h2>
+                    <p>
+                        3.1. Администрация осуществляет хранение данных и обеспечивает их охрану от несанкционированного
+                        доступа и распространения в соответствии с внутренними правилами и регламентами.
+                    </p>
+                    <p>
+                        3.2. В отношении полученных данных сохраняется конфиденциальность, за исключением случаев, когда
+                        они сделаны Пользователем общедоступными, а также когда используемые на Сайте технологии и
+                        программное обеспечение третьих лиц либо настройки используемого Пользователем программного
+                        обеспечения предусматривают открытый обмен с данными лицами и/или иными участниками и
+                        пользователями сети Интернет.
+                    </p>
+                    <p>
+                        3.3. В целях повышения качества работы Администрация вправе хранить лог-файлы о действиях,
+                        совершенных Пользователем в рамках использования Сайта в течение 1 (Одного) года.
+                    </p>
+                    <h2>4. Передача данных</h2>
+                    <p>4.1. Администрация вправе передать данные третьим лицам в следующих случаях:</p>
+                    <ul>
+                        <li>
+                            Пользователь выразил свое согласие на такие действия, включая случаи применения
+                            Пользователем
+                            настроек используемого программного обеспечения, не ограничивающих предоставление
+                            определенной
+                            информации;
+                        </li>
+                        <li>
+                            Передача необходима в рамках использования Пользователем функциональных возможностей Сайта;
+                        </li>
+                        <li>Передача требуется в соответствии с целями обработки данных;</li>
+                        <li>
+                            В связи с передачей Сайта во владение, пользование или собственность такого третьего лица;
+                        </li>
+                        <li>
+                            По запросу суда или иного уполномоченного государственного органа в рамках установленной
+                            законодательством процедуры;
+                        </li>
+                        <li>
+                            Для защиты прав и законных интересов Администрации в связи с допущенными Пользователем
+                            нарушениями.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--    Footer start-->
+    <footer class="footer">
+        <div class="footer__white">
+            <div class="container">
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Жолдасбекова 9А, ТЦ Евразия, 2 этаж, бутик 235А</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад "Томирис"</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад "Томирис"</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__red">
+            <div class="container">
+                <div class="footer__top">
+                    <div class="footer__top-menu">
+                        <div class="footer__list">
+                            <div class="footer__list-name">По стилю</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Этнические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Классические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Геометрия</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Современные</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">По комнатам</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Гостинная</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Спальня</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Детская</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Кабинет</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">Коммерческие</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forcommerce.html">Для ресторанов</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для мечетей</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для офисов</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">Покупателям</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="#newitems">Новинки</a>
+                                    </li>
+                                    <li>
+                                        <a href="services.html">Услуги</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">О компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="#faq">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="contacts.html">Контакты</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__top-info">
+                        <div class="footer__numbers">
+                            <a href="">+7 702 680 05 05</a>
+                            <a href="">+7 702 845 05 05</a>
+                        </div>
+                        <div class="footer__contacts">
+                            <div class="footer__contacts-mail">
+                                <a href="">ernar.tym@gmail.com</a>
+                            </div>
+                            <div class="footer__contacts-socials">
+                                <a href="">
+                                    <img src="images/insta.svg" alt="icon">
+                                </a>
+                                <a href="">
+                                    <img src="images/wats.svg" alt="icon">
+                                </a>
+                            </div>
+                        </div>
+                        <button onclick="openCallback()" class="footer__button white-button">Связатья с нами</button>
+                    </div>
+                </div>
+                <div class="footer__bot">
+                    <div class="footer__bot-links">
+                        <a href="policy.html">Политика конфиденциальности</a>
+                        <a href="offer.html">Публичная оферта</a>
+                    </div>
+                    <div class="footer__bot-years">1997-2022 © Тамирис</div>
+                    <div class="footer__bot-production">
+                        <a href="https://i-marketing.kz/">
+                            <picture>
+                                <img src="images/imarketing.svg" alt="logo">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--    Footer end-->
+
+    <div class="callback-modal" id="callback-modal">
+        <div class="callback__wrapper">
+
+        </div>
+        <div class="callback__content">
+            <div class="callback__close" onclick="closeCallback()">
+                <img src="images/close-button.svg" alt="icon">
+            </div>
+            <div class="callback__title">Связаться с нами</div>
+            <div class="callback__text">Напишите нам и мы свяжемся с Вами!</div>
+            <div class="callback__form">
+                <form action="#">
+                    <div class="callback__inputs">
+                        <input type="text" placeholder="Имя*">
+                        <input type="text" placeholder="Телефон*">
+                        <input type="text" placeholder="E-mail">
+                        <input type="text" placeholder="Ваше сообщение">
+                    </div>
+                    <div class="check">
+                        <input type="checkbox">
+                        <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                                href="policy.html">политикой
+                            конфиденциальности</a></p>
+                    </div>
+                    <button class="callback__button red-button" onclick="closeCallback()">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="thanks-modal" id="thanks-modal">
+        <div class="thanks__wrapper">
+        </div>
+        <div class="thanks__content">
+            <div class="thanks__img">
+                <img src="images/thanks.png" alt="image">
+            </div>
+            <div class="thanks__info">
+                <div class="thanks__info-title">Спасибо за заказ</div>
+                <div class="thanks__info-text">Ваш заказ принят в обработку.
+                    Мы свяжемся с Вами в ближайшее время</div>
+            </div>
+            <button class="thanks__button red-button" onclick="closeThanks()">Готово</button>
+        </div>
+    </div>
+
+    <div class="review-modal" id="review-modal">
+        <div class="review__wrapper">
+        </div>
+        <div class="review__content">
+            <div class="review__close" onclick="closeReview()">
+                <img src="images/close-button.svg" alt="icon">
+            </div>
+            <div class="revmod__title">Оставить заявку</div>
+            <div class="revmod__text">Оставьте заявку и мы свяжемся с Вами!</div>
+            <input type="text" placeholder="Имя*">
+            <input type="text" placeholder="Телефон*">
+            <div class="check">
+                <input type="checkbox">
+                <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                        href="policy.html">политикой
+                    конфиденциальности</a></p>
+            </div>
+            <div class="revmod__button red-button">Отправить</div>
+        </div>
+    </div>
+
+</body>
+
+<script src="http://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+<script src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script src="js/slides.js" defer></script>
+<script src="js/script.js" defer></script>
+
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/logo.svg">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Tomiris</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Bellota+Text:wght@400;700&family=Bona+Nova:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!--Header menu start-->
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-burger" onclick="openBurger()">
+                <img src="images/burger-icon.svg" alt="icon">
+            </div>
+            <div class="header__top-logo">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="logo">
+                </a>
+            </div>
+            <div class="header__top-table">Ежедневно c 10:00 дом 20:00</div>
+            <div class="header__top-phone">
+                <a href="#">
+                    +7 (702) 680 05 05
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="header__bot">
+        <div class="container">
+            <div class="header__bot-menu">
+                <ul>
+                    <li onclick="openMenu()">
+                        <a id="menuItem1" href="#">Каталог <img src="images/drop.svg" alt="icon"></a>
+                    </li>
+                    <li>
+                        <a id="menuItem" class="menu--item " href="#newitems">Новинки</a>
+                    </li>
+                    <li onclick="openMenu2()">
+                        <a id="menuItem2" class="menu--item " href="#">Коммерческое
+                            <img src="images/drop.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu--item " href="services.html">Услуги</a>
+                    </li>
+                    <li>
+                        <a class="menu--item " href="about.html">О компании</a>
+                    </li>
+                    <li>
+                        <a class="menu--item " href="#faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a class="menu--item " href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header__bot-lang">
+                <ul>
+                    <li class="lang"><a href="">Kaz</a></li>
+                    <li class="lang lang-active"><a href="">Rus</a></li>
+                </ul>
+            </div>
+            <div class="header__bot-buttons">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/whtsp-icon.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chosen.html">
+                            <img src="images/heart-icon.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <img src="images/cart-icon.svg" alt="icon">
+                            <p>2</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header__drop" id="dropdown1">
+        <div class="container">
+            <div class="header__drop-content" id="tabs">
+                <ul class="tabs__nav">
+                    <li><a href="#tab-1">По комнате</a></li>
+                    <li><a href="#tab-2">По стилю</a></li>
+                </ul>
+
+                <div class="tabs__items">
+                    <div class="tabs__item" id="tab-1">
+                        <div class="tabs__content">
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/room1.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Гостинная</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/room2.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Спальня</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/room3.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Детская</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/room4.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Кабинет</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tabs__item" id="tab-2">
+                        <div class="tabs__content">
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/style1.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Этнические</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/style2.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Классические</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/style3.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Геометрия</div>
+                            </a>
+                            <a href="forhome.html">
+                                <div class="tabs__img">
+                                    <img src="images/style4.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Современные</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__drop-button white-button">
+                <a href="forhome.html">Перейти в каталог</a>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="header__drop" id="dropdown2">
+        <div class="container">
+            <div class="header__drop-content" id="tabs2">
+                <ul class="tabs2__nav">
+                    <li><a href="#tab-0">По коммерции</a></li>
+                </ul>
+
+                <div class="tabs2__items">
+                    <div class="tabs__item" id="tab-0">
+                        <div class="tabs__content">
+                            <a href="forcommerce.html">
+                                <div class="tabs__img">
+                                    <img src="images/com1.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Для ресторанов</div>
+                            </a>
+                            <a href="forcommerce.html">
+                                <div class="tabs__img">
+                                    <img src="images/com2.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Для мечетей</div>
+                            </a>
+                            <a href="forcommerce.html">
+                                <div class="tabs__img">
+                                    <img src="images/com3.png" alt="image">
+                                </div>
+                                <div class="tabs__name">Для офисов</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__drop-button white-button">
+                <a href="forcommerce.html">Перейти в каталог</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!--Header menu end-->
+
+<!--Burger menu start-->
+<div class="burger" id="burger-menu">
+    <div class="burger__wrapper"></div>
+    <div class="burger__content">
+        <div class="burger__content-top">
+            <div class="burger__content-phone">
+                <a href="">
+                    <img src="images/phone2.svg" alt="icon">
+                </a>
+            </div>
+            <div class="burger__content-logo">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="logo">
+                </a>
+            </div>
+            <div class="zaglushka"></div>
+        </div>
+        <div class="burger__content-close" onclick="closeBurger()">
+            <img src="images/close-button-red.svg" alt="icon">
+        </div>
+        <div class="burger__content-menu">
+            <ul>
+                <li>
+                    <button onclick="catalogToggle()">Каталог
+                        <img src="images/drop.svg" alt="icon">
+                    </button>
+                    <div class="burger__inner" id="catalog-toggle">
+                        <div class="burger__inner-title">По комнате</div>
+                        <div class="burger__inner-content">
+                            <ul>
+                                <li>
+                                    <a href="forhome.html">Гостинная</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Спальня</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Детская</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Кабинет</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="burger__inner-title">По стилю</div>
+                        <div class="burger__inner-content">
+                            <ul>
+                                <li>
+                                    <a href="forhome.html">Этнические</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Классические</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Геометрия</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Современные</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#newitems">Новинки</a>
+                </li>
+                <li>
+                    <button onclick="commerceToggle()">Коммерческое
+                        <img src="images/drop.svg" alt="icon">
+                    </button>
+                    <div class="burger__inner" id="commerce-toggle">
+                        <div class="burger__inner-title">По коммерции</div>
+                        <div class="burger__inner-content">
+                            <ul>
+                                <li>
+                                    <a href="forcommerce.html">Этнические</a>
+                                </li>
+                                <li>
+                                    <a href="forcommerce.html">Для ресторанов</a>
+                                </li>
+                                <li>
+                                    <a href="forcommerce.html">Для офисов</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="services.html">Услуги</a>
+                </li>
+                <li>
+                    <a href="about.html">О компании</a>
+                </li>
+                <li>
+                    <a href="#faq">FAQ</a>
+                </li>
+                <li>
+                    <a href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="burger__content-lang">
+            <ul>
+                <li class="lang"><a href="">Kaz</a></li>
+                <li class="lang lang-active"><a href="">Rus</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div class="burger__content-buttons">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/whtsp-icon.svg" alt="icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <img src="images/heart-icon.svg" alt="icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <img src="images/cart-icon.svg" alt="icon">
+                        <p>2</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="burger__content-graphic">Ежедневно c 10:00 дом 20:00</div>
+
+    </div>
+</div>
+<!--Burger menu start-->
+
+    <main class="main">
+        <div class="container">
+            <div class="goBack">
+                <div>
+                    <img src="images/back.svg" alt="icon">
+                    <a href="/">Вернуться назад</a>
+                </div>
+            </div>
+            <div class="offer">
+                <div class="offer__title page-title">Публичная оферта</div>
+                <div class="offer__content editors">
+                    <h2>1.Определение терминов</h2>
+                    <ol>
+                        <li>
+                            1.1.Публичная оферта (далее – «Оферта») - публичное предложение Продавца, адресованное
+                            неопределенному кругу лиц, заключить с Продавцом договор купли-продажи товара дистанционным
+                            способом (далее - «Договор») на условиях, содержащихся в настоящей Оферте, включая все
+                            Приложения.
+                        </li>
+                        <li>
+                            1.2. Заказ Товара на сайте Интернет-магазина – позиции указанные Покупателем из ассортимента
+                            Товара, предложенного к продаже, при оформлении заявки на приобретение Товара на сайте
+                            Интернет-магазина или через Оператора.
+                        </li>
+                    </ol>
+                    <ol>
+                        <li>
+                            2.1. Заказ Покупателем Товара, размещенного на сайте Интернет-магазина означает, что
+                            Покупатель согласен со всеми условиями настоящей Оферты.
+                        </li>
+                        <li>
+                            2.2. Администрация сайта Интернет-магазина имеет право вносить изменения в Оферту без
+                            уведомления Покупателя.
+                        </li>
+                        <li>
+                            2.3. Срок действия Оферты не ограничен, если иное не указано на сайте Интернет-магазина.
+                        </li>
+                        <li>
+                            2.4. Продавец предоставляет Покупателю полную и достоверную информацию о Товаре, включая
+                            информацию об основных потребительских свойствах Товара, месте изготовления, а также
+                            информацию о гарантийном сроке и сроке годности Товара на сайте Интернет магазина, в разделе
+                            название раздела.
+                        </li>
+                    </ol>
+                    <ol>
+                        <li>
+                            3.1. Цена на каждую позицию Товара указана на сайте Интернет-магазина.
+                        </li>
+                        <li>
+                            3.2. Продавец имеет право в одностороннем порядке изменить цену на любую позицию Товара.
+                        </li>
+                        <li>
+                            3.3. В случае изменения цены на заказанный Товар Продавец обязуется в течение количество
+                            дней проинформировать Покупателя об изменении цены Товара.
+                        </li>
+                        <li>
+                            3.4. Покупатель вправе подтвердить либо аннулировать Заказ на приобретение Товара, если цена
+                            изменена Продавцом после оформления Заказа.
+                        </li>
+                        <li>
+                            3.5. Изменение Продавцом цены на оплаченный Покупателем Товар не допускается.
+                        </li>
+                        <li>
+                            3.6. Продавец указывает стоимость доставки Товара на сайте Интернет-магазина либо сообщает
+                            Покупателю при оформлении заказа Оператором.
+                        </li>
+                        <li>
+                            3.7. Обязательства Покупателя по оплате Товара считаются исполненными с момента поступления
+                            Продавцом денежных средств.
+                        </li>
+                        <li>
+                            3.8. Расчеты между Продавцом и Покупателем за Товар производятся способами, указанными на
+                            сайте Интернет-магазина в разделеназвание раздела
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!--    Footer start-->
+<footer class="footer">
+    <div class="footer__white">
+        <div class="container">
+            <div class="footer__item">
+                <div class="footer__item-name">г.Алматы, ул.Жолдасбекова 9А, ТЦ Евразия, 2 этаж, бутик 235А</div>
+                <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+            </div>
+            <div class="footer__item">
+                <div class="footer__item-name">г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад "Томирис"</div>
+                <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+            </div>
+            <div class="footer__item">
+                <div class="footer__item-name">г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад "Томирис"</div>
+                <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer__red">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__top-menu">
+                    <div class="footer__list">
+                        <div class="footer__list-name">По стилю</div>
+                        <div class="footer__list-items">
+                            <ul>
+                                <li>
+                                    <a href="forhome.html">Этнические</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Классические</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Геометрия</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Современные</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__list">
+                        <div class="footer__list-name">По комнатам</div>
+                        <div class="footer__list-items">
+                            <ul>
+                                <li>
+                                    <a href="forhome.html">Гостинная</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Спальня</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Детская</a>
+                                </li>
+                                <li>
+                                    <a href="forhome.html">Кабинет</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__list">
+                        <div class="footer__list-name">Коммерческие</div>
+                        <div class="footer__list-items">
+                            <ul>
+                                <li>
+                                    <a href="forcommerce.html">Для ресторанов</a>
+                                </li>
+                                <li>
+                                    <a href="forcommerce.html">Для мечетей</a>
+                                </li>
+                                <li>
+                                    <a href="forcommerce.html">Для офисов</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__list">
+                        <div class="footer__list-name">Покупателям</div>
+                        <div class="footer__list-items">
+                            <ul>
+                                <li>
+                                    <a href="#newitems">Новинки</a>
+                                </li>
+                                <li>
+                                    <a href="services.html">Услуги</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">О компании</a>
+                                </li>
+                                <li>
+                                    <a href="#faq">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="contacts.html">Контакты</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__top-info">
+                    <div class="footer__numbers">
+                        <a href="">+7 702 680 05 05</a>
+                        <a href="">+7 702 845 05 05</a>
+                    </div>
+                    <div class="footer__contacts">
+                        <div class="footer__contacts-mail">
+                            <a href="">ernar.tym@gmail.com</a>
+                        </div>
+                        <div class="footer__contacts-socials">
+                            <a href="">
+                                <img src="images/insta.svg" alt="icon">
+                            </a>
+                            <a href="">
+                                <img src="images/wats.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                    <button onclick="openCallback()" class="footer__button white-button">Связатья с нами</button>
+                </div>
+            </div>
+            <div class="footer__bot">
+                <div class="footer__bot-links">
+                    <a href="policy.html">Политика конфиденциальности</a>
+                    <a href="offer.html">Публичная оферта</a>
+                </div>
+                <div class="footer__bot-years">1997-2022 © Тамирис</div>
+                <div class="footer__bot-production">
+                    <a href="https://i-marketing.kz/">
+                        <picture>
+                            <img src="images/imarketing.svg" alt="logo">
+                        </picture>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--    Footer end-->
+
+<div class="callback-modal" id="callback-modal">
+    <div class="callback__wrapper">
+
+    </div>
+    <div class="callback__content">
+        <div class="callback__close" onclick="closeCallback()">
+            <img src="images/close-button.svg" alt="icon">
+        </div>
+        <div class="callback__title">Связаться с нами</div>
+        <div class="callback__text">Напишите нам и мы свяжемся с Вами!</div>
+        <div class="callback__form">
+            <form action="#">
+                <div class="callback__inputs">
+                    <input type="text" placeholder="Имя*">
+                    <input type="text" placeholder="Телефон*">
+                    <input type="text" placeholder="E-mail">
+                    <input type="text" placeholder="Ваше сообщение">
+                </div>
+                <div class="check">
+                    <input type="checkbox">
+                    <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                            href="policy.html">политикой
+                        конфиденциальности</a></p>
+                </div>
+                <button class="callback__button red-button" onclick="closeCallback()">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="thanks-modal" id="thanks-modal">
+    <div class="thanks__wrapper">
+    </div>
+    <div class="thanks__content">
+        <div class="thanks__img">
+            <img src="images/thanks.png" alt="image">
+        </div>
+        <div class="thanks__info">
+            <div class="thanks__info-title">Спасибо за заказ</div>
+            <div class="thanks__info-text">Ваш заказ принят в обработку.
+                Мы свяжемся с Вами в ближайшее время</div>
+        </div>
+        <button class="thanks__button red-button" onclick="closeThanks()">Готово</button>
+    </div>
+</div>
+
+<div class="review-modal" id="review-modal">
+    <div class="review__wrapper">
+    </div>
+    <div class="review__content">
+        <div class="review__close" onclick="closeReview()">
+            <img src="images/close-button.svg" alt="icon">
+        </div>
+        <div class="revmod__title">Оставить заявку</div>
+        <div class="revmod__text">Оставьте заявку и мы свяжемся с Вами!</div>
+        <input type="text" placeholder="Имя*">
+        <input type="text" placeholder="Телефон*">
+        <div class="check">
+            <input type="checkbox">
+            <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                    href="policy.html">политикой
+                конфиденциальности</a></p>
+        </div>
+        <div class="revmod__button red-button">Отправить</div>
+    </div>
+</div>
+
+</body>
+
+<script src="http://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+<script src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script src="js/slides.js" defer></script>
+<script src="js/script.js" defer></script>
+
+</html>

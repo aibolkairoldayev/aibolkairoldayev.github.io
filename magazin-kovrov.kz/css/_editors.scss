@@ -1,0 +1,49 @@
+.editors {
+    
+    ul {
+        li {
+            list-style-type: disc;
+            font-family: 'Bellota Text';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 25px;
+            color: #333333;
+        }
+    }
+    ol {
+        li {
+            list-style-type: none;
+            font-family: 'Bellota Text';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 25px;
+            color: #333333;
+        }
+    }
+    strong {
+        font-weight: 600;
+    }
+    em {
+        font-style: italic;
+    }
+    p {
+        font-family: 'Bellota Text';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        color: #333333;
+    }
+   
+    h2 {
+        font-family: 'Bona Nova';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: 0.2em;
+        color: #333333;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/logo.svg">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Tomiris</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Bellota+Text:wght@400;700&family=Bona+Nova:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="notFound">
+        <div class="container">
+            <div class="notFound__content">
+                <div class="notFound__content-title">Ой...</div>
+                <div class="notFound__content-text">К сожалению
+                    страница <br>
+                    не найдена</div>
+                <div class="notFound__content-button red-button">
+                    <a href="forhome.html">Перейти в каталог</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<div class="callback-modal" id="callback-modal">
+    <div class="callback__wrapper">
+
+    </div>
+    <div class="callback__content">
+        <div class="callback__close" onclick="closeCallback()">
+            <img src="images/close-button.svg" alt="icon">
+        </div>
+        <div class="callback__title">Связаться с нами</div>
+        <div class="callback__text">Напишите нам и мы свяжемся с Вами!</div>
+        <div class="callback__form">
+            <form action="#">
+                <div class="callback__inputs">
+                    <input type="text" placeholder="Имя*">
+                    <input type="text" placeholder="Телефон*">
+                    <input type="text" placeholder="E-mail">
+                    <input type="text" placeholder="Ваше сообщение">
+                </div>
+                <div class="check">
+                    <input type="checkbox">
+                    <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                            href="policy.html">политикой
+                        конфиденциальности</a></p>
+                </div>
+                <button class="callback__button red-button" onclick="closeCallback()">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="thanks-modal" id="thanks-modal">
+    <div class="thanks__wrapper">
+    </div>
+    <div class="thanks__content">
+        <div class="thanks__img">
+            <img src="images/thanks.png" alt="image">
+        </div>
+        <div class="thanks__info">
+            <div class="thanks__info-title">Спасибо за заказ</div>
+            <div class="thanks__info-text">Ваш заказ принят в обработку.
+                Мы свяжемся с Вами в ближайшее время</div>
+        </div>
+        <button class="thanks__button red-button" onclick="closeThanks()">Готово</button>
+    </div>
+</div>
+
+<div class="review-modal" id="review-modal">
+    <div class="review__wrapper">
+    </div>
+    <div class="review__content">
+        <div class="review__close" onclick="closeReview()">
+            <img src="images/close-button.svg" alt="icon">
+        </div>
+        <div class="revmod__title">Оставить заявку</div>
+        <div class="revmod__text">Оставьте заявку и мы свяжемся с Вами!</div>
+        <input type="text" placeholder="Имя*">
+        <input type="text" placeholder="Телефон*">
+        <div class="check">
+            <input type="checkbox">
+            <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                    href="policy.html">политикой
+                конфиденциальности</a></p>
+        </div>
+        <div class="revmod__button red-button">Отправить</div>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+<script src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script src="js/slides.js" defer></script>
+<script src="js/script.js" defer></script>
+
+</html>

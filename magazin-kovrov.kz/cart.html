@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/logo.svg">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Tomiris</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Bellota+Text:wght@400;700&family=Bona+Nova:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--Header menu start-->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-burger" onclick="openBurger()">
+                    <img src="images/burger-icon.svg" alt="icon">
+                </div>
+                <div class="header__top-logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="header__top-table">Ежедневно c 10:00 дом 20:00</div>
+                <div class="header__top-phone">
+                    <a href="#">
+                        +7 (702) 680 05 05
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="header__bot">
+            <div class="container">
+                <div class="header__bot-menu">
+                    <ul>
+                        <li onclick="openMenu()">
+                            <a id="menuItem1" href="#">Каталог <img src="images/drop.svg" alt="icon"></a>
+                        </li>
+                        <li>
+                            <a id="menuItem" class="menu--item " href="#newitems">Новинки</a>
+                        </li>
+                        <li onclick="openMenu2()">
+                            <a id="menuItem2" class="menu--item " href="#">Коммерческое
+                                <img src="images/drop.svg" alt="icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="menu--item " href="services.html">Услуги</a>
+                        </li>
+                        <li>
+                            <a class="menu--item " href="about.html">О компании</a>
+                        </li>
+                        <li>
+                            <a class="menu--item " href="#faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="menu--item " href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__bot-lang">
+                    <ul>
+                        <li class="lang"><a href="">Kaz</a></li>
+                        <li class="lang lang-active"><a href="">Rus</a></li>
+                    </ul>
+                </div>
+                <div class="header__bot-buttons">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="images/whtsp-icon.svg" alt="icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="chosen.html">
+                                <img src="images/heart-icon.svg" alt="icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cart.html">
+                                <img src="images/cart-icon.svg" alt="icon">
+                                <p>2</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header__drop" id="dropdown1">
+            <div class="container">
+                <div class="header__drop-content" id="tabs">
+                    <ul class="tabs__nav">
+                        <li><a href="#tab-1">По комнате</a></li>
+                        <li><a href="#tab-2">По стилю</a></li>
+                    </ul>
+
+                    <div class="tabs__items">
+                        <div class="tabs__item" id="tab-1">
+                            <div class="tabs__content">
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/room1.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Гостинная</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/room2.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Спальня</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/room3.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Детская</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/room4.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Кабинет</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tabs__item" id="tab-2">
+                            <div class="tabs__content">
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/style1.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Этнические</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/style2.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Классические</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/style3.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Геометрия</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/style4.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Современные</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__drop-button white-button">
+                    <a href="forhome.html">Перейти в каталог</a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="header__drop" id="dropdown2">
+            <div class="container">
+                <div class="header__drop-content" id="tabs2">
+                    <ul class="tabs2__nav">
+                        <li><a href="#tab-0">По коммерции</a></li>
+                    </ul>
+
+                    <div class="tabs2__items">
+                        <div class="tabs__item" id="tab-0">
+                            <div class="tabs__content">
+                                <a href="forcommerce.html">
+                                    <div class="tabs__img">
+                                        <img src="images/com1.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Для ресторанов</div>
+                                </a>
+                                <a href="forcommerce.html">
+                                    <div class="tabs__img">
+                                        <img src="images/com2.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Для мечетей</div>
+                                </a>
+                                <a href="forcommerce.html">
+                                    <div class="tabs__img">
+                                        <img src="images/com3.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Для офисов</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__drop-button white-button">
+                    <a href="forcommerce.html">Перейти в каталог</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header menu end-->
+
+    <!--Burger menu start-->
+    <div class="burger" id="burger-menu">
+        <div class="burger__wrapper"></div>
+        <div class="burger__content">
+            <div class="burger__content-top">
+                <div class="burger__content-phone">
+                    <a href="">
+                        <img src="images/phone2.svg" alt="icon">
+                    </a>
+                </div>
+                <div class="burger__content-logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="zaglushka"></div>
+            </div>
+            <div class="burger__content-close" onclick="closeBurger()">
+                <img src="images/close-button-red.svg" alt="icon">
+            </div>
+            <div class="burger__content-menu">
+                <ul>
+                    <li>
+                        <button onclick="catalogToggle()">Каталог
+                            <img src="images/drop.svg" alt="icon">
+                        </button>
+                        <div class="burger__inner" id="catalog-toggle">
+                            <div class="burger__inner-title">По комнате</div>
+                            <div class="burger__inner-content">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Гостинная</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Спальня</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Детская</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Кабинет</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="burger__inner-title">По стилю</div>
+                            <div class="burger__inner-content">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Этнические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Классические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Геометрия</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Современные</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#newitems">Новинки</a>
+                    </li>
+                    <li>
+                        <button onclick="commerceToggle()">Коммерческое
+                            <img src="images/drop.svg" alt="icon">
+                        </button>
+                        <div class="burger__inner" id="commerce-toggle">
+                            <div class="burger__inner-title">По коммерции</div>
+                            <div class="burger__inner-content">
+                                <ul>
+                                    <li>
+                                        <a href="forcommerce.html">Этнические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для ресторанов</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для офисов</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="services.html">Услуги</a>
+                    </li>
+                    <li>
+                        <a href="about.html">О компании</a>
+                    </li>
+                    <li>
+                        <a href="#faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="burger__content-lang">
+                <ul>
+                    <li class="lang"><a href="">Kaz</a></li>
+                    <li class="lang lang-active"><a href="">Rus</a></li>
+                </ul>
+            </div>
+            <hr>
+            <div class="burger__content-buttons">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/whtsp-icon.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <img src="images/heart-icon.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <img src="images/cart-icon.svg" alt="icon">
+                            <p>2</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="burger__content-graphic">Ежедневно c 10:00 дом 20:00</div>
+
+        </div>
+    </div>
+    <!--Burger menu start-->
+
+    <main class="main">
+        <div class="cart">
+            <div class="container">
+                <h2 class="cart__title page-title">Корзина</h2>
+                <div class="cart__text">Ваши товары</div>
+                <div class="cart__content">
+                    <div class="cart__content-names">
+                        <p>Товар</p>
+                        <p>Размер</p>
+                        <p>Количество</p>
+                    </div>
+                    <div class="cart__content-items">
+                        <div class="cart__item">
+                            <div class="cart__item-info">
+                                <div class="cart__img">
+                                    <picture>
+                                        <img src="images/catalog1.png" alt="img">
+                                    </picture>
+                                </div>
+                                <div class="cart__info">
+                                    <div class="cart__info-name">Rivoli</div>
+                                    <div class="cart__info-made">
+                                        <p>Производство: </p> Иран
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__item-size">3.03 × 4.26м</div>
+                            <div class="cart__item-count" data-step="1" data-min="1" data-max="100">
+                                <input class="number-text" type="number" name="count" value="1" min="1">
+                                <div class="cart__buttons">
+                                    <button class="number-plus">
+                                        <img src="images/plus.svg" alt="">
+                                    </button>
+                                    <hr>
+                                    <button class="number-minus">
+                                        <img src="images/minus.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="cart__button">
+                                <img src="images/close-small.svg" alt="icon">
+                            </button>
+                        </div>
+                        <div class="cart__item">
+                            <div class="cart__item-info">
+                                <div class="cart__img">
+                                    <picture>
+                                        <img src="images/catalog2.png" alt="img">
+                                    </picture>
+                                </div>
+                                <div class="cart__info">
+                                    <div class="cart__info-name">Cartie Collection</div>
+                                    <div class="cart__info-made">
+                                        <p>Производство: </p> Иран
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__item-size">3.03 × 4.26м</div>
+                            <div class="cart__item-count" data-step="1" data-min="1" data-max="100">
+                                <input class="number-text" type="number" name="count" value="1" min="1">
+                                <div class="cart__buttons">
+                                    <button class="number-plus">
+                                        <img src="images/plus.svg" alt="">
+                                    </button>
+                                    <hr>
+                                    <button class="number-minus">
+                                        <img src="images/minus.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="cart__button">
+                                <img src="images/close-small.svg" alt="icon">
+                            </button>
+                        </div>
+                    </div>
+                    <button class="cart__clear">
+                        Очистить корзину
+                        <img src="images/close-small.svg" alt="icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <section class="registration">
+            <h2 class="registration__title">Оформление</h2>
+            <div class="registration__content" id="tabs-r1">
+                <div class="container">
+                    <ul class="tabs__nav-r1">
+                        <li><a href="#tab-1-r1">Юридическое лицо</a></li>
+                        <li><a href="#tab-2-r1">Физическое лицо</a></li>
+                    </ul>
+                </div>
+                <hr>
+
+                <div class="container">
+                    <div class="tabs__items-r1">
+                        <div class="tabs__item-r1" id="tab-1-r1">
+                            <div class="tabs__content-r1">
+                                <div class="header__drop-content" id="tabs-r2">
+                                    <ul class="tabs__nav-r2">
+                                        <li><a href="#tab-1-r2">Самовывоз</a></li>
+                                        <li><a href="#tab-2-r2">Доставка</a></li>
+                                    </ul>
+
+                                    <div class="tabs__items-r2">
+                                        <div class="tabs__item-r2" id="tab-1-r2">
+                                            <div class="tabs__content-r2">
+                                                <div class="tabs-r2__form">
+                                                    <div class="tabs-r2__form-inputs">
+                                                        <input type="text" placeholder="Имя*">
+                                                        <input type="text" placeholder="Телефон*">
+                                                    </div>
+                                                    <label for="bankinfo">Реквизиты*</label>
+                                                    <input class="tabs-r2__textarea" type="text" id="bankinfo">
+                                                </div>
+                                                <div class="tabs-r2__text">
+                                                    "После отправки ревизитов, наш менеджер свяжется с Вами для
+                                                    выставления счета на оплату
+                                                </div>
+                                                <div class="tabs-r2__address">
+                                                    <div class="tabs-r2__address-title">Пункты выдачи</div>
+
+                                                    <div id="tabs-r3">
+                                                        <div class="tabs-r2__address-items tabs__nav-r3">
+                                                            <section class="tabs-r2__item">
+                                                                <h3 class="tabs-r2__item-name">г.Алматы,
+                                                                    ул.Жолдасбекова
+                                                                    9А, ТЦ Евразия, 2 этаж,
+                                                                    бутик 235А</h3>
+                                                                <div class="tabs-r2__item-map">
+                                                                    <a>Показать на карте</a>
+                                                                </div>
+                                                                <div class="tabs-r2__item-graphic">Ежедневно
+                                                                    с 10:00-20:00</div>
+                                                            </section>
+                                                            <section class="tabs-r2__item">
+                                                                <h3 class="tabs-r2__item-name">
+                                                                    г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад
+                                                                    "Томирис"
+                                                                </h3>
+                                                                <div class="tabs-r2__item-map">
+                                                                    <a>Показать на карте</a>
+                                                                </div>
+                                                                <div class="tabs-r2__item-graphic">Ежедневно
+                                                                    с 09:00-21:00</div>
+                                                            </section>
+                                                            <section class="tabs-r2__item">
+                                                                <h3 class="tabs-r2__item-name">
+                                                                    г. Алматы, Северное кольцо, рынок Арлан, 2 этаж
+                                                                </h3>
+                                                                <div class="tabs-r2__item-map">
+                                                                    <a>Показать на карте</a>
+                                                                </div>
+                                                                <div class="tabs-r2__item-graphic">Ежедневно
+                                                                    с 09:00-21:00</div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tabs__item-r2" id="tab-2-r2">
+                                            <div class="tabs__content-r2">
+                                                <form class="shipping">
+                                                    <div class="shipping__inputs">
+                                                        <input type="text" placeholder="Имя*">
+                                                        <input type="text" placeholder="Телефон*">
+                                                        <select name="dropSelect">
+                                                            <option value="P">Город:</option>
+                                                            <option value="A">Алматы</option>
+                                                            <option value="B">Астана</option>
+                                                            <option value="C">Шымкент</option>
+                                                            <option value="D">Тараз</option>
+                                                            <option value="F">Кызылорда</option>
+                                                            <option value="G">Туркестан</option>
+                                                            <option value="H">Оскемен</option>
+                                                            <option value="I">Семей</option>
+                                                            <option value="G">Талдыкорган</option>
+                                                            <option value="K">Павлодар</option>
+                                                            <option value="L">Караганда</option>
+                                                            <option value="M">Жезказган</option>
+                                                            <option value="N">Костанай</option>
+                                                            <option value="O">Актобе</option>
+                                                            <option value="P">Атырау</option>
+                                                            <option value="Q">Актау</option>
+                                                            <option value="R">Орал</option>
+                                                            <option value="S">Кокшетау</option>
+                                                        </select>
+                                                    </div>
+                                                    <input class="shipping__address" type="text" placeholder="Адрес*">
+                                                    <label for="ship">Реквизиты*</label>
+                                                    <textarea name="ship" id="ship"></textarea>
+                                                </form>
+                                                <div class="shipping__text">
+                                                    "После отправки ревизитов, наш менеджер свяжется с Вами для
+                                                    выставления счета на оплату
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs__item-r1" id="tab-2-r1">
+                            <div class="tabs__content-r1">
+                                <div class="header__drop-content" id="tabs-r4">
+                                    <ul class="tabs__nav-r4">
+                                        <li><a href="#tab-1-r4">Самовывоз</a></li>
+                                        <li><a href="#tab-2-r4">Доставка</a></li>
+                                    </ul>
+
+                                    <div class="tabs__items-r4">
+                                        <div class="tabs__item-r2" id="tab-1-r4">
+                                            <div class="tabs__content-r2">
+                                                <div class="tabs-r2__form">
+                                                    <div class="tabs-r2__form-inputs">
+                                                        <input type="text" placeholder="Имя*">
+                                                        <input type="text" placeholder="Телефон*">
+                                                    </div>
+                                                </div>
+                                                <div class="tabs-r2__address">
+                                                    <div class="tabs-r2__address-title">Пункты выдачи</div>
+
+                                                    <div id="tabs-r7">
+                                                        <div class="tabs-r2__address-items tabs__nav-r7">
+                                                            <section class="tabs-r2__item">
+                                                                <h3 class="tabs-r2__item-name">г.Алматы,
+                                                                    ул.Жолдасбекова
+                                                                    9А, ТЦ Евразия, 2 этаж,
+                                                                    бутик 235А</h3>
+                                                                <div class="tabs-r2__item-map">
+                                                                    <a>Показать на карте</a>
+                                                                </div>
+                                                                <div class="tabs-r2__item-graphic">Ежедневно
+                                                                    с 10:00-20:00</div>
+                                                            </section>
+                                                            <section class="tabs-r2__item">
+                                                                <h3 class="tabs-r2__item-name">
+                                                                    г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад
+                                                                    "Томирис"
+                                                                </h3>
+                                                                <div class="tabs-r2__item-map">
+                                                                    <a>Показать на карте</a>
+                                                                </div>
+                                                                <div class="tabs-r2__item-graphic">Ежедневно
+                                                                    с 09:00-21:00</div>
+                                                            </section>
+                                                            <section class="tabs-r2__item">
+                                                                <h3 class="tabs-r2__item-name">
+                                                                    г. Алматы, Северное кольцо, рынок Арлан, 2 этаж
+                                                                </h3>
+                                                                <div class="tabs-r2__item-map">
+                                                                    <a>Показать на карте</a>
+                                                                </div>
+                                                                <div class="tabs-r2__item-graphic">Ежедневно
+                                                                    с 09:00-21:00</div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="payment">
+                                                    <div class="payment__title">Способ оплаты</div>
+                                                    <div class="payment__content" id="tabs-r5">
+                                                        <ul class="tabs__nav-r5">
+                                                            <li><a href="#tab-1-r5">Оплата онлайн</a></li>
+                                                            <li><a href="#tab-2-r5">При получении</a></li>
+                                                            <li><a href="#tab-3-r5">Рассрочка</a></li>
+                                                        </ul>
+
+                                                        <div class="tabs__items-r5">
+                                                            <div class="tabs__item-r5" id="tab-1-r5">
+                                                                <div class="tabs__content-r5">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="tabs__item-r5" id="tab-2-r5">
+                                                                <div class="tabs__content-r5">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="tabs__item-r5" id="tab-3-r5">
+                                                                <div class="tabs__content-r5">
+                                                                    <div class="bank" id="tabs-r6">
+
+                                                                        <div class="tabs__nav-r6">
+                                                                            <a class="" href="#tab-1-r6">
+                                                                                <img src="images/bank1.png" alt="icon">
+                                                                            </a>
+                                                                            <a class="" href="#tab-2-r6">
+                                                                                <img src="images/bank2.png" alt="icon">
+                                                                            </a>
+                                                                            <a class="" href="#tab-3-r6">
+                                                                                <img src="images/bank3.png" alt="icon">
+                                                                            </a>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="payment__text">
+                                                        Наш менеджер свяжется с Вами для подтверждения заказа
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tabs__item-r2" id="tab-2-r4">
+                                            <div class="tabs__content-r2">
+                                                <form class="shipping">
+                                                    <div class="shipping__inputs">
+                                                        <input type="text" placeholder="Имя*">
+                                                        <input type="text" placeholder="Телефон*">
+                                                        <select name="dropSelect">
+                                                            <option value="P">Город:</option>
+                                                            <option value="A">Алматы</option>
+                                                            <option value="B">Астана</option>
+                                                            <option value="C">Шымкент</option>
+                                                            <option value="D">Тараз</option>
+                                                            <option value="F">Кызылорда</option>
+                                                            <option value="G">Туркестан</option>
+                                                            <option value="H">Оскемен</option>
+                                                            <option value="I">Семей</option>
+                                                            <option value="G">Талдыкорган</option>
+                                                            <option value="K">Павлодар</option>
+                                                            <option value="L">Караганда</option>
+                                                            <option value="M">Жезказган</option>
+                                                            <option value="N">Костанай</option>
+                                                            <option value="O">Актобе</option>
+                                                            <option value="P">Атырау</option>
+                                                            <option value="Q">Актау</option>
+                                                            <option value="R">Орал</option>
+                                                            <option value="S">Кокшетау</option>
+                                                        </select>
+                                                    </div>
+                                                    <input class="shipping__address" type="text" placeholder="Адрес*">
+
+                                                </form>
+                                                <div class="payment">
+                                                    <div class="payment__title">Способ оплаты</div>
+                                                    <div class="payment__content" id="tabs-r8">
+                                                        <ul class="tabs__nav-r8">
+                                                            <li><a href="#tab-1-r8">Оплата онлайн</a></li>
+                                                            <li><a href="#tab-2-r8">При получении</a></li>
+                                                            <li><a href="#tab-3-r8">Рассрочка</a></li>
+                                                        </ul>
+
+                                                        <div class="tabs__items-r8">
+                                                            <div class="tabs__item-r5" id="tab-1-r8">
+                                                                <div class="tabs__content-r5">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="tabs__item-r5" id="tab-2-r8">
+                                                                <div class="tabs__content-r5">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="tabs__item-r5" id="tab-3-r8">
+                                                                <div class="tabs__content-r5">
+                                                                    <div class="bank" id="tabs-r9">
+
+                                                                        <div class="tabs__nav-r9">
+                                                                            <a class="" href="#tab-1-r9">
+                                                                                <img src="images/bank1.png" alt="icon">
+                                                                            </a>
+                                                                            <a class="" href="#tab-2-r9">
+                                                                                <img src="images/bank2.png" alt="icon">
+                                                                            </a>
+                                                                            <a class="" href="#tab-3-r9">
+                                                                                <img src="images/bank3.png" alt="icon">
+                                                                            </a>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="payment__text">
+                                                        "После отправки ревизитов, наш менеджер свяжется с Вами для
+                                                        выставления счета на оплату
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="registration__button red-button" onclick="openThanks()">Оформить</button>
+            <div class="container">
+                <div class="registration__info">
+                    <div class="registration__info-text">
+                        *Доставка товара осуществляется в срок предусмотренный договором/счетом или заказом. Временной
+                        интервал с 7:00 до 18:00. Так же, мы осуществляем позднюю доставку, с 18:00 до 21:00 + 50% к
+                        стоимости услуги, с 21:00 +100% к стоимости услуги. Если вы хотите получить заказ в выходной -
+                        пожалуйста, сообщите менеджеру при оформлении заказа.
+                    </div>
+                    <div class="registration__info-text">*Для обмена, возврата товара или устранения недостатков в
+                        товаре, необходимо обратиться в службу поддержки клиентов Продавца по телефонам:
+                        +7(702) 680 05 05, +7(702) 845 05 05</div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__white">
+            <div class="container">
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Жолдасбекова 9А, ТЦ Евразия, 2 этаж, бутик 235А</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад "Томирис"</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад "Томирис"</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__red">
+            <div class="container">
+                <div class="footer__top">
+                    <div class="footer__top-menu">
+                        <div class="footer__list">
+                            <div class="footer__list-name">По стилю</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Этнические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Классические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Геометрия</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Современные</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">По комнатам</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Гостинная</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Спальня</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Детская</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Кабинет</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">Коммерческие</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forcommerce.html">Для ресторанов</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для мечетей</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для офисов</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">Покупателям</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="#newitems">Новинки</a>
+                                    </li>
+                                    <li>
+                                        <a href="services.html">Услуги</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">О компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="#faq">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="contacts.html">Контакты</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__top-info">
+                        <div class="footer__numbers">
+                            <a href="">+7 702 680 05 05</a>
+                            <a href="">+7 702 845 05 05</a>
+                        </div>
+                        <div class="footer__contacts">
+                            <div class="footer__contacts-mail">
+                                <a href="">ernar.tym@gmail.com</a>
+                            </div>
+                            <div class="footer__contacts-socials">
+                                <a href="">
+                                    <img src="images/insta.svg" alt="icon">
+                                </a>
+                                <a href="">
+                                    <img src="images/wats.svg" alt="icon">
+                                </a>
+                            </div>
+                        </div>
+                        <button onclick="openCallback()" class="footer__button white-button">Связатья с нами</button>
+                    </div>
+                </div>
+                <div class="footer__bot">
+                    <div class="footer__bot-links">
+                        <a href="policy.html">Политика конфиденциальности</a>
+                        <a href="offer.html">Публичная оферта</a>
+                    </div>
+                    <div class="footer__bot-years">1997-2022 © Тамирис</div>
+                    <div class="footer__bot-production">
+                        <a href="https://i-marketing.kz/">
+                            <picture>
+                                <img src="images/imarketing.svg" alt="logo">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--    Footer end-->
+
+    <div class="callback-modal" id="callback-modal">
+        <div class="callback__wrapper">
+
+        </div>
+        <div class="callback__content">
+            <div class="callback__close" onclick="closeCallback()">
+                <img src="images/close-button.svg" alt="icon">
+            </div>
+            <div class="callback__title">Связаться с нами</div>
+            <div class="callback__text">Напишите нам и мы свяжемся с Вами!</div>
+            <div class="callback__form">
+                <form action="#">
+                    <div class="callback__inputs">
+                        <input type="text" placeholder="Имя*">
+                        <input type="text" placeholder="Телефон*">
+                        <input type="text" placeholder="E-mail">
+                        <input type="text" placeholder="Ваше сообщение">
+                    </div>
+                    <div class="check">
+                        <input type="checkbox">
+                        <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                                href="policy.html">политикой
+                                конфиденциальности</a></p>
+                    </div>
+                    <button class="callback__button red-button" onclick="closeCallback()">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="thanks-modal" id="thanks-modal">
+        <div class="thanks__wrapper">
+        </div>
+        <div class="thanks__content">
+            <div class="thanks__img">
+                <img src="images/thanks.png" alt="image">
+            </div>
+            <div class="thanks__info">
+                <div class="thanks__info-title">Спасибо за заказ</div>
+                <div class="thanks__info-text">Ваш заказ принят в обработку.
+                    Мы свяжемся с Вами в ближайшее время</div>
+            </div>
+            <button class="thanks__button red-button" onclick="closeThanks()">Готово</button>
+        </div>
+    </div>
+
+    <div class="review-modal" id="review-modal">
+        <div class="review__wrapper">
+        </div>
+        <div class="review__content">
+            <div class="review__close" onclick="closeReview()">
+                <img src="images/close-button.svg" alt="icon">
+            </div>
+            <div class="revmod__title">Оставить заявку</div>
+            <div class="revmod__text">Оставьте заявку и мы свяжемся с Вами!</div>
+            <input type="text" placeholder="Имя*">
+            <input type="text" placeholder="Телефон*">
+            <div class="check">
+                <input type="checkbox">
+                <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                        href="policy.html">политикой
+                        конфиденциальности</a></p>
+            </div>
+            <div class="revmod__button red-button">Отправить</div>
+        </div>
+    </div>
+
+</body>
+
+<script src="http://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous" defer></script>
+<script src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script src="js/slides.js" defer></script>
+<script src="js/script.js" defer></script>
+
+</html>

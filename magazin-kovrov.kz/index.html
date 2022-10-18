@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/logo.svg">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Tomiris</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Bellota+Text:wght@400;700&family=Bona+Nova:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--Header menu start-->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-burger" onclick="openBurger()">
+                    <img src="images/burger-icon.svg" alt="icon">
+                </div>
+                <div class="header__top-logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="header__top-table">Ежедневно c 10:00 дом 20:00</div>
+                <div class="header__top-phone">
+                    <a href="#">
+                        +7 (702) 680 05 05
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="header__bot">
+            <div class="container">
+                <div class="header__bot-menu">
+                    <ul>
+                        <li onclick="openMenu()">
+                            <a id="menuItem1" href="#">Каталог <img src="images/drop.svg" alt="icon"></a>
+                        </li>
+                        <li>
+                            <a id="menuItem" class="menu--item " href="#newitems">Новинки</a>
+                        </li>
+                        <li onclick="openMenu2()">
+                            <a id="menuItem2" class="menu--item " href="#">Коммерческое
+                                <img src="images/drop.svg" alt="icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="menu--item " href="services.html">Услуги</a>
+                        </li>
+                        <li>
+                            <a class="menu--item " href="about.html">О компании</a>
+                        </li>
+                        <li>
+                            <a class="menu--item " href="#faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="menu--item " href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__bot-lang">
+                    <ul>
+                        <li class="lang"><a href="">Kaz</a></li>
+                        <li class="lang lang-active"><a href="">Rus</a></li>
+                    </ul>
+                </div>
+                <div class="header__bot-buttons">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="images/whtsp-icon.svg" alt="icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="chosen.html">
+                                <img src="images/heart-icon.svg" alt="icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cart.html">
+                                <img src="images/cart-icon.svg" alt="icon">
+                                <p>2</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header__drop" id="dropdown1">
+            <div class="container">
+                <div class="header__drop-content" id="tabs">
+                    <ul class="tabs__nav">
+                        <li><a href="#tab-1">По комнате</a></li>
+                        <li><a href="#tab-2">По стилю</a></li>
+                    </ul>
+
+                    <div class="tabs__items">
+                        <div class="tabs__item" id="tab-1">
+                            <div class="tabs__content">
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/room1.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Гостинная</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/room2.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Спальня</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/room3.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Детская</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/room4.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Кабинет</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tabs__item" id="tab-2">
+                            <div class="tabs__content">
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/style1.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Этнические</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/style2.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Классические</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/style3.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Геометрия</div>
+                                </a>
+                                <a href="forhome.html">
+                                    <div class="tabs__img">
+                                        <img src="images/style4.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Современные</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__drop-button white-button">
+                    <a href="forhome.html">Перейти в каталог</a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="header__drop" id="dropdown2">
+            <div class="container">
+                <div class="header__drop-content" id="tabs2">
+                    <ul class="tabs2__nav">
+                        <li><a href="#tab-0">По коммерции</a></li>
+                    </ul>
+
+                    <div class="tabs2__items">
+                        <div class="tabs__item" id="tab-0">
+                            <div class="tabs__content">
+                                <a href="forcommerce.html">
+                                    <div class="tabs__img">
+                                        <img src="images/com1.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Для ресторанов</div>
+                                </a>
+                                <a href="forcommerce.html">
+                                    <div class="tabs__img">
+                                        <img src="images/com2.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Для мечетей</div>
+                                </a>
+                                <a href="forcommerce.html">
+                                    <div class="tabs__img">
+                                        <img src="images/com3.png" alt="image">
+                                    </div>
+                                    <div class="tabs__name">Для офисов</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__drop-button white-button">
+                    <a href="forcommerce.html">Перейти в каталог</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header menu end-->
+
+    <!--Burger menu start-->
+    <div class="burger" id="burger-menu">
+        <div class="burger__wrapper"></div>
+        <div class="burger__content">
+            <div class="burger__content-top">
+                <div class="burger__content-phone">
+                    <a href="">
+                        <img src="images/phone2.svg" alt="icon">
+                    </a>
+                </div>
+                <div class="burger__content-logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="zaglushka"></div>
+            </div>
+            <div class="burger__content-close" onclick="closeBurger()">
+                <img src="images/close-button-red.svg" alt="icon">
+            </div>
+            <div class="burger__content-menu">
+                <ul>
+                    <li>
+                        <button onclick="catalogToggle()">Каталог
+                            <img src="images/drop.svg" alt="icon">
+                        </button>
+                        <div class="burger__inner" id="catalog-toggle">
+                            <div class="burger__inner-title">По комнате</div>
+                            <div class="burger__inner-content">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Гостинная</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Спальня</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Детская</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Кабинет</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="burger__inner-title">По стилю</div>
+                            <div class="burger__inner-content">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Этнические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Классические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Геометрия</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Современные</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#newitems">Новинки</a>
+                    </li>
+                    <li>
+                        <button onclick="commerceToggle()">Коммерческое
+                            <img src="images/drop.svg" alt="icon">
+                        </button>
+                        <div class="burger__inner" id="commerce-toggle">
+                            <div class="burger__inner-title">По коммерции</div>
+                            <div class="burger__inner-content">
+                                <ul>
+                                    <li>
+                                        <a href="forcommerce.html">Этнические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для ресторанов</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для офисов</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="services.html">Услуги</a>
+                    </li>
+                    <li>
+                        <a href="about.html">О компании</a>
+                    </li>
+                    <li>
+                        <a href="#faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="burger__content-lang">
+                <ul>
+                    <li class="lang"><a href="">Kaz</a></li>
+                    <li class="lang lang-active"><a href="">Rus</a></li>
+                </ul>
+            </div>
+            <hr>
+            <div class="burger__content-buttons">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/whtsp-icon.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <img src="images/heart-icon.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <img src="images/cart-icon.svg" alt="icon">
+                            <p>2</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="burger__content-graphic">Ежедневно c 10:00 дом 20:00</div>
+
+        </div>
+    </div>
+    <!--Burger menu start-->
+
+    <main class="main">
+        <div class="banner">
+            <div class="banner__content">
+                <div class="banner__item" style="background-image: url(images/kover.png) ;">
+                    <div class="banner__item-info">
+                        <div class="banner__item-title">Большая распродажа</div>
+                        <div class="banner__item-text">
+                            с 15 июня в ТРЦ «Евразия» скидки до 50% на все модели ковров
+                        </div>
+                        <div class="banner__item-button red-button">
+                            <a href="">Выбрать ковёр</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner__item" style="background-image: url(images/kover.png) ;">
+                    <div class="banner__item-info">
+                        <div class="banner__item-title">Большая распродажа</div>
+                        <div class="banner__item-text">
+                            с 15 июня в ТРЦ «Евразия» скидки до 50% на все модели ковров
+                        </div>
+                        <div class="banner__item-button red-button">
+                            <a href="">Выбрать ковёр</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner__item" style="background-image: url(images/kover.png) ;">
+                    <div class="banner__item-info">
+                        <div class="banner__item-title">Большая распродажа</div>
+                        <div class="banner__item-text">
+                            с 15 июня в ТРЦ «Евразия» скидки до 50% на все модели ковров
+                        </div>
+                        <div class="banner__item-button red-button">
+                            <a href="">Выбрать ковёр</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="catalog">
+            <div class="container">
+                <h2 class="catalog__title main-title">Каталог</h2>
+                <div class="catalog__text">Вы можете выбрать ковёр по стилю или по комнате.</div>
+                <div class="catalog__block">
+                    <div class="catalog__block-title">По стилю</div>
+                    <div class="catalog__block-content">
+                        <div class="catalog__item" style="background-image: url(images/catalog1.png) ;">
+                            <div class="catalog__item-name">Этнические</div>
+                            <div class="catalog__item-number">24 модели</div>
+                            <div class="catalog__item-button white-button">
+                                <a href="forhome.html">
+                                    Смотреть
+                                </a>
+                            </div>
+                        </div>
+                        <div class="catalog__item" style="background-image: url(images/catalog2.png) ;">
+                            <div class="catalog__item-name">Классические</div>
+                            <div class="catalog__item-number">12 модели</div>
+                            <div class="catalog__item-button white-button">
+                                <a href="forhome.html">Смотреть</a>
+                            </div>
+                        </div>
+                        <div class="catalog__item" style="background-image: url(images/catalog3.png) ;">
+                            <div class="catalog__item-name">Геометрия</div>
+                            <div class="catalog__item-number">12 модели</div>
+                            <div class="catalog__item-button white-button">
+                                <a href="forhome.html">Смотреть</a>
+                            </div>
+                        </div>
+                        <div class="catalog__item" style="background-image: url(images/catalog4.png) ;">
+                            <div class="catalog__item-name">Современные</div>
+                            <div class="catalog__item-number">25 модели</div>
+                            <div class="catalog__item-button white-button">
+                                <a href="forhome.html">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="catalog__block">
+                    <div class="catalog__block-title">По комнате</div>
+                    <div class="catalog__block-content">
+                        <div class="catalog__item" style="background-image: url(images/catalog5.png) ;">
+                            <div class="catalog__item-name">Гостинная</div>
+                            <div class="catalog__item-number">24 модели</div>
+                            <div class="catalog__item-button white-button">
+                                <a href="forhome.html">Смотреть</a>
+                            </div>
+                        </div>
+                        <div class="catalog__item" style="background-image: url(images/catalog6.png) ;">
+                            <div class="catalog__item-name">Спальня</div>
+                            <div class="catalog__item-number">26 модели</div>
+                            <div class="catalog__item-button white-button">
+                                <a href="forhome.html">Смотреть</a>
+                            </div>
+                        </div>
+                        <div class="catalog__item" style="background-image: url(images/catalog7.png) ;">
+                            <div class="catalog__item-name">Детская</div>
+                            <div class="catalog__item-number">28 модели</div>
+                            <div class="catalog__item-button white-button">
+                                <a href="forhome.html">Смотреть</a>
+                            </div>
+                        </div>
+                        <div class="catalog__item" style="background-image: url(images/catalog8.png) ;">
+                            <div class="catalog__item-name">Кабинет</div>
+                            <div class="catalog__item-number">13 модели</div>
+                            <div class="catalog__item-button white-button">
+                                <a href="forhome.html">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="bestseller">
+            <div class="container">
+                <h2 class="bestseller__title main-title">Хит продаж</h2>
+                <div class="bestseller__text">
+                    <a href="forhome.html">Смотреть все хиты</a>
+                </div>
+                <div class="bestseller__content">
+                    <div class="bestseller__item">
+                        <div class="bestseller__item-img">
+                            <picture>
+                                <img src="images/bs1.png" alt="image">
+                            </picture>
+                            <div class="bestseller__item-buttons">
+                                <button class="heart-icon">
+                                </button>
+                                <button class="add-icon">
+                                    <img class="cart-icon" src="images/cart-icon.svg" alt="icon">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bestseller__item-info">
+                            <div class="bestseller__name">Rivoli</div>
+                            <div class="bestseller__made">
+                                <p>Производство:</p>
+                                Иран
+                            </div>
+                            <div class="bestseller__size">3.03 × 4.26м</div>
+                        </div>
+                        <div class="bestseller__item-button red-button">
+                            <a href="#">Запросить цену</a>
+                        </div>
+                    </div>
+                    <div class="bestseller__item">
+                        <div class="bestseller__item-img">
+                            <picture>
+                                <img src="images/bs2.png" alt="image">
+                            </picture>
+                            <div class="bestseller__item-buttons">
+                                <button class="heart-icon">
+                                </button>
+                                <button class="add-icon">
+                                    <img class="cart-icon" src="images/cart-icon.svg" alt="icon">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bestseller__item-info">
+                            <div class="bestseller__name">Cartie Collection</div>
+                            <div class="bestseller__made">
+                                <p>Производство:</p>
+                                Турция
+                            </div>
+                            <div class="bestseller__size">3.40 × 4.32м</div>
+                        </div>
+                        <div class="bestseller__item-button red-button">
+                            <a href="#">Запросить цену</a>
+                        </div>
+                    </div>
+                    <div class="bestseller__item">
+                        <div class="bestseller__item-img">
+                            <picture>
+                                <img src="images/bs1.png" alt="image">
+                            </picture>
+                            <div class="bestseller__item-buttons">
+                                <button class="heart-icon">
+                                </button>
+                                <button class="add-icon">
+                                    <img class="cart-icon" src="images/cart-icon.svg" alt="icon">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bestseller__item-info">
+                            <div class="bestseller__name">Rivoli</div>
+                            <div class="bestseller__made">
+                                <p>Производство:</p>
+                                Бангладеш
+                            </div>
+                            <div class="bestseller__size">3.03 × 4.66м</div>
+                        </div>
+                        <div class="bestseller__item-button red-button">
+                            <a href="#">Запросить цену</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="collection" id="newitems">
+            <div class="container">
+                <h2 class="container__title main-title">Новая коллекция</h2>
+                <div class="collection__text">Новая коллекция современных ковров дополнит и преобразит Ваш интерьер.
+                </div>
+                <div class="collection__seeall">
+                    <a href="forhome.html">
+                        Смотреть всю коллекцию
+                    </a>
+                </div>
+                <div class="collection__content">
+                    <div class="collection__content-img">
+                        <a href="forhome.html">
+                            <picture>
+                                <img src="images/collection-main.png" alt="image">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="collection__content-items">
+                        <div class="collection__item">
+                            <div class="collection__item-img">
+                                <picture>
+                                    <img src="images/collection1.png" alt="image">
+                                </picture>
+                            </div>
+                            <div class="collection__item-name">
+                                <a href="goods.html">Rivoli</a>
+                            </div>
+                        </div>
+                        <div class="collection__item">
+                            <div class="collection__item-img">
+                                <picture>
+                                    <img src="images/collection2.png" alt="image">
+                                </picture>
+                            </div>
+                            <div class="collection__item-name">
+                                <a href="goods.html">Hunt for antique Rugs</a>
+                            </div>
+                        </div>
+                        <div class="collection__item">
+                            <div class="collection__item-img">
+                                <picture>
+                                    <img src="images/collection3.png" alt="image">
+                                </picture>
+                            </div>
+                            <div class="collection__item-name">
+                                <a href="goods.html">JAIPUR WUNDERKAMMER</a>
+                            </div>
+                        </div>
+                        <div class="collection__item">
+                            <div class="collection__item-img">
+                                <picture>
+                                    <img src="images/collection4.png" alt="image">
+                                </picture>
+                            </div>
+                            <div class="collection__item-name">
+                                <a href="goods.html">HACIENDA</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="indual">
+            <div class="container">
+                <div class="indual__left">
+                    <div class="indual__left-title">Подчеркни свою
+                        <p>индивидуальность</p>
+                    </div>
+                    <picture>
+                        <img src="images/individual1.png" alt="image">
+                    </picture>
+                </div>
+                <div class="indual__right">
+                    <picture>
+                        <img src="images/individual2.png" alt="image">
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <div class="advantages">
+            <div class="container">
+                <div class="advantages__title">«Наше преимущество в качественных коврах»</div>
+                <div class="advantages__content">
+                    <div class="advantages__item">
+                        Работаем
+                        <p>с 1997 года</p>
+                    </div>
+                    <div class="advantages__item">
+                        75
+                        <p>сотрудников</p>
+                    </div>
+                    <div class="advantages__item">
+                        Более 1000
+                        <p>наименований</p>
+                    </div>
+                    <div class="advantages__item">
+                        860 довольных
+                        <p>клиентов</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <div class="container">
+                <div class="about__content">
+                    <div class="about__content-title">Магазин ковров «TOMIRIS»</div>
+                    <div class="about__content-text">Наши магазины находятся в г. Алматы. Мы осуществляем продажы ковров
+                        из Ирана и Пакистана
+                        с 1997 года.
+                        Сообщите нам, какой ковер вы желаете приобрести и мы сделаем самое выгодное предложение.
+                        У нас представлено множество ковров от эконом класса до элитных. Получите индивидульное
+                        предложение для вашего интерьера.</div>
+                    <div class="about__content-button red-button">
+                        <a href="about.html">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="faq__title main-title">F.A.Q</h2>
+                <div class="faq__text">Ответы на самые популярные вопросы.</div>
+                <div class="faq__content">
+                    <button class="faq__button">Как офорить заказ?</button>
+                    <div class="faq__answer">
+                        <p>Вы можете оплатить заказ удобным для Вас способом, наличным и безналичным рассчетом. Оформите
+                            заявку и наш менеджер свяжется с Вами.</p>
+                    </div>
+
+                    <button class="faq__button">Как я могу оплатить заказ?</button>
+                    <div class="faq__answer">
+                        <p>Вы можете оплатить заказ удобным для Вас способом, наличным и безналичным рассчетом. Оформите
+                            заявку и наш менеджер свяжется с Вами.</p>
+                    </div>
+
+                    <button class="faq__button">Какие способы доставки у Вас имеются?</button>
+                    <div class="faq__answer">
+                        <p>Вы можете оплатить заказ удобным для Вас способом, наличным и безналичным рассчетом. Оформите
+                            заявку и наш менеджер свяжется с Вами.</p>
+                    </div>
+
+                    <button class="faq__button">Как ухаживать за ковром?</button>
+                    <div class="faq__answer">
+                        <p>Вы можете оплатить заказ удобным для Вас способом, наличным и безналичным рассчетом. Оформите
+                            заявку и наш менеджер свяжется с Вами.</p>
+                    </div>
+
+                    <button class="faq__button">Условия возврата и обмена</button>
+                    <div class="faq__answer">
+                        <p>Вы можете оплатить заказ удобным для Вас способом, наличным и безналичным рассчетом. Оформите
+                            заявку и наш менеджер свяжется с Вами.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="application">
+            <div class="container">
+                <div class="application__img">
+                </div>
+                <div class="application__form">
+                    <div class="application__form-title">Остались вопросы?</div>
+                    <div class="application__form-text">Напишите нам и наши специалисты помогут Вам!</div>
+                    <form action="#">
+                        <input class="application__input" type="text" placeholder="Имя">
+                        <input class="application__input" type="text" placeholder="Телефон">
+                        <div class="check">
+                            <input type="checkbox">
+                            <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                                    href="policy.html">политикой
+                                    конфиденциальности</a></p>
+                        </div>
+                        <button class="application__button red-button">Отправить</button>
+                    </form>
+
+                </div>
+            </div>
+            <picture>
+                <img src="images/app.png" alt="image">
+            </picture>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__white">
+            <div class="container">
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Жолдасбекова 9А, ТЦ Евразия, 2 этаж, бутик 235А</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад "Томирис"</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+                <div class="footer__item">
+                    <div class="footer__item-name">г.Алматы, ул.Шоссейная 74, рынок Азия, 2 ряд, склад "Томирис"</div>
+                    <a class="footer__item-show" href="contacts.html">Показать на карте</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__red">
+            <div class="container">
+                <div class="footer__top">
+                    <div class="footer__top-menu">
+                        <div class="footer__list">
+                            <div class="footer__list-name">По стилю</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Этнические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Классические</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Геометрия</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Современные</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">По комнатам</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forhome.html">Гостинная</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Спальня</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Детская</a>
+                                    </li>
+                                    <li>
+                                        <a href="forhome.html">Кабинет</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">Коммерческие</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="forcommerce.html">Для ресторанов</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для мечетей</a>
+                                    </li>
+                                    <li>
+                                        <a href="forcommerce.html">Для офисов</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer__list">
+                            <div class="footer__list-name">Покупателям</div>
+                            <div class="footer__list-items">
+                                <ul>
+                                    <li>
+                                        <a href="#newitems">Новинки</a>
+                                    </li>
+                                    <li>
+                                        <a href="services.html">Услуги</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">О компании</a>
+                                    </li>
+                                    <li>
+                                        <a href="#faq">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="contacts.html">Контакты</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__top-info">
+                        <div class="footer__numbers">
+                            <a href="">+7 702 680 05 05</a>
+                            <a href="">+7 702 845 05 05</a>
+                        </div>
+                        <div class="footer__contacts">
+                            <div class="footer__contacts-mail">
+                                <a href="">ernar.tym@gmail.com</a>
+                            </div>
+                            <div class="footer__contacts-socials">
+                                <a href="">
+                                    <img src="images/insta.svg" alt="icon">
+                                </a>
+                                <a href="">
+                                    <img src="images/wats.svg" alt="icon">
+                                </a>
+                            </div>
+                        </div>
+                        <button onclick="openCallback()" class="footer__button white-button">Связатья с нами</button>
+                    </div>
+                </div>
+                <div class="footer__bot">
+                    <div class="footer__bot-links">
+                        <a href="policy.html">Политика конфиденциальности</a>
+                        <a href="offer.html">Публичная оферта</a>
+                    </div>
+                    <div class="footer__bot-years">1997-2022 © Тамирис</div>
+                    <div class="footer__bot-production">
+                        <a href="https://i-marketing.kz/">
+                            <picture>
+                                <img src="images/imarketing.svg" alt="logo">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="callback-modal" id="callback-modal">
+        <div class="callback__wrapper">
+
+        </div>
+        <div class="callback__content">
+            <div class="callback__close" onclick="closeCallback()">
+                <img src="images/close-button.svg" alt="icon">
+            </div>
+            <div class="callback__title">Связаться с нами</div>
+            <div class="callback__text">Напишите нам и мы свяжемся с Вами!</div>
+            <div class="callback__form">
+                <form action="#">
+                    <div class="callback__inputs">
+                        <input type="text" placeholder="Имя*">
+                        <input type="text" placeholder="Телефон*">
+                        <input type="text" placeholder="E-mail">
+                        <input type="text" placeholder="Ваше сообщение">
+                    </div>
+                    <div class="check">
+                        <input type="checkbox">
+                        <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                                href="policy.html">политикой
+                                конфиденциальности</a></p>
+                    </div>
+                    <button class="callback__button red-button" onclick="closeCallback()">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="thanks-modal" id="thanks-modal">
+        <div class="thanks__wrapper">
+        </div>
+        <div class="thanks__content">
+            <div class="thanks__img">
+                <img src="images/thanks.png" alt="image">
+            </div>
+            <div class="thanks__info">
+                <div class="thanks__info-title">Спасибо за заказ</div>
+                <div class="thanks__info-text">Ваш заказ принят в обработку.
+                    Мы свяжемся с Вами в ближайшее время</div>
+            </div>
+            <button class="thanks__button red-button" onclick="closeThanks()">Готово</button>
+        </div>
+    </div>
+
+    <div class="review-modal" id="review-modal">
+        <div class="review__wrapper">
+        </div>
+        <div class="review__content">
+            <div class="review__close" onclick="closeReview()">
+                <img src="images/close-button.svg" alt="icon">
+            </div>
+            <div class="revmod__title">Оставить заявку</div>
+            <div class="revmod__text">Оставьте заявку и мы свяжемся с Вами!</div>
+            <input type="text" placeholder="Имя*">
+            <input type="text" placeholder="Телефон*">
+            <div class="check">
+                <input type="checkbox">
+                <p>Я ознакомлен и согласен с <a href="offer.html">публичной офертой</a> и <a
+                        href="policy.html">политикой
+                        конфиденциальности</a></p>
+            </div>
+            <div class="revmod__button red-button">Отправить</div>
+        </div>
+    </div>
+
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart__wrapper">
+        </div>
+        <div class="carmod__content">
+            <div class="cart__added">
+                <input type="checkbox">
+                <p>Товар добавлен</p>
+            </div>
+            <hr>
+            <div class="cart__modal-content">
+                <div class="cart__modal-info">
+                    <div class="carmod__img">
+                        <img src="images/catalog1.png" alt="icon">
+                    </div>
+                    <div class="carmod__text">
+                        <div class="carmod__name">Rivoli</div>
+                        <div class="carmod__made">
+                            <p>Производство:</p> Иран
+                        </div>
+                        <div class="carmod__size">3.03 × 4.26м</div>
+                    </div>
+                    <div class="carmod__close" onclick="closeCartModal()">
+                        <img src="images/close-button.svg" alt="icon">
+                    </div>
+                </div>
+            </div>
+            <div class="cart__modal-buttons">
+                <a class="cart__design red-button" href="cart.html">Оформить</a>
+                <a class="cart__all white-button" href="cart.html">Все товары ( <p>2</p> )</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="http://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous" defer></script>
+<script src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script src="js/slides.js" defer></script>
+<script src="js/script.js" defer></script>
+
+</html>
