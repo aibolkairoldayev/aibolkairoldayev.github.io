@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oftum</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="/">
+                    <img src="img/logo1.svg" alt="logo">
+                </a>
+            </div>
+            <div class="header__info">
+                <div class="header__info-top">
+                    <div class="header__city">
+                        <label for="cities">Ваш город: </label>
+                        <select name="cities" id="cities">
+                            <option value="1">г. Алматы</option>
+                            <option value="1">г. Астана</option>
+                            <option value="1">г. Шымкент</option>
+                            <option value="1">г. Актобе</option>
+                            <option value="1">г. Караганда</option>
+                            <option value="1">г. Семей</option>
+                        </select>
+                    </div>
+                    <div class="header__contacts">
+                        <div class="header__socials">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/fb-blue.svg" alt="icon">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/ig-blue.svg" alt="icon">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="img/whtsp-blue.svg" alt="icon">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header__phone">
+                            <a href="tel:+77273117172">
+                                <img src="img/call-blue.svg" alt="icon">
+                                <p>+7 (7273) 117 172</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__info-bot">
+                    <ul class="header__menu">
+                        <li>
+                            <a href="/">Главная</a>
+                        </li>
+                        <li>
+                            <a href="/about">О компании</a>
+                        </li>
+                        <li>
+                            <a href="/services">Наши услуги</a>
+                        </li>
+                        <li>
+                            <a href="/price">Прайс</a>
+                        </li>
+                        <li>
+                            <a href="/gallery">Галерея</a>
+                        </li>
+                        <li>
+                            <a href="/contacts">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__buttons">
+                <button id="callback" class="btn-1">
+                    Заказать звонок
+                </button>
+                <p id="appointment">Записаться на прием</p>
+            </div>
+        </div>
+    </header>
+    <main class="main"></main>
+    <footer class="footer"></footer>
+</body>
+<script src="js/script.js"></script>
+
+</html>
