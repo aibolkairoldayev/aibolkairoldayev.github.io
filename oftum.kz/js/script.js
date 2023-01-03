@@ -38,15 +38,20 @@ $('.doctors__list').slick({
     focusOnSelect: true
 });
 
-// Задается отступ слева для слайдера докторов на главной странице 
+// Задается отступ слева для слайдера докторов и отступ справа для доктора на главной странице 
 
 function containerWidth() {
     let containerWidth = $('#containerW').width();
     let windowWidth = $(window).width();
     let marginLeft = ((windowWidth - containerWidth) / 2) + 'px';
+    let docRight = ((windowWidth - containerWidth) / 2) - 140 + 'px';
     $('.doctors__slide').css('marginLeft', marginLeft);
+    $('.standarts__slider').css('marginLeft', marginLeft);
+    $('.consult__img img').css('marginRight', docRight);
+
 }
 containerWidth();
+
 
 // Меняется картинка доктора в слайдере на главной странице
 
@@ -55,3 +60,56 @@ $('.doc__content').on('afterChange', function (event, slick, currentSlide, nextS
     $('.doc__img img').attr("src", docPhoto)
 });
 
+
+// Слайдер отзывов главной страницы
+
+$('.reviews__slider').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1
+});
+
+
+// Слайдер оборудования главной страницы
+
+$('.standarts__slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+});
+
+
+// Убрать прелоудер
+$(document).ready(() => {
+    $('.preloader').css('display', 'none');
+});
+function showPreloader() {
+    $('.preloader').css('display', 'flex');
+}
+function hidePreloader() {
+    $('.preloader').css('display', 'none');
+}
+
+
+// Раскывание бургер-меню
+
+$('.header__burger').click(function (event) {
+    $('.header__burger').toggleClass('active');
+    $('.burger').toggleClass('active');
+})
+
+
+// Раскывание адресов в главной странице
+
+var children = $('.clinics__content').children().length;
+for (i = 0; i < children; i++) {
+    var arr = [];
+    arr.concat(i)
+    console.log(arr)
+}
+
+$('#clinic__head-' + i).click(function () {
+    $('#clinic__body-' + i).css('display', 'block');
+    $('#clinic__body-' + i).css('height', 'auto');
+    $('#clinic__item-' + i).css('height', 'auto');
+})

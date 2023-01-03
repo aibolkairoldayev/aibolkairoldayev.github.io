@@ -16,18 +16,22 @@
 <body>
     <header class="header">
         <div class="container">
+            <div class="header__call">
+                <a href="tel:+77273117172">
+                    <img src="img/call-blue.svg" alt="icon">
+                </a>
+            </div>
             <div class="header__logo">
-                <a href="/">
+                <a href="index.html">
                     <img src="img/logo1.svg" alt="logo">
                 </a>
             </div>
             <div class="header__info">
                 <div class="header__info-top">
                     <div class="header__city">
-                        <img src="img/select.svg" class="cityArrow" alt="arrow">
+                        <!-- <div class="select-arrow"></div> -->
                         <label for="cities">Ваш город: </label>
-                        <select name="cities" id="cities">
-
+                        <select class="cities" name="cities" id="cities">
                             <option value="1">г. Алматы</option>
                             <option value="2">г. Астана</option>
                             <option value="3">г. Шымкент</option>
@@ -93,8 +97,75 @@
                 </button>
                 <p id="appointment">Записаться на прием</p>
             </div>
+            <div class="header__burger">
+                <span></span>
+            </div>
         </div>
     </header>
+
+    <div class="burger">
+        <div class="burger__wrapper" id="burger"></div>
+        <div class="burger__content">
+            <div class="header__city">
+                <!-- <div class="select-arrow"></div> -->
+                <label for="cities">Ваш город: </label>
+                <select class="cities" name="cities" id="cities">
+                    <option value="1">г. Алматы</option>
+                    <option value="2">г. Астана</option>
+                    <option value="3">г. Шымкент</option>
+                    <option value="4">г. Актобе</option>
+                    <option value="5">г. Караганда</option>
+                    <option value="6">г. Семей</option>
+                </select>
+            </div>
+            <ul class="burger__menu">
+                <li>
+                    <a href="index.html">Главная</a>
+                </li>
+                <li>
+                    <a href="about.html">О компании</a>
+                </li>
+                <li>
+                    <a href="services.html">Наши услуги</a>
+                </li>
+                <li>
+                    <a href="price.html">Прайс</a>
+                </li>
+                <li>
+                    <a href="gallery.html">Галерея</a>
+                </li>
+                <li>
+                    <a href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+            <div class="header__socials">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="img/fb-blue.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/ig-blue.svg" alt="icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/whtsp-blue.svg" alt="icon">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="burger__buttons">
+                <button id="callback" class="btn-1">
+                    Заказать звонок
+                </button>
+                <p id="appointment">Записаться на прием</p>
+            </div>
+        </div>
+    </div>
+
     <main class="main">
         <section class="banner">
             <div class="banner__parent">
@@ -113,13 +184,19 @@
                         </div>
                         <div class="banner__parent-right">
                             <div class="banner__img">
-                                <img src="img/banner1.png" alt="img">
+                                <picture>
+                                    <img src="img/banner1.png" alt="img">
+                                </picture>
                             </div>
                             <div class="banner__play">
-                                <img src="img/play.svg" alt="icon">
+                                <picture>
+                                    <img src="img/play.svg" alt="icon">
+                                </picture>
                             </div>
                             <div class="banner__mute">
-                                <img src="img/mute.svg" alt="icon">
+                                <picture>
+                                    <img src="img/mute.svg" alt="icon">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -258,7 +335,9 @@
                 </div>
                 <div class="services__content">
                     <div class="services__item">
-                        <img src="img/serv1.png" alt="img">
+                        <picture>
+                            <img src="img/serv1.png" alt="img">
+                        </picture>
                         <div class="services__item-info">
                             <div class="services__item-title">
                                 <a href="">Лазерная коррекция зрения</a>
@@ -278,7 +357,9 @@
                         </a>
                     </div>
                     <div class="services__item">
-                        <img src="img/serv2.png" alt="img">
+                        <picture>
+                            <img src="img/serv2.png" alt="img">
+                        </picture>
                         <div class="services__item-info">
                             <div class="services__item-title">
                                 <a href="">Лазерная коагуляция сетчатки глаза</a>
@@ -296,7 +377,9 @@
                         </a>
                     </div>
                     <div class="services__item">
-                        <img src="img/serv3.png" alt="img">
+                        <picture>
+                            <img src="img/serv3.png" alt="img">
+                        </picture>
                         <div class="services__item-info">
                             <div class="services__item-title">
                                 <a href="">Синдром сухого глаза</a>
@@ -314,7 +397,9 @@
                         </a>
                     </div>
                     <div class="services__item">
-                        <img src="img/serv4.png" alt="img">
+                        <picture>
+                            <img src="img/serv4.png" alt="img">
+                        </picture>
                         <div class="services__item-info">
                             <div class="services__item-title">
                                 <a href="">Кератоконус</a>
@@ -335,7 +420,7 @@
                 </div>
             </section>
         </div>
-        <section class="leader">
+        <!-- <section class="leader">
             <div class="container">
                 <div class="leader__left">
                     <div class="leader__left-name mainTitle2">
@@ -377,7 +462,9 @@
                         <button class="methods__item-btn btn-1">
                             <a href="">Подробнее</a>
                         </button>
-                        <img class="methods__item-img" src="img/method1.png" alt="img">
+                        <picture>
+                            <img class="methods__item-img" src="img/method1.png" alt="img">
+                        </picture>
                     </div>
                     <div class="methods__item">
                         <p>Метод</p>
@@ -389,7 +476,9 @@
                         <button class="methods__item-btn btn-1">
                             <a href="">Подробнее</a>
                         </button>
-                        <img class="methods__item-img" src="img/method2.png" alt="img">
+                        <picture>
+                            <img class="methods__item-img" src="img/method2.png" alt="img">
+                        </picture>
                     </div>
                     <div class="methods__item">
                         <p>Метод</p>
@@ -402,7 +491,9 @@
                         <button class="methods__item-btn btn-1">
                             <a href="">Подробнее</a>
                         </button>
-                        <img class="methods__item-img" src="img/method3.png" alt="img">
+                        <picture>
+                            <img class="methods__item-img" src="img/method3.png" alt="img">
+                        </picture>
                     </div>
                 </div>
                 <div class="methods__bot">
@@ -414,7 +505,9 @@
                             Алматы и Астане
                         </div>
                         <div class="equipment__item-img">
-                            <img src="img/exuipment.png" alt="img">
+                            <picture>
+                                <img src="img/exuipment.png" alt="img">
+                            </picture>
                         </div>
                     </div>
                     <div class="equipment__item">
@@ -445,7 +538,9 @@
         </section>
         <section class="advert">
             <div class="advert__img">
-                <img src="img/advert.png" alt="img">
+                <picture>
+                    <img src="img/advert.png" alt="img">
+                </picture>
             </div>
             <div class="container advert__content">
 
@@ -482,7 +577,9 @@
                     <div class="doctors__list ">
                         <div class="doctors__item">
                             <div class="doctors__item-img">
-                                <img src="img/doc1.png" alt="img">
+                                <picture>
+                                    <img src="img/doc1.png" alt="img">
+                                </picture>
                             </div>
                             <div class="doctors__item-info">
                                 <div class="doctors__item-name">
@@ -499,7 +596,9 @@
                         </div>
                         <div class="doctors__item">
                             <div class="doctors__item-img">
-                                <img src="img/doc2.png" alt="img">
+                                <picture>
+                                    <img src="img/doc2.png" alt="img">
+                                </picture>
                             </div>
                             <div class="doctors__item-info">
                                 <div class="doctors__item-name">
@@ -516,7 +615,9 @@
                         </div>
                         <div class="doctors__item">
                             <div class="doctors__item-img">
-                                <img src="img/doc3.png" alt="img">
+                                <picture>
+                                    <img src="img/doc3.png" alt="img">
+                                </picture>
                             </div>
                             <div class="doctors__item-info">
                                 <div class="doctors__item-name">
@@ -533,7 +634,9 @@
                         </div>
                         <div class="doctors__item">
                             <div class="doctors__item-img">
-                                <img src="img/doc2.png" alt="img">
+                                <picture>
+                                    <img src="img/doc2.png" alt="img">
+                                </picture>
                             </div>
                             <div class="doctors__item-info">
                                 <div class="doctors__item-name">
@@ -549,9 +652,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
             <div class="doctors__bot">
                 <div class="container" id="containerW">
@@ -696,13 +797,382 @@
                 </div>
             </div>
         </section>
-        <section class="consulting">
+        <section class="consult">
             <div class="container">
-
+                <div class="consult__title mainTitle">
+                    <b>Запишитесь на консультацию</b>
+                    к нашим опытным врачам
+                </div>
+                <div class="consult__text">
+                    Укажите свой номер телефона, мы перезвоном и подберём для вас удобное время приема
+                </div>
+                <div class="consult__calls">
+                    <input type="text" placeholder="+7">
+                    <button class="btn-2">
+                        Перезвоните мне
+                    </button>
+                    <div class="consult__calls-us">
+                        <p>Или позвоните нам:</p>
+                        <a href="">
+                            +7 (7273) 117 172
+                        </a>
+                    </div>
+                </div>
+                <p>
+                    Нажимая на кнопку «Перезвоните мне», я подтверждаю свое согласие с политикой конфиденциальности
+                </p>
+            </div>
+            <div class="consult__img">
+                <picture>
+                    <img src="img/doc3.png" alt="image">
+                </picture>
             </div>
         </section>
+        <section class="reviews">
+            <div class="container">
+                <div class="reviews__title mainTitle">
+                    <b>Отзывы о Oftum</b> на независимых площадках
+                </div>
+                <div class="reviews__rating">
+                    <b>Отзывы, похвала и критика</b>
+                    <i data-star="4.3"></i>
+                </div>
+                <div class="reviews__number">
+                    <div class="reviews__number-item">
+                        <b>500</b>
+                        <p>отзывов о клинике</p>
+                    </div>
+                    <div class="reviews__number-item">
+                        <b>4,8 / 5</b>
+                        <p>рейтинг положительных отзывов</p>
+                    </div>
+                </div>
+                <div class="reviews__slider">
+                    <div class="reviews__item">
+                        <img src="img/review1.svg" alt="img">
+                        <i data-star="3.7"></i>
+                    </div>
+                    <div class="reviews__item">
+                        <img src="img/review2.svg" alt="img">
+                        <i data-star="5.0"></i>
+                    </div>
+                    <div class="reviews__item">
+                        <img src="img/review3.svg" alt="img">
+                        <i data-star="2.6"></i>
+                    </div>
+                    <div class="reviews__item">
+                        <img src="img/review4.svg" alt="img">
+                        <i data-star="1.4"></i>
+                    </div>
+                    <div class="reviews__item">
+                        <img src="img/review5.svg" alt="img">
+                        <i data-star="4.7"></i>
+                    </div>
+                    <div class="reviews__item">
+                        <img src="img/review6.svg" alt="img">
+                        <i data-star="2.3"></i>
+                    </div>
+                    <div class="reviews__item">
+                        <img src="img/review7.svg" alt="img">
+                        <i data-star="1.3"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="standarts">
+            <div class="standarts__top">
+                <div class="container">
+                    <div class="standarts__title mainTitle">
+                        Клиника обустроена по самым современным <b>европейским стандартам</b>
+                    </div>
+                    <div class="standarts__text">
+                        Равным образом, современная методология разработки однозначно фиксирует необходимость
+                        направлений прогрессивного развития. Принимая во внимание показатели успешности,
+                        постоянное
+                    </div>
+                </div>
+            </div>
+            <div class="standarts__slider">
+                <div>
+                    <div class="standarts__content">
+                        <div class="standarts__item">
+                            <img src="img/standart1.png" alt="img">
+                        </div>
+                        <div class="standarts__item">
+                            <img src="img/standart2.png" alt="img">
+                        </div>
+                        <div class="standarts__item">
+                            <img src="img/standart3.png" alt="img">
+                        </div>
+                        <div class="standarts__item">
+                            <img src="img/standart4.png" alt="img">
+                        </div>
+                        <div class="standarts__item">
+                            <img src="img/standart5.png" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="standarts__content">
+                        <div class="standarts__item">
+                            <img src="img/standart1.png" alt="img">
+                        </div>
+                        <div class="standarts__item">
+                            <img src="img/standart2.png" alt="img">
+                        </div>
+                        <div class="standarts__item">
+                            <img src="img/standart3.png" alt="img">
+                        </div>
+                        <div class="standarts__item">
+                            <img src="img/standart4.png" alt="img">
+                        </div>
+                        <div class="standarts__item">
+                            <img src="img/standart5.png" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="standarts__all">
+                <a href="gallery.html">Фотогалерея</a>
+            </div>
+        </section>
+        <section class="video">
+            <div class="container">
+                <div class="video__title mainTitle">
+                    <b>Видеопрезентация</b> клиники
+                </div>
+                <div class="video__content">
+                    <video width="100%" height="440" controls>
+                        <source src="img/video.mp4" type="video/mp4">
+                        <source src="img/video.mp4" type="video/ogg">
+                    </video>
+                </div>
+            </div>
+        </section>
+        <section class="clinics">
+            <div class="container">
+                <div class="clinics__title mainTitle">
+                    <b> Наши </b>клиники
+                </div>
+                <div class="clinics__content">
+                    <div class="clinics__item" id="clinic__item-0">
+                        <div class="clinics__item-head" id="clinic__head-0">Oftum в г. Алматы</div>
+                        <div class="clinics__item-body" id="clinic__body-0">
+                            <div class="clinics__address">
+                                <b>Адрес:</b>
+                                <span>
+                                    г. Алматы, ул. Чайковского 149
+                                </span>
+                            </div>
+                            <div class="clinics__graphic">
+                                <b>Режим работы:</b>
+                                <span>
+                                    пн-вс с 8:00 до 18:00
+                                </span>
+                            </div>
+                            <div class="clinics__phone">
+                                <b>Телефон:</b>
+                                <span>
+                                    <p>Городской телефон: +7 (7273) 117 172</p>
+                                    <p>Амбулатория: +7 (775) 888 10 11</p>
+                                </span>
+                            </div>
+                            <div class="clinics__web">
+                                <b>Веб-сайт: </b>
+                                <span> www.oftum.kz</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clinics__item" id="clinic__item-1">
+                        <div class="clinics__item-head" id="clinic__head-1">Oftum в г. Астана</div>
+                        <div class="clinics__item-body" id="clinic__body-1">
+                            <div class="clinics__address">
+                                <b>Адрес:</b>
+                                <span>
+                                    г. Астана, ул. Қ. Аманжолова 26, БЦ "Millennium Park", блок D
+                                </span>
+                            </div>
+                            <div class="clinics__graphic">
+                                <b>Режим работы:</b>
+                                <span>
+                                    пн-вс с 8:00 до 18:00
+                                </span>
+                            </div>
+                            <div class="clinics__phone">
+                                <b>Телефон:</b>
+                                <span>
+                                    <p>Городской телефон: +7 (7172) 783 888</p>
+                                    <p>Амбулатория: +7 (777) 888 777 8</p>
+                                </span>
+                            </div>
+                            <div class="clinics__web">
+                                <b>Веб-сайт: </b>
+                                <span> www.oftum.kz</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clinics__item" id="clinic__item-2">
+                        <div class="clinics__item-head" id="clinic__head-2">Oftum в Словакии, г. Кошице</div>
+                        <div class="clinics__item-body" id="clinic__body-2">
+                            <div class="clinics__address">
+                                <b>Адрес:</b>
+                                <span>
+                                    г. Кошице, Moldavská 21/A, 2 этаж
+                                </span>
+                            </div>
+                            <div class="clinics__graphic">
+                                <b>Режим работы:</b>
+                                <span>
+                                    пн-вс с 8:00 до 17:00
+                                </span>
+                            </div>
+                            <div class="clinics__phone">
+                                <b>Телефон:</b>
+                                <span>
+                                    <p>Городской телефон: +421 55/622 58 37</p>
+                                    <p>SOS номер: +421 903 627 895</p>
+                                </span>
+                            </div>
+                            <div class="clinics__web">
+                                <b>Веб-сайт: </b>
+                                <span>www.oftum.sk</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clinics__item" id="clinic__item-3">
+                        <div class="clinics__item-head" id="clinic__head-3">Oftum в Чехии, г. Прага</div>
+                        <div class="clinics__item-body">
+                            <div class="clinics__address" id="clinic__body-3">
+                                <b>Адрес:</b>
+                                <span>
+                                    г. Прага, City Empiria, 8-й этаж Na Strži 1702/65
+                                </span>
+                            </div>
+                            <div class="clinics__graphic">
+                                <b>Режим работы:</b>
+                                <span>
+                                    пн-вс с 8:00 до 18:00
+                                </span>
+                            </div>
+                            <div class="clinics__phone">
+                                <b>Телефон:</b>
+                                <span>
+                                    <p>Городской телефон : +420 273 160 112</p>
+                                    <p>SOS номер: +420 734 315 588</p>
+                                </span>
+                            </div>
+                            <div class="clinics__web">
+                                <b>Веб-сайт: </b>
+                                <span>www.oftum.cz</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="map">
+            <div class="container">
+                <div class="map__title mainTitle">Карта</div>
+                <div class="map__content">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d540.4225221054626!2d76.93908953247534!3d43.24264642147142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836ec2e44dea3d%3A0x82e736e3f5403a1e!2sTchaikovsky%20St%20149%2C%20Almaty%20050000!5e0!3m2!1sen!2skz!4v1672578086882!5m2!1sen!2skz"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+        <section class="seo">
+            <div class="container">
+                <div class="seo__title mainTitle">SEO текст</div>
+                <div class="seo__text">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                    took a galley of type and scrambled it to make a type specimen book. It has survived not
+                    only five centuries, but also the leap into electronic typesetting, remaining essentially
+                    unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                    has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                    took a galley of type and scrambled it to make a type specimen book. It has survived not
+                    only five centuries, but also the leap into electronic typesetting, remaining essentially
+                    unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                </div>
+                <a href="">Читать далее</a>
+            </div>
+        </section>-->
     </main>
-    <footer class="footer"></footer>
+    <!-- <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__top-logo">
+                    <a href="/">
+                        <img src="img/logo2.svg" alt="logo">
+                    </a>
+                </div>
+                <ul class="footer__top-menu">
+                    <li>
+                        <a href="index.html">Главная</a>
+                    </li>
+                    <li>
+                        <a href="services.itml">Наши услуги</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Галерея</a>
+                    </li>
+                    <li>
+                        <a href="oferta.html">Публичная оферта</a>
+                    </li>
+                    <li>
+                        <a href="about.html">О компании</a>
+                    </li>
+                    <li>
+                        <a href="price.html">Прайс</a>
+                    </li>
+                    <li>
+                        <a href="contacts.html">Контакты</a>
+                    </li>
+                    <li>
+                        <a href="oferta2.html">Платежная оферта</a>
+                    </li>
+                </ul>
+                <div class="footer__top-socials">
+                    <a href="#">
+                        <img src="img/fb-white.svg" alt="icon">
+                    </a>
+                    <a href="#">
+                        <img src="img/ig-white.svg" alt="icon">
+                    </a>
+                    <a href="#">
+                        <img src="img/whtsp-white.svg" alt="icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bot">
+                <div class="footer__bot-info">
+                    <b>© 2022 Oftum</b>
+                    <b>Все права защищены</b>
+                </div>
+                <div class="footer__policy">
+                    <a href="/policy">Политика конфиденциальности</a>
+                </div>
+                <div class="footer__made">
+                    <b>Разработано</b>
+                    <a href="https://i-marketing.kz/">
+                        <img src="img/imark.svg" alt="logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+    <div class="preloader" id="preloader">
+        <img src="img/logo2.svg" alt="image">
+    </div>
+
 </body>
 <script src="js/carousel.js"></script>
 <script src="js/script.js"></script>
