@@ -525,6 +525,7 @@
             max-width: 300px;
             bottom: 0;
             right: 0;
+            z-index: 0;
         }
         &-title {
             margin-bottom: 25px;
@@ -747,6 +748,7 @@
     height: 494px;
     background: #E6F5FA;
     position: relative;
+    z-index: 1;
     &__img {
         img {
             height: 100%;
@@ -754,6 +756,7 @@
         position: absolute;
         top: 0;
         right: 0;
+        z-index: -1;
     } 
     
     &__text {
@@ -995,11 +998,11 @@
         justify-content: space-between;
     }
     &__item {
-        margin-right: 30px;
         width: 23%;
+        height: 280px;
         img {
             width: 100%;
-            height: 280px;
+            height: 100%;
         }
     }
 }
@@ -1155,7 +1158,7 @@
             line-height: 19px;
             text-decoration-line: underline;
             color: #0096D1;
-            margin-left: 13%;
+            margin-left: 17%;
             &:hover {
                 font-weight: 600;
             }
@@ -1223,9 +1226,10 @@
         margin-bottom: 30px;
     }
     &__content {
+        padding-bottom: 100px;
         video {
             border-radius: 12px;
-           
+            height: 440px;
         }
     }
 }
@@ -1244,10 +1248,10 @@
     }
     &__item {
         background: #fff;
-        padding: 35px;
+        padding: 35px 35px 0 35px;
         border-top: 2px solid #3D7DCC;
         border-radius: 8px;
-        height: 98px;
+        transition: .3s ease;
         &-head {
             font-family: 'Panton';
             font-weight: 700;
@@ -1259,10 +1263,10 @@
             }
         }
         &-body {
-            height: 0;
-            display: none;
             padding-top: 35px;
-            transition: .3s linear;
+            transition: .3s ease;
+            overflow: hidden;
+            height: 0;
             b {
                 font-family: 'Panton';
                 font-weight: 600;
@@ -1540,6 +1544,28 @@ select {
 .preloader {
     display: block;
 }
+@media (max-width: 1800px) {
+    .standarts {
+        .slick-next  {
+            right: 41%;
+        }
+        &__all {
+            a {
+                margin-left: 14%;
+            }
+        } 
+    }
+}
+
+@media (max-width: 1600px) {
+    .standarts {
+        &__all {
+            a {
+                margin-left: 10%;
+            }
+        } 
+    }
+}
 
 @media (max-width: 1400px) {
     .banner {
@@ -1562,9 +1588,38 @@ select {
             }
         }
     }
+    .doc__img {
+        right: -60px;
+    }
+    .consult {
+        padding: 40px 0 60px;
+        &__img {
+            img {
+                width: 540px;
+                height: 500px;
+            }
+        }
+    }
+    .standarts {
+        &__all {
+            a {
+                margin-left: 5%;
+            }
+        }
+        .slick-next  {
+            right: 41%;
+        }
+    }
 }
 
 @media (max-width: 1200px) {
+    .header {
+        &__buttons {
+            button {
+                width: 140px;
+            }
+        }
+    }
     .banner {
         &__title {
             font-size: 27px;
@@ -1593,9 +1648,123 @@ select {
             }
         }
     }
+
+    .leader {
+        .quotesTop {
+            top: 40px;
+            right: 10px;
+        }
+        .quotesBot {
+            bottom: -50px;
+            left: -10px;
+        }
+    }
+    .methods {
+        &__item {
+            &:first-child {
+                img {
+                    width: 40%;
+                }
+            }
+            &:nth-child(3) {
+                img {
+                    width: 52%;
+                    bottom: -8px;
+                }
+            }
+        }
+    }
+    .advert {
+        height: 450px;
+        &__img {
+            img {
+                height: 450px;
+            }
+        }
+        &__content {
+            padding: 60px 0;
+        }
+    }
+    .doc__img {
+        right: -15px;
+        img {
+            width: 510px;
+            max-height: 540px;
+        }
+    }
+    .insta {
+        padding: 90px 0;
+    }
+    .consult {
+        height: 420px;
+        &__img {
+            right: 0;
+            img {
+                width: 510px;
+                height: 460px;
+            }
+        }
+        &__title {
+            width: 55%;
+            line-height: 40px;
+            b {
+                line-height: 40px;
+            }
+        }
+    }
+    .reviews {
+        padding: 70px 0;
+        .slick-next  {
+            right: -40px;
+        }
+        .slick-prev {
+            left: -40px;
+        }
+    }
+    .standarts {
+        &__all {
+            a {
+                margin-left: 2%;
+            }
+        }
+        .slick-next  {
+            right: 41%;
+        }
+        .slick-prev {
+            left: 36%;
+        }
+    }
+    .footer {
+        padding: 30px 0 20px;
+        &__top {
+            padding-bottom: 18px;
+            &-menu {
+                margin-right: -60px;
+            }
+        }
+        &__bot {
+            justify-content: space-between;
+        }
+    }
 }
 
 @media (max-width: 992px) {
+    .mainTitle {
+        font-size: 37px;
+        line-height: 38px;
+        b {
+            font-size: 37px;
+            line-height: 38px;
+        }
+    }
+    .mainTitle2  {
+        font-size: 27px;
+        line-height: 30px;
+        b {
+            font-size: 27px;
+            line-height: 30px;
+        }
+    }
     .header {
         z-index: 4;
         position: relative;
@@ -1684,13 +1853,298 @@ select {
             }
         }
     }
+    .services {
+        &__content {
+            grid-template-columns: 1fr;
+        }
+        &__item {
+            img {
+                max-width: 250px;
+            }
+        }
+    }
+    .leader {
+        margin-bottom: 60px;
+        min-height: 450px;
+        background-position-x: -20%;
+        &__left {
+            width: 40%;
+            &-name {
+                font-size: 30px;
+                b {
+                    font: 30px;
+                }
+            }
+            &-text {
+                width: 90%;
+            }
+        }
+        &__right {
+            width: 39%;
+            &-text {
+                line-height: 130%;
+            }
+        }
+    }
+    .methods {
+        &__title {
+            margin-bottom: 25px;
+        }
+        &__item {
+            padding: 15px;
+            height: 400px;
+            &-title {
+                font-size: 22px;
+                line-height: 130%;
+                margin: 5px 0 10px;
+            }
+            &-text {
+                font-size: 15px;
+                line-height: 120%;
+                margin-bottom: 15px;
+            }
+            &:nth-child(1) {
+                img {
+                    width: 35%;
+                    height: 130px;
+                }
+            }
+            &:nth-child(2) {
+                img {
+                    bottom: -35px;
+                    max-height: 170px;
+                }
+            }
+            &:nth-child(3) {
+                img {
+                    width: 45%;
+                }
+            }
+        }
+        &__bot {
+            gap:15px;
+            .equipment {
+                &__item {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+    .advert {
+        height: 370px;
+        &__img {
+            img {
+                height: 370px;
+            }
+        }
+        &__content {
+            padding: 35px 0;
+        }
+        &__title {
+            width: 55%;
+        }
+        &__text {
+            font-size: 15px;
+            line-height: 130%;
+            margin: 15px 0 20px;
+            width: 45%;
+        }
+        &__rest {
+            &-day {
+                font-size: 20px;
+                height: 40px;
+            }
+        }
+    }
+    .doctors {
+        &__top {
+            padding-top: 50px;
+        }
+        &__text {
+            width: 100%;
+            margin: 20px 0 30px;
+        }
+        &__bot {
+            padding-top: 200px;
+        }
+    }
+    .doc {
+        &__img {
+            right: 0;
+            bottom: -2px;
+            img {
+                width: 350px;
+            }
+        }
+        &__content {
+            height: 340px;
+            padding-top: 35px;
+        }
+        &__name {
+            width: 60%;
+            font-size: 34px;
+            margin-bottom: 20px;
+            b {
+                font-size: 34px;
+            }
+        }
+        &__info {
+            width: 50%;
+            li {
+                line-height: 130%;
+                margin-bottom: 13px;
+            }
+        }
+    }
+    .insta {
+        padding: 60px 0;
+        &__item {
+            height: 220px;
+        }
+    }
+    .consult {
+        height: 390px;
+        padding: 20px 0 50px;  
+        p {
+            width: 62%;
+        } 
+        &__img {
+            img {
+                width: 460px;
+                height: 410px;
+            }
+        }
+        &__text {
+            margin: 15px 0;
+            width: 60%;
+        }
+        &__calls {
+            width: 60%;
+            display: block;
+            &-us {
+                p {
+                    margin-top: 10px;
+                }
+            }
+            input {
+                height: 40px;
+                width: 280px;
+            }
+            button {
+                width: 280px;
+                margin: 15px 0 0;
+            }
+        }
+        &__title {
+            font-size: 34px;
+            width: 65%;
+            b {
+                font-size: 34px;
+            }
+        }
+    }
+    .reviews {
+        padding: 50px 0;
+        &__rating {
+            margin: 15px 0 0;
+            align-items: center;
+        }
+        &__number {
+            &-item {
+                padding: 5px;
+                margin: 0 15px;
+                b {
+                    font-size: 53px;
+                    line-height: 60px;
+                    width: 60%;
+                }
+            }
+        }
+        .slick-prev {
+            left: -30px;
+        } 
+        .slick-next {
+            right: -30px;
+        } 
+    }
+    .standarts {
+        .slick-next {
+            right: 34%;
+        }
+        .slick-prev {
+            left: 34%;
+        }
+        &__all {
+            a {
+                margin-left: 5%;
+            }
+        }
+    }
+    .video {
+        &__content {
+            padding-bottom: 70px;
+            video {
+                height: 380px;
+            }
+        }
+        &__title {
+            margin-bottom: 20px;
+        }
+    }
+    .clinics {
+        padding: 40px 0;
+        height: 660px;
+        &__item {
+            padding: 20px 20px 0 20px;
+        }
+    }
+    .map {
+        padding: 50px 0 30px;
+        iframe {
+            height: 400px;
+        }
+    }
+    .seo {
+        &__text {
+            margin: 20px 0 10px;
+        }
+    }
+    .footer {
+        &__top {
+            &-menu {
+                margin-right: 0;
+            }
+            &-socials {
+                display: grid;
+                text-align: center;
+                width: 9%;
+            }
+        }
+        &__bot {
+            &-info {
+                b {
+                    margin: 0 7px 0 0;
+                }
+            }
+        }
+        &__policy {
+            a {
+                margin: 0 10px;
+            }
+        }
+        &__made {
+            margin-left: 20px;
+        }
+    }
 }
 
 @media (max-width: 768px) {
     .mainTitle {
         font-size: 34px;
+        line-height: 35px;
         b {
             font-size: 34px;
+            line-height: 35px;
         }
     }
     .banner {
@@ -1741,6 +2195,232 @@ select {
             }
         }
     }
+    .services {
+        margin-bottom: 50px;
+    }
+    .leader {
+        min-height: 400px;
+        background-position-x: 120px;
+        .container {
+            display: block;
+        }
+        &__left {
+            width: 100%;
+            &-name {
+                padding-top: 5px;
+                font-size: 27px;
+                b {
+                    font-size: 27px;
+                }
+            }
+            &-text {
+                margin: 10px 0 20px;
+                width: 75%;
+            }
+        }
+        &__right {
+            width: 100%;
+            padding-top: 5px;
+            padding-left: 0;
+            width: 70%;
+        }
+        .quotesTop {
+            top: 10px;
+            right: 60px;
+        }
+        .quotesBot {
+            bottom: -35px;
+            left: -50px;
+        }
+    }
+    .methods {
+        &__title {
+            margin-bottom: 15px;
+        }
+        &__top {
+            display: block;
+        }
+        &__item {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            img {
+                display: none;
+            }
+        }
+        .equipment {
+            &__item {
+                padding: 15px;
+                &-title {
+                    font-size: 22px;
+                    line-height: 130%;
+                }
+                &-text {
+                    width: 100%;
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+    .advert {
+        height: 320px;  
+        &__img {
+            width: 50%;
+            img {
+                height: 320px;
+            }
+        }
+        &__title {
+            width: 65%;
+            font-size: 22px;
+            b {
+                font-size: 22px;
+            }
+        }
+        &__text {
+            width: 60%;
+        }
+        &__rest {
+            width: 60%;
+            &-day {
+                width: 70px;
+                font-size: 17px;
+                height: 30px;
+            }
+        }
+        &__btn {
+            height: 38px;
+        }
+    }
+    .doctors {
+        &__top {
+            padding-top: 30px;
+        }
+        &__title {
+            font-size: 30px;
+            line-height: 30px;
+        }
+        &__text {
+            margin: 15px 0 20px;
+        }
+        &__bot {
+            margin-top: -160px;
+        }
+        &__item {
+            margin-right: 20px;
+            height: 480px;
+            &-name {
+                font-size: 22px;
+                line-height: 22px;
+            }
+            &-text {
+                font-size: 14px;
+                line-height: 130%;
+                margin: 10px 0 13px;
+            }
+            &-exp {
+                font-size: 14px;
+            }
+        }
+        &__info {
+            padding: 15px;
+        }
+    }
+    .doc {
+        &__img {
+            right: -10px;
+            img {
+                width: 270px;
+            }
+        }
+        &__content  {
+            height: 390px;
+        }
+        &__info {
+            width: 62%;
+        }
+    }
+    .insta {
+        &__item {
+            height: 170px;
+            width: 100%;
+        }
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+    }
+    .consult {
+        height: 400px;
+       
+        &__img {
+            img {
+                width: 400px;
+                height: 370px;
+            }
+        }
+        &__title {
+            font-size: 30px;
+            line-height: 31px;
+            b {
+                font-size: 30px;
+                line-height: 31px;
+            }
+        }
+        &__text {
+            width: 65%;
+            font-size: 14px;
+            line-height: 130%;
+        }
+        &__calls{
+            button {
+                height: 40px;
+            }
+        }
+    }
+    .reviews {
+        &__number {
+            display: block;
+            &-item {
+                b {
+                    width: auto;
+                }
+            }
+        }
+    }
+    .standarts {
+        .slick-next {
+            right: 100px;
+        }
+        .slick-prev {
+            left: 100px
+        }
+        &__all {
+            a {
+                margin-left: 120px;
+            }
+        }
+    }
+    .video {
+        &__content {
+            video {
+                height: 320px;
+            }
+        }      
+    }
+    .clinics {
+        height: auto;
+        &__content {
+            grid-template-columns: 1fr;
+        }
+    }
+    .map {
+        padding: 30px 0 20px;
+        iframe {
+            height: 300px;
+        }
+    }
 }
 
 @media (max-width: 576px) {
@@ -1786,9 +2466,249 @@ select {
             margin-top: 15px;
         }
     }
+    .services {
+        &__content {
+            padding-top: 20px;
+        }
+    }
+    .leader {
+        height: 700px;
+        padding: 20px 0;
+        background-size: 100% 44%;
+        background-position-x: 45%;
+        background-position-y: 100%;
+        margin-bottom: 40px;
+
+        &__left {
+            &-text {
+                width: 100%;
+                line-height: 110%;
+            }
+            &-name {
+                font-size: 24px;
+                line-height: 25px;
+                b {
+                    font-size: 24px;
+                }
+            }
+        }
+        &__right {
+            width: 100%;
+            &-title {
+                padding-top: 27px;
+                margin-bottom: 14px;
+            }
+            &-text {
+                width: 100%;
+                padding-left: 15px;
+            }
+        }
+        .quotesTop {
+            top: -5px;
+            right: 10px;
+        }
+        .quotesBot {
+            bottom: -45px;
+            left: -10px;
+        }
+    }
+    .methods {
+        &__bot {
+            display: block;
+            margin-bottom: 30px;
+        }
+        .equipment {
+            &__item {
+                margin-bottom: 13px;
+                img {
+                    display: block;
+                    width: 180px;
+                }
+                &-text {
+                    font-size: 14px;
+                    line-height: 130%;
+                }
+            }
+        }
+    }
+    .advert {
+        &__content {
+            padding: 10px;
+        }
+        height: 480px;
+        &__title {
+            width: 100%;
+        }
+        &__text {
+            width: 100%;
+           
+        }
+        &__img {
+            bottom: 0;
+            top: auto;
+            width: 100%;
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 250px;
+            }       
+        }
+        &__rest {
+            width: 100%;
+            justify-content: start;
+            p {
+                margin-right: 17px;
+            }
+        }
+    }
+    .doctors {
+        &__item {
+            height: 438px;
+        }
+        &__info {
+            padding: 15px;
+        }
+        &__bot {
+            margin-top: -170px;
+        }
+    }
+    .doc {
+        &__content {
+            padding-top: 25px;
+            height: 480px;
+        }
+        &__name {
+            width: 100%;
+        }
+        &__info {
+            width: 100%;
+        }
+        &__img {
+            right: 50px;
+            img {
+                width: 220px;
+            }
+        }
+    }
+    .insta {
+        padding: 30px 0;
+        &__content {
+            margin-top: 20px;
+        }
+        &__title {
+            select {
+                height: 30px;
+                padding: 5px;
+            }
+        }
+    }
+    .consult {
+        height: auto;
+        padding: 20px 0;
+        &__img {
+            display: none;
+        }
+        &__title {
+            width: 100%;
+        }
+        &__text {
+            width: 100%;
+        }
+        &__calls {
+            input {
+                width: 100%;
+            }
+            button {
+                width: 100%;
+            }
+        }
+        p {
+            width: 100%;
+        }
+    }
+    .reviews {
+        padding: 30px 0;
+        &__number {
+            &-item {
+                b {
+                    font-size: 40px;
+                    width: 40%;
+                }
+            }
+        }
+        .slick-prev {
+            left: 10px;
+        } 
+        .slick-next {
+            right: 10px;
+        } 
+        .slick-arrow {
+            top: 40%;
+        }
+    }
+    .standarts {
+      
+        &__all {
+            a {
+                margin-left: 60px;
+            }
+        }
+    }
+    .video {
+        &__content {
+            padding-bottom: 30px;
+            video {
+                height: 270px;
+            }
+        }
+        &__title {
+            margin-bottom: 10px;
+        }
+    }
+    .footer {
+        &__top {
+            display: block;
+            text-align: center;
+            &-menu {
+                grid-template-columns: 1fr 1fr;
+                margin: 20px 0;
+                a {
+                    font-size: 14px;
+                }
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+            &-socials {
+                display: flex;
+                margin-left: 40%;
+                a {
+                    margin: 0 7px;
+                }
+            }
+        }
+        &__bot {
+            display: block;
+            text-align: center;
+        }
+        &__policy {
+            margin: 15px 0;
+        }
+        &__made {
+            justify-content: center;
+        }
+    }
 }
 
 @media (max-width: 480px) {
+    .mainTitle2 {
+        font-size: 19px;
+        line-height: 24px;
+        b {
+            font-size: 19px;
+            line-height: 24px;
+        }
+    }
     .banner {
         &__parent {
             .slick-arrow {
@@ -1845,6 +2765,134 @@ select {
             }
             &-left {
                 width: 100%;
+            }
+        }
+    }
+    .services {
+        &__content {
+            gap: 0;
+            padding-top: 6px;
+        }
+        &__item {
+            height: auto;
+            padding: 20px;
+            margin-bottom: 15px;
+            img {
+                max-width: 150px;
+                max-height: 150px;
+            }
+            &-title {
+                margin-bottom: 15px;
+            }
+            &-text {
+                width: 80%;
+                margin-bottom: 15px;
+            }
+            &-types {
+                li {
+                    margin-bottom: 7px;
+                }
+            }
+        }
+    }
+    .leader {
+        background-size: 100% 36%;
+    }
+    .advert {
+        height: 460px;
+    }
+    .doc {
+        &__content {
+            height: 540px;
+        }
+        &__img {
+            right: 15px;
+        }
+    }
+    .insta {
+        &__content {
+            grid-template-columns: 1fr;
+            height: 380px;
+            overflow-y: scroll;
+        }
+        &__item {
+            height: auto;
+            max-height: 340px;
+        }
+    }
+    .reviews {
+        &__number {
+            &-item {
+                b {
+                    font-size: 35px;
+                    width: 60%;
+                }
+            } 
+        }
+    }
+    .standarts {
+        .slick-next {
+            right: 50px;
+        }
+        .slick-prev {
+            left: 50px
+        }
+        &__all {
+            a {
+                margin-left: 30px;
+            }
+        }
+    }
+    .video {
+        &__content {
+            video {
+                height: 230px;
+            }
+        }
+        &__title {
+            margin-bottom: 0px;
+        }
+    }
+    .clinics {
+        &__title {
+            margin-bottom: 15px;
+        }
+        &__item {
+            padding: 20px 10px 0 10px;
+           &-body {
+            span {
+                font-size: 14px;
+                p {
+                    font-size: 14px;
+                }
+            }
+           }
+            &-head {
+                line-height: 10px;
+            }
+        }
+    }
+    .map {
+        padding: 20px 0 10px;
+        iframe {
+            height: 240px;
+        }
+    }
+    .seo {
+        margin-top: 20px;
+        &__text {
+            margin: 10px 0 0;
+            height: 300px;
+            overflow-y: scroll;
+        }
+    }
+    .footer {
+        &__top {
+            &-menu {
+                grid-template-columns: 1fr;
+            }
+            &-socials {
+                margin-left: 32%;
             }
         }
     }

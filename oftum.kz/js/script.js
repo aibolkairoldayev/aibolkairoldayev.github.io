@@ -27,6 +27,7 @@ $('.doc__content').slick({
     arrows: true,
     fade: true,
     dots: false,
+    infinite: false,
     asNavFor: '.doctors__list'
 });
 $('.doctors__list').slick({
@@ -35,7 +36,28 @@ $('.doctors__list').slick({
     asNavFor: '.doc__content',
     dots: false,
     arrows: false,
-    focusOnSelect: true
+    infinite: false,
+    focusOnSelect: true,
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2.3,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1.3,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+            }
+        },
+    ]
 });
 
 // Задается отступ слева для слайдера докторов и отступ справа для доктора на главной странице 
@@ -66,7 +88,27 @@ $('.doc__content').on('afterChange', function (event, slick, currentSlide, nextS
 $('.reviews__slider').slick({
     infinite: true,
     slidesToShow: 4,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+            }
+        },
+    ]
 });
 
 
@@ -101,15 +143,11 @@ $('.header__burger').click(function (event) {
 
 // Раскывание адресов в главной странице
 
-var children = $('.clinics__content').children().length;
-for (i = 0; i < children; i++) {
-    var arr = [];
-    arr.concat(i)
-    console.log(arr)
-}
-
-$('#clinic__head-' + i).click(function () {
-    $('#clinic__body-' + i).css('display', 'block');
-    $('#clinic__body-' + i).css('height', 'auto');
-    $('#clinic__item-' + i).css('height', 'auto');
+$('.clinics__item').click(function () {
+    $('.clinics__item-body').css('overflow', 'hidden');
+    $('.clinics__item-body').css('height', '0');
+    $('.clinics__item').css('height', '98px');
+    ($(this).find('.clinics__item-body')).css('height', 'auto');
+    ($(this).find('.clinics__item-body')).css('overflow', 'initial');
+    $(this).css('height', 'auto');
 })

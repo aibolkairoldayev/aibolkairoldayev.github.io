@@ -826,6 +826,7 @@ img {
   max-width: 300px;
   bottom: 0;
   right: 0;
+  z-index: 0;
 }
 .services__item-title {
   margin-bottom: 25px;
@@ -1032,11 +1033,13 @@ img {
   height: 494px;
   background: #E6F5FA;
   position: relative;
+  z-index: 1;
 }
 .advert__img {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: -1;
 }
 .advert__img img {
   height: 100%;
@@ -1270,12 +1273,12 @@ img {
   justify-content: space-between;
 }
 .insta__item {
-  margin-right: 30px;
   width: 23%;
+  height: 280px;
 }
 .insta__item img {
   width: 100%;
-  height: 280px;
+  height: 100%;
 }
 
 .consult {
@@ -1429,7 +1432,7 @@ img {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   color: #0096D1;
-  margin-left: 13%;
+  margin-left: 17%;
 }
 .standarts__all a:hover {
   font-weight: 600;
@@ -1493,8 +1496,12 @@ img {
 .video__title {
   margin-bottom: 30px;
 }
+.video__content {
+  padding-bottom: 100px;
+}
 .video__content video {
   border-radius: 12px;
+  height: 440px;
 }
 
 .clinics {
@@ -1512,10 +1519,10 @@ img {
 }
 .clinics__item {
   background: #fff;
-  padding: 35px;
+  padding: 35px 35px 0 35px;
   border-top: 2px solid #3D7DCC;
   border-radius: 8px;
-  height: 98px;
+  transition: 0.3s ease;
 }
 .clinics__item-head {
   font-family: "Panton";
@@ -1528,10 +1535,10 @@ img {
   cursor: pointer;
 }
 .clinics__item-body {
-  height: 0;
-  display: none;
   padding-top: 35px;
-  transition: 0.3s linear;
+  transition: 0.3s ease;
+  overflow: hidden;
+  height: 0;
 }
 .clinics__item-body b {
   font-family: "Panton";
@@ -1790,6 +1797,19 @@ select::-ms-expand {
   display: block;
 }
 
+@media (max-width: 1800px) {
+  .standarts .slick-next {
+    right: 41%;
+  }
+  .standarts__all a {
+    margin-left: 14%;
+  }
+}
+@media (max-width: 1600px) {
+  .standarts__all a {
+    margin-left: 10%;
+  }
+}
 @media (max-width: 1400px) {
   .banner__title {
     font-size: 30px;
@@ -1803,8 +1823,27 @@ select::-ms-expand {
   .banner__child-item img {
     height: 274px;
   }
+  .doc__img {
+    right: -60px;
+  }
+  .consult {
+    padding: 40px 0 60px;
+  }
+  .consult__img img {
+    width: 540px;
+    height: 500px;
+  }
+  .standarts__all a {
+    margin-left: 5%;
+  }
+  .standarts .slick-next {
+    right: 41%;
+  }
 }
 @media (max-width: 1200px) {
+  .header__buttons button {
+    width: 140px;
+  }
   .banner__title {
     font-size: 27px;
   }
@@ -1829,8 +1868,105 @@ select::-ms-expand {
   .banner__child-item img {
     height: 224px;
   }
+  .leader .quotesTop {
+    top: 40px;
+    right: 10px;
+  }
+  .leader .quotesBot {
+    bottom: -50px;
+    left: -10px;
+  }
+  .methods__item:first-child img {
+    width: 40%;
+  }
+  .methods__item:nth-child(3) img {
+    width: 52%;
+    bottom: -8px;
+  }
+  .advert {
+    height: 450px;
+  }
+  .advert__img img {
+    height: 450px;
+  }
+  .advert__content {
+    padding: 60px 0;
+  }
+  .doc__img {
+    right: -15px;
+  }
+  .doc__img img {
+    width: 510px;
+    max-height: 540px;
+  }
+  .insta {
+    padding: 90px 0;
+  }
+  .consult {
+    height: 420px;
+  }
+  .consult__img {
+    right: 0;
+  }
+  .consult__img img {
+    width: 510px;
+    height: 460px;
+  }
+  .consult__title {
+    width: 55%;
+    line-height: 40px;
+  }
+  .consult__title b {
+    line-height: 40px;
+  }
+  .reviews {
+    padding: 70px 0;
+  }
+  .reviews .slick-next {
+    right: -40px;
+  }
+  .reviews .slick-prev {
+    left: -40px;
+  }
+  .standarts__all a {
+    margin-left: 2%;
+  }
+  .standarts .slick-next {
+    right: 41%;
+  }
+  .standarts .slick-prev {
+    left: 36%;
+  }
+  .footer {
+    padding: 30px 0 20px;
+  }
+  .footer__top {
+    padding-bottom: 18px;
+  }
+  .footer__top-menu {
+    margin-right: -60px;
+  }
+  .footer__bot {
+    justify-content: space-between;
+  }
 }
 @media (max-width: 992px) {
+  .mainTitle {
+    font-size: 37px;
+    line-height: 38px;
+  }
+  .mainTitle b {
+    font-size: 37px;
+    line-height: 38px;
+  }
+  .mainTitle2 {
+    font-size: 27px;
+    line-height: 30px;
+  }
+  .mainTitle2 b {
+    font-size: 27px;
+    line-height: 30px;
+  }
   .header {
     z-index: 4;
     position: relative;
@@ -1905,13 +2041,252 @@ select::-ms-expand {
   .advantages__bot-right {
     width: 45%;
   }
+  .services__content {
+    grid-template-columns: 1fr;
+  }
+  .services__item img {
+    max-width: 250px;
+  }
+  .leader {
+    margin-bottom: 60px;
+    min-height: 450px;
+    background-position-x: -20%;
+  }
+  .leader__left {
+    width: 40%;
+  }
+  .leader__left-name {
+    font-size: 30px;
+  }
+  .leader__left-name b {
+    font: 30px;
+  }
+  .leader__left-text {
+    width: 90%;
+  }
+  .leader__right {
+    width: 39%;
+  }
+  .leader__right-text {
+    line-height: 130%;
+  }
+  .methods__title {
+    margin-bottom: 25px;
+  }
+  .methods__item {
+    padding: 15px;
+    height: 400px;
+  }
+  .methods__item-title {
+    font-size: 22px;
+    line-height: 130%;
+    margin: 5px 0 10px;
+  }
+  .methods__item-text {
+    font-size: 15px;
+    line-height: 120%;
+    margin-bottom: 15px;
+  }
+  .methods__item:nth-child(1) img {
+    width: 35%;
+    height: 130px;
+  }
+  .methods__item:nth-child(2) img {
+    bottom: -35px;
+    max-height: 170px;
+  }
+  .methods__item:nth-child(3) img {
+    width: 45%;
+  }
+  .methods__bot {
+    gap: 15px;
+  }
+  .methods__bot .equipment__item {
+    padding: 20px;
+  }
+  .advert {
+    height: 370px;
+  }
+  .advert__img img {
+    height: 370px;
+  }
+  .advert__content {
+    padding: 35px 0;
+  }
+  .advert__title {
+    width: 55%;
+  }
+  .advert__text {
+    font-size: 15px;
+    line-height: 130%;
+    margin: 15px 0 20px;
+    width: 45%;
+  }
+  .advert__rest-day {
+    font-size: 20px;
+    height: 40px;
+  }
+  .doctors__top {
+    padding-top: 50px;
+  }
+  .doctors__text {
+    width: 100%;
+    margin: 20px 0 30px;
+  }
+  .doctors__bot {
+    padding-top: 200px;
+  }
+  .doc__img {
+    right: 0;
+    bottom: -2px;
+  }
+  .doc__img img {
+    width: 350px;
+  }
+  .doc__content {
+    height: 340px;
+    padding-top: 35px;
+  }
+  .doc__name {
+    width: 60%;
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+  .doc__name b {
+    font-size: 34px;
+  }
+  .doc__info {
+    width: 50%;
+  }
+  .doc__info li {
+    line-height: 130%;
+    margin-bottom: 13px;
+  }
+  .insta {
+    padding: 60px 0;
+  }
+  .insta__item {
+    height: 220px;
+  }
+  .consult {
+    height: 390px;
+    padding: 20px 0 50px;
+  }
+  .consult p {
+    width: 62%;
+  }
+  .consult__img img {
+    width: 460px;
+    height: 410px;
+  }
+  .consult__text {
+    margin: 15px 0;
+    width: 60%;
+  }
+  .consult__calls {
+    width: 60%;
+    display: block;
+  }
+  .consult__calls-us p {
+    margin-top: 10px;
+  }
+  .consult__calls input {
+    height: 40px;
+    width: 280px;
+  }
+  .consult__calls button {
+    width: 280px;
+    margin: 15px 0 0;
+  }
+  .consult__title {
+    font-size: 34px;
+    width: 65%;
+  }
+  .consult__title b {
+    font-size: 34px;
+  }
+  .reviews {
+    padding: 50px 0;
+  }
+  .reviews__rating {
+    margin: 15px 0 0;
+    align-items: center;
+  }
+  .reviews__number-item {
+    padding: 5px;
+    margin: 0 15px;
+  }
+  .reviews__number-item b {
+    font-size: 53px;
+    line-height: 60px;
+    width: 60%;
+  }
+  .reviews .slick-prev {
+    left: -30px;
+  }
+  .reviews .slick-next {
+    right: -30px;
+  }
+  .standarts .slick-next {
+    right: 34%;
+  }
+  .standarts .slick-prev {
+    left: 34%;
+  }
+  .standarts__all a {
+    margin-left: 5%;
+  }
+  .video__content {
+    padding-bottom: 70px;
+  }
+  .video__content video {
+    height: 380px;
+  }
+  .video__title {
+    margin-bottom: 20px;
+  }
+  .clinics {
+    padding: 40px 0;
+    height: 660px;
+  }
+  .clinics__item {
+    padding: 20px 20px 0 20px;
+  }
+  .map {
+    padding: 50px 0 30px;
+  }
+  .map iframe {
+    height: 400px;
+  }
+  .seo__text {
+    margin: 20px 0 10px;
+  }
+  .footer__top-menu {
+    margin-right: 0;
+  }
+  .footer__top-socials {
+    display: grid;
+    text-align: center;
+    width: 9%;
+  }
+  .footer__bot-info b {
+    margin: 0 7px 0 0;
+  }
+  .footer__policy a {
+    margin: 0 10px;
+  }
+  .footer__made {
+    margin-left: 20px;
+  }
 }
 @media (max-width: 768px) {
   .mainTitle {
     font-size: 34px;
+    line-height: 35px;
   }
   .mainTitle b {
     font-size: 34px;
+    line-height: 35px;
   }
   .banner__parent {
     width: 100%;
@@ -1957,6 +2332,205 @@ select::-ms-expand {
     padding: 4px 10px;
     font-size: 11px;
   }
+  .services {
+    margin-bottom: 50px;
+  }
+  .leader {
+    min-height: 400px;
+    background-position-x: 120px;
+  }
+  .leader .container {
+    display: block;
+  }
+  .leader__left {
+    width: 100%;
+  }
+  .leader__left-name {
+    padding-top: 5px;
+    font-size: 27px;
+  }
+  .leader__left-name b {
+    font-size: 27px;
+  }
+  .leader__left-text {
+    margin: 10px 0 20px;
+    width: 75%;
+  }
+  .leader__right {
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 0;
+    width: 70%;
+  }
+  .leader .quotesTop {
+    top: 10px;
+    right: 60px;
+  }
+  .leader .quotesBot {
+    bottom: -35px;
+    left: -50px;
+  }
+  .methods__title {
+    margin-bottom: 15px;
+  }
+  .methods__top {
+    display: block;
+  }
+  .methods__item {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .methods__item img {
+    display: none;
+  }
+  .methods .equipment__item {
+    padding: 15px;
+  }
+  .methods .equipment__item-title {
+    font-size: 22px;
+    line-height: 130%;
+  }
+  .methods .equipment__item-text {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .advert {
+    height: 320px;
+  }
+  .advert__img {
+    width: 50%;
+  }
+  .advert__img img {
+    height: 320px;
+  }
+  .advert__title {
+    width: 65%;
+    font-size: 22px;
+  }
+  .advert__title b {
+    font-size: 22px;
+  }
+  .advert__text {
+    width: 60%;
+  }
+  .advert__rest {
+    width: 60%;
+  }
+  .advert__rest-day {
+    width: 70px;
+    font-size: 17px;
+    height: 30px;
+  }
+  .advert__btn {
+    height: 38px;
+  }
+  .doctors__top {
+    padding-top: 30px;
+  }
+  .doctors__title {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .doctors__text {
+    margin: 15px 0 20px;
+  }
+  .doctors__bot {
+    margin-top: -160px;
+  }
+  .doctors__item {
+    margin-right: 20px;
+    height: 480px;
+  }
+  .doctors__item-name {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .doctors__item-text {
+    font-size: 14px;
+    line-height: 130%;
+    margin: 10px 0 13px;
+  }
+  .doctors__item-exp {
+    font-size: 14px;
+  }
+  .doctors__info {
+    padding: 15px;
+  }
+  .doc__img {
+    right: -10px;
+  }
+  .doc__img img {
+    width: 270px;
+  }
+  .doc__content {
+    height: 390px;
+  }
+  .doc__info {
+    width: 62%;
+  }
+  .insta__item {
+    height: 170px;
+    width: 100%;
+  }
+  .insta__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .consult {
+    height: 400px;
+  }
+  .consult__img img {
+    width: 400px;
+    height: 370px;
+  }
+  .consult__title {
+    font-size: 30px;
+    line-height: 31px;
+  }
+  .consult__title b {
+    font-size: 30px;
+    line-height: 31px;
+  }
+  .consult__text {
+    width: 65%;
+    font-size: 14px;
+    line-height: 130%;
+  }
+  .consult__calls button {
+    height: 40px;
+  }
+  .reviews__number {
+    display: block;
+  }
+  .reviews__number-item b {
+    width: auto;
+  }
+  .standarts .slick-next {
+    right: 100px;
+  }
+  .standarts .slick-prev {
+    left: 100px;
+  }
+  .standarts__all a {
+    margin-left: 120px;
+  }
+  .video__content video {
+    height: 320px;
+  }
+  .clinics {
+    height: auto;
+  }
+  .clinics__content {
+    grid-template-columns: 1fr;
+  }
+  .map {
+    padding: 30px 0 20px;
+  }
+  .map iframe {
+    height: 300px;
+  }
 }
 @media (max-width: 576px) {
   .mainTitle {
@@ -1997,8 +2571,217 @@ select::-ms-expand {
   .advantages__top {
     margin-top: 15px;
   }
+  .services__content {
+    padding-top: 20px;
+  }
+  .leader {
+    height: 700px;
+    padding: 20px 0;
+    background-size: 100% 44%;
+    background-position-x: 45%;
+    background-position-y: 100%;
+    margin-bottom: 40px;
+  }
+  .leader__left-text {
+    width: 100%;
+    line-height: 110%;
+  }
+  .leader__left-name {
+    font-size: 24px;
+    line-height: 25px;
+  }
+  .leader__left-name b {
+    font-size: 24px;
+  }
+  .leader__right {
+    width: 100%;
+  }
+  .leader__right-title {
+    padding-top: 27px;
+    margin-bottom: 14px;
+  }
+  .leader__right-text {
+    width: 100%;
+    padding-left: 15px;
+  }
+  .leader .quotesTop {
+    top: -5px;
+    right: 10px;
+  }
+  .leader .quotesBot {
+    bottom: -45px;
+    left: -10px;
+  }
+  .methods__bot {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .methods .equipment__item {
+    margin-bottom: 13px;
+  }
+  .methods .equipment__item img {
+    display: block;
+    width: 180px;
+  }
+  .methods .equipment__item-text {
+    font-size: 14px;
+    line-height: 130%;
+  }
+  .advert {
+    height: 480px;
+  }
+  .advert__content {
+    padding: 10px;
+  }
+  .advert__title {
+    width: 100%;
+  }
+  .advert__text {
+    width: 100%;
+  }
+  .advert__img {
+    bottom: 0;
+    top: auto;
+    width: 100%;
+  }
+  .advert__img img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+  }
+  .advert__rest {
+    width: 100%;
+    justify-content: start;
+  }
+  .advert__rest p {
+    margin-right: 17px;
+  }
+  .doctors__item {
+    height: 438px;
+  }
+  .doctors__info {
+    padding: 15px;
+  }
+  .doctors__bot {
+    margin-top: -170px;
+  }
+  .doc__content {
+    padding-top: 25px;
+    height: 480px;
+  }
+  .doc__name {
+    width: 100%;
+  }
+  .doc__info {
+    width: 100%;
+  }
+  .doc__img {
+    right: 50px;
+  }
+  .doc__img img {
+    width: 220px;
+  }
+  .insta {
+    padding: 30px 0;
+  }
+  .insta__content {
+    margin-top: 20px;
+  }
+  .insta__title select {
+    height: 30px;
+    padding: 5px;
+  }
+  .consult {
+    height: auto;
+    padding: 20px 0;
+  }
+  .consult__img {
+    display: none;
+  }
+  .consult__title {
+    width: 100%;
+  }
+  .consult__text {
+    width: 100%;
+  }
+  .consult__calls input {
+    width: 100%;
+  }
+  .consult__calls button {
+    width: 100%;
+  }
+  .consult p {
+    width: 100%;
+  }
+  .reviews {
+    padding: 30px 0;
+  }
+  .reviews__number-item b {
+    font-size: 40px;
+    width: 40%;
+  }
+  .reviews .slick-prev {
+    left: 10px;
+  }
+  .reviews .slick-next {
+    right: 10px;
+  }
+  .reviews .slick-arrow {
+    top: 40%;
+  }
+  .standarts__all a {
+    margin-left: 60px;
+  }
+  .video__content {
+    padding-bottom: 30px;
+  }
+  .video__content video {
+    height: 270px;
+  }
+  .video__title {
+    margin-bottom: 10px;
+  }
+  .footer__top {
+    display: block;
+    text-align: center;
+  }
+  .footer__top-menu {
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 0;
+  }
+  .footer__top-menu a {
+    font-size: 14px;
+  }
+  .footer__top-menu li {
+    margin-bottom: 10px;
+  }
+  .footer__top-socials {
+    display: flex;
+    margin-left: 40%;
+  }
+  .footer__top-socials a {
+    margin: 0 7px;
+  }
+  .footer__bot {
+    display: block;
+    text-align: center;
+  }
+  .footer__policy {
+    margin: 15px 0;
+  }
+  .footer__made {
+    justify-content: center;
+  }
 }
 @media (max-width: 480px) {
+  .mainTitle2 {
+    font-size: 19px;
+    line-height: 24px;
+  }
+  .mainTitle2 b {
+    font-size: 19px;
+    line-height: 24px;
+  }
   .banner__parent .slick-arrow {
     top: 46%;
   }
@@ -2046,6 +2829,104 @@ select::-ms-expand {
   }
   .advantages__bot-left {
     width: 100%;
+  }
+  .services__content {
+    gap: 0;
+    padding-top: 6px;
+  }
+  .services__item {
+    height: auto;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  .services__item img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .services__item-title {
+    margin-bottom: 15px;
+  }
+  .services__item-text {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  .services__item-types li {
+    margin-bottom: 7px;
+  }
+  .leader {
+    background-size: 100% 36%;
+  }
+  .advert {
+    height: 460px;
+  }
+  .doc__content {
+    height: 540px;
+  }
+  .doc__img {
+    right: 15px;
+  }
+  .insta__content {
+    grid-template-columns: 1fr;
+    height: 380px;
+    overflow-y: scroll;
+  }
+  .insta__item {
+    height: auto;
+    max-height: 340px;
+  }
+  .reviews__number-item b {
+    font-size: 35px;
+    width: 60%;
+  }
+  .standarts .slick-next {
+    right: 50px;
+  }
+  .standarts .slick-prev {
+    left: 50px;
+  }
+  .standarts__all a {
+    margin-left: 30px;
+  }
+  .video__content video {
+    height: 230px;
+  }
+  .video__title {
+    margin-bottom: 0px;
+  }
+  .clinics__title {
+    margin-bottom: 15px;
+  }
+  .clinics__item {
+    padding: 20px 10px 0 10px;
+  }
+  .clinics__item-body span {
+    font-size: 14px;
+  }
+  .clinics__item-body span p {
+    font-size: 14px;
+  }
+  .clinics__item-head {
+    line-height: 10px;
+  }
+  .map {
+    padding: 20px 0 10px;
+  }
+  .map iframe {
+    height: 240px;
+  }
+  .seo {
+    margin-top: 20px;
+  }
+  .seo__text {
+    margin: 10px 0 0;
+    height: 300px;
+    overflow-y: scroll;
+  }
+  .footer__top-menu {
+    grid-template-columns: 1fr;
+  }
+  .footer__top-socials {
+    margin-left: 32%;
   }
 }
 [data-star] {
