@@ -69,7 +69,16 @@ function containerWidth() {
     let docRight = ((windowWidth - containerWidth) / 2) - 140 + 'px';
     $('.doctors__slide').css('marginLeft', marginLeft);
     $('.standarts__slider').css('marginLeft', marginLeft);
-    $('.consult__img img').css('marginRight', docRight);
+    $('.standarts__mobile').css('marginLeft', marginLeft);
+    if ($(window).width() > 2000) {
+        $('.consult__img img').css('marginRight', docRight);
+        $('.doctors__slide').css('marginRight', docRight);
+        $('.advert__img').css('marginRight', docRight);
+        $('.standarts__slider').css('marginRight', docRight);
+        $('.banner').css('marginRight', docRight);
+        $('.banner').css('marginLeft', docRight);
+        $('.standarts++slider').slick('slickRemove', 2);
+    }
 
 }
 containerWidth();
@@ -116,8 +125,31 @@ $('.reviews__slider').slick({
 
 $('.standarts__slider').slick({
     infinite: true,
-    slidesToShow: 1,
     slidesToScroll: 1,
+    slidesToShow: 1,
+});
+
+
+// Слайдер оборудования главной страницы мобилка
+
+$('.standarts__mobile').slick({
+    infinite: true,
+    slidesToScroll: 1,
+    slidesToShow: 3,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1,
+            }
+        },
+    ]
 });
 
 
@@ -136,12 +168,20 @@ function hidePreloader() {
 // Раскывание бургер-меню
 
 $('.header__burger').click(function (event) {
-    $('.header__burger').toggleClass('active');
-    $('.burger').toggleClass('active');
+    if ($('.header__burger').hasClass('active')) {
+        $('.header__burger').toggleClass('active');
+        $('.burger').toggleClass('active');
+        $('body, html').css('overflow', 'auto');
+    }
+    else {
+        $('.header__burger').toggleClass('active');
+        $('.burger').toggleClass('active');
+        $('body, html').css('overflow', 'hidden');
+    }
 })
 
 
-// Раскывание адресов в главной странице
+// Раскрывание адресов в главной странице
 
 $('.clinics__item').click(function () {
     $('.clinics__item-body').css('overflow', 'hidden');
@@ -151,3 +191,4 @@ $('.clinics__item').click(function () {
     ($(this).find('.clinics__item-body')).css('overflow', 'initial');
     $(this).css('height', 'auto');
 })
+

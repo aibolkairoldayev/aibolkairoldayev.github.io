@@ -386,13 +386,10 @@ img {
 .header__city .cities {
   background-image: url(../img/select.svg);
   background-repeat: no-repeat;
-  background-position: 87px 8px;
+  background-position: 93px 8px;
 }
 .header__city .cities:focus {
   background-image: url(../img/select-up.png);
-}
-.header__city .cities::part(listbox) {
-  padding: 14px;
 }
 .header__city .select-arrow {
   position: absolute;
@@ -414,7 +411,7 @@ img {
   font-size: 14px;
   line-height: 150%;
   color: #0B83CF;
-  margin-left: 7px;
+  padding-left: 7px;
 }
 .header__city select:hover {
   font-weight: 500;
@@ -1171,7 +1168,7 @@ img {
 .doc__content {
   padding-top: 50px;
   width: 100%;
-  height: 400px;
+  height: 430px;
 }
 .doc__img {
   position: absolute;
@@ -1266,6 +1263,12 @@ img {
   border-radius: 8px;
   height: 44px;
   padding: 12px 15px;
+  background-image: url(../img/select.svg);
+  background-repeat: no-repeat;
+  background-position: 93px 20px;
+}
+.insta__title select:focus {
+  background-image: url(../img/select-up.png);
 }
 .insta__content {
   margin-top: 30px;
@@ -1421,6 +1424,9 @@ img {
 .standarts {
   margin-bottom: 100px;
 }
+.standarts__mobile {
+  display: none;
+}
 .standarts__all {
   text-align: center;
   margin-top: 50px;
@@ -1455,14 +1461,14 @@ img {
   right: 44%;
   background-image: url(./../img/arrow-right2.svg);
 }
-.standarts__title {
-  width: 77%;
-}
 .standarts__content {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(2, 1fr);
+}
+.standarts__title {
+  width: 77%;
 }
 .standarts__text {
   width: 75%;
@@ -1991,6 +1997,9 @@ select::-ms-expand {
     align-items: center;
     padding: 15px 20px 22px;
   }
+  .burger__content {
+    width: 65%;
+  }
   .banner__title {
     font-size: 22px;
     line-height: 25px;
@@ -2235,6 +2244,22 @@ select::-ms-expand {
   }
   .standarts__all a {
     margin-left: 5%;
+  }
+  .standarts__slider {
+    display: none;
+  }
+  .standarts__mobile {
+    display: block;
+  }
+  .standarts__item {
+    height: 230px;
+    margin: 0 10px;
+  }
+  .standarts__title {
+    width: 100%;
+  }
+  .standarts__text {
+    width: 100%;
   }
   .video__content {
     padding-bottom: 70px;
@@ -2771,6 +2796,9 @@ select::-ms-expand {
   }
   .footer__made {
     justify-content: center;
+  }
+  .burger__content {
+    width: 80%;
   }
 }
 @media (max-width: 480px) {
